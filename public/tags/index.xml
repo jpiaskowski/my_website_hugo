@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 10:50:02 -0700</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Tags</title>
@@ -13,10 +13,114 @@
     </image>
     
     <item>
-      <title>Source Themes</title>
-      <link>/tags/source-themes/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/source-themes/</guid>
+      <title>data workflow</title>
+      <link>/tags/data-workflow/</link>
+      <pubDate>Sat, 01 Feb 2020 10:50:02 -0700</pubDate>
+      <guid>/tags/data-workflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>drought tolerance</title>
+      <link>/tags/drought-tolerance/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/drought-tolerance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>genetics</title>
+      <link>/tags/genetics/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/genetics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plant breeding</title>
+      <link>/tags/plant-breeding/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/plant-breeding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pulse crops</title>
+      <link>/tags/pulse-crops/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/pulse-crops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sweet cherry</title>
+      <link>/tags/sweet-cherry/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/sweet-cherry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wheat</title>
+      <link>/tags/wheat/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/wheat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jupyter</title>
+      <link>/tags/jupyter/</link>
+      <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
+      <guid>/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profiling</title>
+      <link>/tags/profiling/</link>
+      <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
+      <guid>/tags/profiling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profvis</title>
+      <link>/tags/profvis/</link>
+      <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
+      <guid>/tags/profvis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reproducibility</title>
+      <link>/tags/reproducibility/</link>
+      <pubDate>Tue, 07 Aug 2018 10:50:02 -0700</pubDate>
+      <guid>/tags/reproducibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rcpp</title>
+      <link>/tags/rcpp/</link>
+      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
+      <guid>/tags/rcpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>virtual machine</title>
+      <link>/tags/virtual-machine/</link>
+      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
+      <guid>/tags/virtual-machine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>population genetics</title>
+      <link>/tags/population-genetics/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/tags/population-genetics/</guid>
       <description></description>
     </item>
     
@@ -37,34 +141,18 @@
     </item>
     
     <item>
-      <title>Academic</title>
-      <link>/tags/academic/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/tags/academic/</guid>
+      <title>dryland agriculture</title>
+      <link>/tags/dryland-agriculture/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/tags/dryland-agriculture/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>plot</title>
-      <link>/tags/plot/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/tags/plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/tags/r-markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>/tags/regression/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/tags/regression/</guid>
+      <title>extension</title>
+      <link>/tags/extension/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/tags/extension/</guid>
       <description></description>
     </item>
     

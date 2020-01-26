@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R language | Julia Piaskowski</title>
+    <link>/categories/r-language/</link>
+      <atom:link href="/categories/r-language/index.xml" rel="self" type="application/rss+xml" />
+    <description>R language</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Sep 2018 10:50:02 -0700</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>R language</title>
+      <link>/categories/r-language/</link>
+    </image>
+    
+    <item>
+      <title>Faster R Scripts through Code Profiling</title>
+      <link>/post/code_profiling/</link>
+      <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
+      <guid>/post/code_profiling/</guid>
+      <description>&lt;h5 id=&#34;sources&#34;&gt;Sources&lt;/h5&gt;
+&lt;p&gt;Thomas Lumley, Github repo 
+&lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;useRfasteR&lt;/a&gt;
+&lt;br&gt;
+Hadley Wickham, 
+&lt;a href=&#34;http://adv-r.had.co.nz/Profiling.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Profiling&lt;/a&gt;
+, &lt;em&gt;Advanced R&lt;/em&gt;&lt;br&gt;
+Dirk Eddelbuettel, 
+&lt;a href=&#34;http://www.rcpp.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rcpp&lt;/a&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;the-process-for-improving-code&#34;&gt;The Process for Improving Code:&lt;/h4&gt;
+&lt;p&gt;(quote from &lt;em&gt;Advanced R&lt;/em&gt;)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Find the biggest bottleneck (the slowest part of your code).&lt;/li&gt;
+&lt;li&gt;Try to eliminate it (you may not succeed but that’s ok).&lt;/li&gt;
+&lt;li&gt;Repeat until your code is “fast enough.”&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Easy peasy, right???&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./owl.png&#34; alt=&#34;owl&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;some-general-guidelines-for-speeding-up-r-code&#34;&gt;Some general guidelines for speeding up R code&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;Use data frames less - they are expensive to create, often copied in whole when modified, and their rownames attribute can really slow things down.&lt;/li&gt;
+&lt;li&gt;Be wary of using functions that copy objects in whole: c(), append(), cbind(), rbind(), or paste(). When used in loops, you can get a massive proliferation of objects in memory.&lt;/li&gt;
+&lt;li&gt;Use vectorised functions:
+&lt;ul&gt;
+&lt;li&gt;apply, lapply, sapply, vapply, tapply, mapply&lt;/li&gt;
+&lt;li&gt;rowSums, colSums, rowMeans, colMeans, cumsum, diff&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Base functions are designed to handle wildly different input. Consider rewriting base functions for highly repetitive tasks.&lt;/li&gt;
+&lt;li&gt;Use parallel::mclapply for parallelising functions.&lt;/li&gt;
+&lt;li&gt;Consider an optimized matrix algebra library (beyond BLAS) for better performance (e.g. 
+&lt;a href=&#34;https://developer.apple.com/documentation/accelerate/blas&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apple vecLib BLAS&lt;/a&gt;
+, 
+&lt;a href=&#34;https://www.openblas.net/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;openBLAS&lt;/a&gt;
+).&lt;/li&gt;
+&lt;li&gt;If you work with sparse matrices, use tools for them like the package &amp;lsquo;Matrix&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;For huge objects, consider storing the information in a database and accessing it with &amp;lsquo;dbplyr&amp;rsquo;. The packages &amp;lsquo;dbglm&amp;rsquo; and &amp;lsquo;tidypredict&amp;rsquo; will also do model fitting with data inside a database.&lt;/li&gt;
+&lt;li&gt;Another solution for large objects are specialized formats like 
+&lt;a href=&#34;https://portal.hdfgroup.org/display/support&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HDF5&lt;/a&gt;
+ or 
+&lt;a href=&#34;https://www.unidata.ucar.edu/software/netcdf/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;netCDF&lt;/a&gt;
+.&lt;/li&gt;
+&lt;li&gt;Take advantage of the Rcpp suite of programs - not just for C/C++ programmers (e.g. RcppArmadillo::fastlm).&lt;/li&gt;
+&lt;li&gt;Use an alternative implementation of R (e.g., 
+&lt;a href=&#34;https://github.com/oracle/fastr]&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;fastR&lt;/a&gt;
+, 
+&lt;a href=&#34;http://www.pqr-project.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pqR&lt;/a&gt;
+).&lt;/li&gt;
+&lt;li&gt;Check your code with benchmarking!!!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;lets-do-some-benchmarking&#34;&gt;Let&#39;s do some benchmarking!&lt;/h4&gt;
+&lt;p&gt;Important: don&#39;t (re)install &amp;lsquo;compiler&amp;rsquo;; you should just be able to load it in R v3.5 and later.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;pck &amp;lt;- c(&amp;quot;pryr&amp;quot;,&amp;quot;microbenchmark&amp;quot;, &amp;quot;profvis&amp;quot;, &amp;quot;compiler&amp;quot;, &amp;quot;mnormt&amp;quot;)
+invisible(lapply(pck, library, character.only = T))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;First, Turn off the just-in-time compiler. Note that return value is what the JIT was set at previously (default = 3).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;enableJIT(0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;the-microbenchmark-function&#34;&gt;The microbenchmark function&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;for evaluating small snippets of code&lt;/li&gt;
+&lt;li&gt;below is a comparison of several approaches to calculating a mean&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;a &amp;lt;- function() {
+  m &amp;lt;- sample(1:100, 2)
+  data.x &amp;lt;- lapply(m, function(x) rnorm(1e4, mean = x))
+  do.call(&amp;quot;cbind&amp;quot;, data.x)
+}
+
+some_data &amp;lt;- a()
+dim(some_data)
+
+microbenchmark(
+  mean_loop = apply(some_data, 2, mean),
+  mean_vec = colMeans(some_data),
+  mean_manual = apply(some_data, 2, function(x) sum(x)/length(x)),
+  mean_manual_ultra = apply(some_data, 2, function(x){
+    total = 0
+    n = 0
+    i = 1
+    while(!is.na(x[i])) {
+      total = total + x[i]
+      n = n+1
+      i = i+1
+    }
+    total/n
+  })
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;prevent-multiple-dispatch&#34;&gt;Prevent multiple dispatch:&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;the function mean() is meant to handle several different types of data&lt;/li&gt;
+&lt;li&gt;specifying the method (thus implying a certain type of input) can speed up the process for small data sets&lt;/li&gt;
+&lt;li&gt;the function mean() calls a different function depending on the object specified:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;methods(mean)
+
+x1 &amp;lt;- list(e2 = runif(1e2), e4 = runif(1e4), e6 = runif(1e6))
+
+lapply(x1, function(x)
+  microbenchmark(
+    mean(x),
+    mean.default(x)
+  )
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I suspect the improvement in speed for smaller objects but larger objects is related to big O notation &amp;ndash; these smaller objects are impacted by constants&lt;/p&gt;
+&lt;p&gt;Other approaches for finding source code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;# tracking package type, etc
+otype(mean)
+ftype(mean)
+showMethods(mean) #for S4
+methods(mean)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The function methods() does not always work, but there are alternatives:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;methods(var)
+getAnywhere(var)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;find-the-bottlenecks-with-rprof&#34;&gt;Find the bottlenecks with Rprof()&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;writes stack calls to disk along with memory usage and vector duplication&lt;/li&gt;
+&lt;li&gt;you create a .prof file to do this and then close it when done with profiling&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;Rprof(&amp;quot;permute.prof&amp;quot;, memory.profiling = T)
+
+sigma.mv &amp;lt;- diag(1, nrow = 5, ncol = 5)
+sigma.mv[upper.tri(sigma.mv)] = 0.5
+sigma.mv[lower.tri(sigma.mv)] = 0.5
+
+mvn.data &amp;lt;- rmnorm(1e3, mean = rep(0, 5), varcov = sigma.mv)
+colnames(mvn.data) &amp;lt;- c(paste0(&amp;quot;x&amp;quot;,1:5))
+
+kmeans.Ftest &amp;lt;- function(kmean_obj) {
+  df.1 = length(kmean_obj$size) - 1
+  df.2 = length(kmean_obj$cluster) - length(kmean_obj$size)
+  betw_ms &amp;lt;- kmean_obj$tot.withinss/df.1
+  with_ms &amp;lt;- kmean_obj$betweenss/df.2
+  fratio = betw_ms/with_ms
+  pval &amp;lt;- pf(fratio, df1 = df.2, df2 = df.1, lower.tail = F)
+  stuff = c(fratio, df.1, df.2, pval)
+  names(stuff) &amp;lt;- c(&#39;F-ratio&#39;, &#39;df 1&#39;,&#39;df 2&#39;, &#39;p-value&#39;)
+  return(stuff)
+}
+
+kmeans.optimiz &amp;lt;- lapply(2:10, function(x) {
+    results = kmeans(mvn.data, centers = x, nstart = 15, algorithm = &amp;quot;MacQueen&amp;quot;,
+                        iter.max = 50)
+    kmeans.Ftest(results)
+})
+
+kmeans.final &amp;lt;- do.call(&amp;quot;rbind&amp;quot;, kmeans.optimiz)
+
+Rprof(NULL)
+summaryRprof(&amp;quot;permute.prof&amp;quot;) #, memory = &amp;quot;both&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;use-profvis-to-visualize-performance&#34;&gt;Use profvis to visualize performance&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;nice graphical output&lt;/li&gt;
+&lt;li&gt;native in RStudio (there is extensive 
+&lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/218221837-Profiling-with-RStudio&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt;
+)&lt;/li&gt;
+&lt;li&gt;you can view output in browser&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;p &amp;lt;- profvis({
+mean_loop = apply(some_data, 2, mean)
+mean_vec = colMeans(some_data)
+mean_manual = apply(some_data, 2, function(x) sum(x)/length(x))
+mean_manual_ultra = apply(some_data, 2, function(x){
+  total = 0
+  n = 0
+  i = 1
+  while(!is.na(x[i])) {
+      total = total + x[i]
+      n = n+1
+      i = i+1
+    }
+    total/n
+  })
+})
+htmlwidgets::saveWidget(p, &amp;quot;profile.html&amp;quot;)
+
+browseURL(&amp;quot;profile.html&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;explore-source-code&#34;&gt;Explore source code&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;How to access function source code&lt;/strong&gt;
+(if you didn&#39;t write the function yourself)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Type the function name (without parentheses): &lt;code&gt;eigen&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Find namespace and methods associated: &lt;code&gt;methods(&amp;quot;princomp&amp;quot;); getAnywhere(&amp;quot;princomp.default&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Use pryr::show_c_source() to search for C code on GitHub (which may or may not be helpful)&lt;/li&gt;
+&lt;li&gt;Download the entire package and explore the code&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;svd
+La.svd
+
+try(show_c_source(.Internal(La_svd(x))))
+show_c_source(.Internal(mean(x)))
+
+download.packages(&amp;quot;broman&amp;quot;, repos = &amp;quot;https://cloud.r-project.org&amp;quot;,
+  destdir = getwd(),type = &amp;quot;source&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;trace-objects-copied&#34;&gt;Trace objects copied&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;use tracemem() to track particular objects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;a &amp;lt;- letters[sample(10)]
+tracemem(a)
+a[1] &amp;lt;- &amp;quot;Z&amp;quot;
+b &amp;lt;- a[1:5]  # not copied
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;memory&#34;&gt;Memory&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;How much memory is being used? Note that R requests memory from your computer in big chunks then manages it itself.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;mem_used()
+object.size(x1) #base
+object_size(x1) #pryr
+compare_size(x1) #between base R and pryr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Read the 
+&lt;a href=&#34;https://www.rdocumentation.org/packages/pryr/versions/0.1.4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation for pryr functions&lt;/a&gt;
+ for more useful functions.&lt;/p&gt;
+&lt;p&gt;Now that we are all done, turn the JIT compiler back on:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;enableJIT(3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;more-tips-from-advanced-r&#34;&gt;More Tips from &lt;em&gt;Advanced R&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;These are designed to reduce internal checks&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;read.csv(): specify known column types with colClasses.&lt;/li&gt;
+&lt;li&gt;factor(): specify known levels with levels.&lt;/li&gt;
+&lt;li&gt;cut(): don&#39;t generate labels with labels = FALSE if you don&#39;t need them, or, even better, use findInterval().&lt;/li&gt;
+&lt;li&gt;unlist(x, use.names = FALSE) is much faster than unlist(x).&lt;/li&gt;
+&lt;li&gt;interaction(): if you only need combinations that exist in the data, use drop = TRUE.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;remember&#34;&gt;Remember!&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./xkcd1205.png&#34; alt=&#34;xkcd1205&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://xkcd.com/1205/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;xckd comic&lt;/a&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Best Practices for Data Workflows in Ag Science</title>
+      <link>/post/workflow_basics/</link>
+      <pubDate>Tue, 07 Aug 2018 10:50:02 -0700</pubDate>
+      <guid>/post/workflow_basics/</guid>
+      <description>&lt;p&gt;I was struggling with the data set. The first 50 rows were summary stats (&amp;hellip;I think), and then the actual data started. The file was over 250 columns wide, composed largely of phenotypic traits. Perhaps one third of the columns were unique variables gathered over several years, but, the variable names were inconsistent across years. Actually, there was no information on the variables, what they were measuring, and what scale they were on. The closest hint was a pattern of color coding applied to groups of columns: yellow, green, blue. There appeared to be partial duplication and/or combination of of some columns, but we could not reconstruct exactly what had happened to the data. No one could recall the full history of the file, what that color coding meant, who had pre-processed data, or what they had done. We did know that the raw data were long lost.&lt;/p&gt;
+&lt;p&gt;This was the not the first nor the last messy data set with an unknown history that complicated my capacity to organize and analyse the information.&lt;/p&gt;
+&lt;p&gt;Other problems I encountered with poorly managed data sets:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Date sets with outliers removed based on individual&#39;s researchers assessment on what looked weird or not.&lt;/li&gt;
+&lt;li&gt;An Excel file several thousand lines with miscellaneous comments added every so often indicating a data point may be suspect.&lt;/li&gt;
+&lt;li&gt;An Excel file several sheets wide of the same information across different years - yet the column names did not match, and some sheets included summary stats for groups of data, using empty rows to differentiate groups (again, I think this was what going on&amp;hellip;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There&#39;s no way to sugarcoat it: management of raw experimental data and the analysis workflow is largely abysmal in the agricultural sciences, my academic home for 14 years. The process of cleaning, rearranging, filtering and preparing experimental data for downstream analyses is poorly described, if at all, in most papers. As many of know, much of data conditioning and preparation is done by students and technicians with little formal guidance or documentation of their work.&lt;/p&gt;
+&lt;p&gt;Since data sets can and should live on for decades - as part of long-term agriculture research, for meta-analyses or other uses, understanding how the raw data were parsed, cleaned and interpreted is important. Assumptions that made sense in the initial analysis may need re-evaluation later. Intermediate files can turn out to be useful. Organization of an analysis workflow can help researchers conduct their research in a regimented and reproducible way.&lt;/p&gt;
+&lt;p&gt;Here are a few concrete recommendations for improving workflow:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Archive the raw, unaltered version of data set.&lt;/li&gt;
+&lt;li&gt;Create a consistent directory structure for each project - that way you are storing things consistently and can find them. Really, this makes things easier for everyone.&lt;/li&gt;
+&lt;li&gt;For a data set, each column should be include only type of data corresponding to the column name. These data can be on different scales. For example, if one column indicates the type of variable (e.g. pH, moisture content, nitrate concentration), another columns could indicate the actual value for that trait and observation. It is less confusing if a column only contain a similar type of data (e.g &lt;em&gt;raw&lt;/em&gt; OR &lt;em&gt;transformed&lt;/em&gt; OR &lt;em&gt;mean value&lt;/em&gt;), not data and summary stats together.&lt;/li&gt;
+&lt;li&gt;Avoid use of formatting that cannot be interpreted as plain text. By this, I mean do not insert comments in Microsoft office files, or use text formatting tools (bolding, color coding) to differentiate observations. This information can easily become lost to time and does not translate well to other software, especially command-line software. Comments, categorical variables, et cetera should each have their own column.&lt;/li&gt;
+&lt;li&gt;Summary stats of a data set belong in their own table or file.&lt;/li&gt;
+&lt;li&gt;Use a non-proprietary format like CSV or TXT.&lt;/li&gt;
+&lt;li&gt;Avoid creating data that relies on a particular order of the observations (for instance, every 5th row is the mean of the previous 4 rows). One sorting step can ruin this. If a special order is needed, create a column which implements this.&lt;/li&gt;
+&lt;li&gt;Make a &amp;ldquo;codebook&amp;rdquo; documenting what each variable means, what scale it is on, expected levels or range of data. This can be one sheet of information - very brief, but handy. Giving variables short, descriptive names is also helpful.&lt;/li&gt;
+&lt;li&gt;Document what happens to a data set - and make that information available to others. I prefer to use a command line tool like R, but a text file could do. This is to ensure your work can be duplicated. I realize programming is not for everyone, but using a command-line program like R, Python, Julia, SAS, or even bash, is one of the best ways to document how information is pre-processed. Changes made through point-and-click interfaces like Excel are not reproducible because they are almost always incompletely documented or not documented at all. In addition, manual manipulation in a spreadsheet program also results in user-generated errors: misspellings, misclassifications, cut-and-paste errors and so on.&lt;/li&gt;
+&lt;li&gt;Accountability and follow up: attach people&#39;s names to their data and/or analysis.&lt;/li&gt;
+&lt;li&gt;Back up your data: across at least 2 locations over the life of your project. Version control make it possible for your work to be undone by accessing earlier versions. Git is one such tool, but saving intermediate file versions (often!) can also help. By providing descriptive comments at each new commit (a version), that can help downstream researchers sift through previous versions of the data. Also, some cloud storage providers (like Dropbox) offer options for data recovery.&lt;/li&gt;
+&lt;li&gt;Coordinate with project collaborators regarding workflow expectations and processes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The core reason I am interested in these issues is to improve reproducibility. As I dealt with the aforementioned issues with data, I could not help but wonder if I was making the right choices with the data, and wish that I had more information on the background of these legacy data sets. This is particularly important as meta-studies continue to gain in popularity. Unifying data sets and leveraging their combined power is one of the priorities for agricultural productivity identified by the National Academy of Sciences in their recent report, 
+&lt;a href=&#34;https://www.nap.edu/resource/25059/ScienceBreakthroughs2030ReportBrief.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Science Breakthroughs to Advance Food and Agricultural Research by 2030&lt;/em&gt;&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;For more information, see this 
+&lt;a href=&#34;https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;excellent article&lt;/em&gt;&lt;/a&gt;
+ by Kara Woo and Karl Broman - it&#39;s short and gives easy-to-follow best practices when working with spreadsheets.&lt;/p&gt;
+&lt;p&gt;Scott Long at the University of Indiana put together an 
+&lt;a href=&#34;https://www.ihrp.uic.edu/files/Workflow%20Slides%20JSLong%20110410.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;informative set of slides&lt;/a&gt;
+ delving further into the principles of data workflow. Patrick Schloss, of the bioinformatics program &lt;em&gt;mothur&lt;/em&gt;, recently published an 
+&lt;a href=&#34;https://mbio.asm.org/content/9/3/e00525-18&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;article&lt;/a&gt;
+ delving into the problem of reproducibility in microbiome work and how to fix it. Among many things, he recommended implementing robust workflow practices.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>What I learned at the UseR! conference</title>
+      <link>/post/user_2018/</link>
+      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
+      <guid>/post/user_2018/</guid>
+      <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
+&lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
+&lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;
+ provided by R Consortium YouTube channel) I&#39;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The hex wall was just straight up cool. Here&#39;s the 
+&lt;a href=&#34;https://blog.mitchelloharawild.com/blog/user-2018-feature-wall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code for that&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I participated in a half day workshop on Rcpp (
+&lt;a href=&#34;https://www.youtube.com/watch?v=FZ0LcJbxPF0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+ and 
+&lt;a href=&#34;https://www.youtube.com/watch?v=EXGhR-kyjRg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+). This continues to be a very popular suite of packages to help users increase the speed and efficiency of their programs. I say &amp;ldquo;suite&amp;rdquo; because in addition to 3 major functions provided by Rcpp, a number of accessory packages have been written to extend its functionality. Several of these accessory packages essentially are providing templates for invoking C++ commands without having to actually know C. Dirk Eddelbuttel introduced the 3 major functions for extending R with C/C++:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;evalCpp: for evaluating ad hoc anonymous expressions&lt;/li&gt;
+&lt;li&gt;cppFunction: standard function written in C/C++ and invoked in a program&lt;/li&gt;
+&lt;li&gt;sourceCpp: source C/C++ objects &amp;amp; functions from external file
+These functions must be compiled each time a fresh R session is started. Building an Rcpp package avoids this and is easy to do:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;Rcpp.package.skeleton(&amp;quot;mypackage&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;The other useful workshop I participated in was methods for speeding up R, delivered by Thomas Lumley, formerly of UW and now of U of Auckland. He focused on a few major recommendations:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Vectorise whenever possible. This also implies that you know your vectorised functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lapply/apply/sapply/vapply/tapply&lt;/li&gt;
+&lt;li&gt;rowMeans, rowSums&lt;/li&gt;
+&lt;li&gt;colMeans, colSums&lt;/li&gt;
+&lt;li&gt;Consider parallelised functions: mclapply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Base functions are often designed to handle wildly different input. It may make sense in some instances to rewrite functions, making assumptions (e.g. about the input data) that fit your circumstances.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data frames should be avoided if possible - they are expensive to create and often copied in whole when modified.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using an optimized matrix algebra library (not LAPACK) may be worth the time to install that. These libraries have optimized how data is accessed from disk.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Some rec&#39;s on how to handle large objects that reasonably don&#39;t fit in memory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;buy a computer with more memory (not always a reasonable option)&lt;/li&gt;
+&lt;li&gt;put your data in database and access with tools like dbplyr. One recommendation is MonetDBLite, a column-optimized database good for scientific applications for that reason.&lt;/li&gt;
+&lt;li&gt;Use special file formats for bigger data sets: HDF5, GitLFS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;But, first and foremost, he emphasized the use of profiling tools and benchmarking functions. find out where the bottleneck in your program actually are! And be careful to not waste too much time on optimizing code - time saved may not be worth time invested. R is automatically running a JIT (just in time) compiler that makes code run faster each time it is called. It makes sense to turn this off while doing benchmarking:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;enableJIT(0)
+
+# to turn back on:
+
+enableJIT(1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Course notes available on his github repo 
+&lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UseRfasteR&lt;/a&gt;
+.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Excellent keynotes all-around. 
+&lt;a href=&#34;https://www.youtube.com/watch?v=27FxbDtCFoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Steph da Silva&lt;/a&gt;
+ emphasized the importance of &lt;em&gt;community&lt;/em&gt; in open-source community - what that can look like, how to contribute  how your contribution helps develop camaraderie to support sharing of code and development of analysts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=5033jBHFiHE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Roger Peng discussed development of R&lt;/a&gt;
+ as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&#39;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Jenny Bryan&#39;s talk on 
+&lt;a href=&#34;https://youtu.be/7oyiPBjLAWY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;Code Smells and Feels&amp;rdquo;&lt;/a&gt;
+ provided a great introduction to how to identify and fix poorly written code. According to 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;
+, &amp;ldquo;Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning. Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.&amp;rdquo;
+Based on the book, &lt;em&gt;Refactoring: Improving the Design of Existing Code&lt;/em&gt;, she gave a few simple directives to create simple code that is easy to understand, debug, and maintain. Hooray!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Hoist entry or exit conditionals to the top of functions&lt;/li&gt;
+&lt;li&gt;Use functions as much as possible&lt;/li&gt;
+&lt;li&gt;Avoid overly nested code (e.g. a long cascade of nested &amp;ldquo;if&amp;rdquo; statements)&lt;/li&gt;
+&lt;li&gt;Not every &amp;ldquo;if&amp;rdquo; needs an else&lt;/li&gt;
+&lt;li&gt;Consider implementing true object-oriented programming when working with classes&lt;/li&gt;
+&lt;li&gt;Don&#39;t&amp;rsquo; be afraid to write short helper functions
+There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&#39;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Excellent set of talks on data handling and workflow. In particular, 
+&lt;a href=&#34;https://www.youtube.com/watch?v=GrqM2VqIQ20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a talk on the website builder&lt;/a&gt;
+ for documenting data analysis called 
+&lt;a href=&#34;https://github.com/jdblischak/workflowr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;workflowr&amp;rdquo;&lt;/a&gt;
+. 
+&lt;a href=&#34;https://www.youtube.com/watch?v=IYfZ6kd7aT0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Discussion on consistent workflows&lt;/a&gt;
+, recommended conventions for naming variables, creating consistent set of directories for each project, using version controls. Obvious to a data scientist, but rarely used by regular scientist. This resonates strongly with me due to ongoing issues with data management in the agricultural sciences.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=3Bu7QUxzIbA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Excellent talk on precision in R&lt;/a&gt;
+. Use .Machine to find out more, but basically R is only good to 16 decimal points. Subtraction of one number similar to it can result in cancellation where the result essentially slides to zero, losing precision. Ways to avoid this include working in log space, perhaps adding a zero if needed: log(x + 1), -log(1 - exp(x)). Also, there is the 
+&lt;a href=&#34;https://cran.r-project.org/web/packages/Rmpfr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rmpfr package&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=XQmBcpQl8K8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Glue package&lt;/a&gt;
+ - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&#39;s printf(), but glue makes this easier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=L6FawdEA3W0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fun talk on vwline package&lt;/a&gt;
+ for creating variable-width lines, like in Menaurd&#39;s famous plot of Napolean&#39;s march through Russia.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;./napoleon.jpg&#34; alt=&#34;napolean_plot&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

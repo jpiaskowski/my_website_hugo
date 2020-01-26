@@ -5,7 +5,7 @@
     <link>/categories/</link>
       <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 19 Sep 2018 10:50:02 -0700</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Categories</title>
@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>Demo</title>
-      <link>/categories/demo/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/categories/demo/</guid>
+      <title>R language</title>
+      <link>/categories/r-language/</link>
+      <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
+      <guid>/categories/r-language/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      <guid>/categories/r/</guid>
+      <title>workflow</title>
+      <link>/categories/workflow/</link>
+      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
+      <guid>/categories/workflow/</guid>
       <description></description>
     </item>
     

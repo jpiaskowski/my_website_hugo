@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quero-Garcia, José | Julia Piaskowski</title>
+    <link>/authors/quero-garcia-jose/</link>
+      <atom:link href="/authors/quero-garcia-jose/index.xml" rel="self" type="application/rss+xml" />
+    <description>Quero-Garcia, José</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Quero-Garcia, José</title>
+      <link>/authors/quero-garcia-jose/</link>
+    </image>
+    
+    <item>
+      <title>Prediction of Genetic Value for Sweet Cherry Fruit Maturity among Environments Using a 6K SNP Array.</title>
+      <link>/publication/sweet_cherry_maturity/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/sweet_cherry_maturity/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

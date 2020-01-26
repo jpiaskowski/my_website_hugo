@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Overview | Julia Piaskowski</title>
+    <link>/courses/zotero/</link>
+      <atom:link href="/courses/zotero/index.xml" rel="self" type="application/rss+xml" />
+    <description>Overview</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 18 Mar 2018 10:50:02 -0700</lastBuildDate>
+    <image>
+      <url>/courses/zotero/featured.jpg</url>
+      <title>Overview</title>
+      <link>/courses/zotero/</link>
+    </image>
+    
+    <item>
+      <title>Using Zotero</title>
+      <link>/courses/zotero/zotero_workshop/</link>
+      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
+      <guid>/courses/zotero/zotero_workshop/</guid>
+      <description>&lt;h3 id=&#34;installation&#34;&gt;Installation&lt;/h3&gt;
+&lt;p&gt;Step 1: install 
+&lt;a href=&#34;https://www.zotero.org/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Zotero&lt;/strong&gt;&lt;/a&gt;
+. It now comes automatically bundled with an extension for inserting citations into Microsoft Word and Libre Writer.&lt;/p&gt;
+&lt;p&gt;Once installed, you should be able to open Zotero and see this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;zotero.png&#34; alt=&#34;zotero&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You should also consider creating an 
+&lt;a href=&#34;https://www.zotero.org/user/register/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;online account&lt;/strong&gt;&lt;/a&gt;
+ so your local library can sync with the cloud service. This is free. You can link the Zotero app to your account under &amp;ldquo;Zotero&amp;rdquo; &amp;gt; &amp;ldquo;Preferences&amp;rdquo;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_sync.png&#34; alt=&#34;zotero sync&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The Zotero tab should be present on Microsoft Word. This works on Windows and Mac versions, and it also works with Libre Office.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;Word_zotero.png&#34; alt=&#34;zotero_cwyw&#34;&gt;&lt;/p&gt;
+&lt;p&gt;There is also a large number of 
+&lt;a href=&#34;https://www.zotero.org/support/plugins&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;plugins&lt;/strong&gt;&lt;/a&gt;
+ to consider.&lt;/p&gt;
+&lt;h3 id=&#34;adding-references&#34;&gt;Adding references&lt;/h3&gt;
+&lt;h4 id=&#34;formats&#34;&gt;Formats&lt;/h4&gt;
+&lt;p&gt;Many journals provide options for direct import of a reference into. NCBI, Springer, ASA-CSSA-SSSA and many more are quite good at this.&lt;/p&gt;
+&lt;p&gt;Often many formats are offered, each specifc to a particular software. If you see an option for Zotero, clearly that will work fine for importation. Otherwise, a plain .RIS file is the best option. I often choose &amp;ldquo;RefWorks&amp;rdquo; as the format for that program is compatible with Zotero.&lt;/p&gt;
+&lt;h4 id=&#34;importing-references&#34;&gt;Importing References&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Example: &lt;em&gt;Springer&lt;/em&gt;.  
+&lt;a href=&#34;https://link.springer.com/article/10.1007/s10681-015-1445-9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mapping of a major gene for the slow ripening character in peach: co-location with the maturity date gene and development of a candidate gene-based diagnostic marker for its selection&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Example: &lt;em&gt;NCBI&lt;/em&gt;.  
+&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/15168024&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;QTL analysis of quality traits in an advanced backcross between Prunus persica cultivars and the wild relative species &lt;i&gt;P. davidiana&lt;/i&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Example: &lt;em&gt;PMC Full text&lt;/em&gt;.  
+&lt;a href=&#34;https://www.ncbi.nlm.nih.gov/pubmed/18073436&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The impact of genetic relationship information on genome-assisted breeding values&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Example: &lt;em&gt;ASHS&lt;/em&gt;.  
+&lt;a href=&#34;http://journal.ashspublications.org/content/116/6/1004.abstract&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Variability in sugars, acids, firmness, and color characteristics of 12 peach genotypes&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;Example: &lt;em&gt;Multiple References&lt;/em&gt;.  
+&lt;a href=&#34;https://gsejournal.biomedcentral.com/articles/10.1186/s12711-017-0329-y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fixed-length haplotypes can improve genomic prediction accuracy in an admixed dairy cattle population&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;manual-addition&#34;&gt;Manual Addition&lt;/h4&gt;
+&lt;p&gt;A references can always be entered by hand under &amp;ldquo;File&amp;rdquo; &amp;gt; &amp;ldquo;New Item&amp;rdquo;. This is laborious and likely to result in errors, so I do not recommend it. However, sometimes there is no choice.&lt;/p&gt;
+&lt;p&gt;PDFs and other attachments are usually added manually. Use the paperclip icon to attached local files. An exception is importing an existing library.&lt;/p&gt;
+&lt;h4 id=&#34;other-reference-types&#34;&gt;Other Reference Types&lt;/h4&gt;
+&lt;p&gt;Zotero offers many reference types. The default item type used by Zotero (and scientists) is &amp;ldquo;Journal Article&amp;rdquo;. However, there are a number of other types to consider. Here is a sampling of other commonly-used item types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Book or Book Section&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_book.png&#34; alt=&#34;zotero_book&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_book_section.png&#34; alt=&#34;zotero_bookSec&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dissertation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_dissertation.png&#34; alt=&#34;zotero_dissertation&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Conference Paper&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_conference_paper.png&#34; alt=&#34;zotero_conf_paper&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Webpage&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_webpage.png&#34; alt=&#34;zotero_webpage&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Using these different types enables users to capture the information essential to the particular reference. For citation purposes, journals have developed a set of formatting guidelines for each reference type. By using the correct reference type, references are more likely to be properly formatted within documents.&lt;/p&gt;
+&lt;h4 id=&#34;editing-references&#34;&gt;Editing References&lt;/h4&gt;
+&lt;p&gt;Regardless of how references are added, all references should be inspected once to ensure all elements are as expected. Sometimes, article titles or author names are in all caps. Often, each word in an article title is capitalized. Occasionally, the abstract and title are merged, making for an epically long title. For books, editors may not be included or may be improperly labelled. The citation manager will not be able to correct these issues - it is up to users to do this.&lt;/p&gt;
+&lt;p&gt;The most notable drawback to Zotero is that you will lose italics. This can be ignored in abstracts, but if you plan on citing an article with an italicized word in the title, it is best to fix this. To do so, flank the italized text in the following html code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;i&amp;gt; your italicized text &amp;lt;/i&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Which will look like this after inserted into a list of references:
+&lt;i&gt; your italized text &lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;Journal names are not always standardized. This can sometimes be ignored since the Medline abbreviations are used. For example, here are several variations in name of a reputable journal commonly called &amp;ldquo;PNAS&amp;rdquo;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PNAS&lt;/li&gt;
+&lt;li&gt;PNAS USA&lt;/li&gt;
+&lt;li&gt;Proc Natl Acad Sci&lt;/li&gt;
+&lt;li&gt;Proc Natl Acad Sci USA&lt;/li&gt;
+&lt;li&gt;Proc. Natl Acad. Sci. USA&lt;/li&gt;
+&lt;li&gt;Proceeding of the National Academy of Sciences&lt;/li&gt;
+&lt;li&gt;Proceedings of the National Academy of Sciences&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;manipulating-zotero&#34;&gt;Manipulating Zotero&lt;/h3&gt;
+&lt;p&gt;For dedicated users, a reference library can become quite large and unwieldy. Hence knowelge on how to organize, filter and search a library are essential to taking full advantage of the information stored in personal or shared reference library.&lt;/p&gt;
+&lt;h4 id=&#34;organize-references-into-collections&#34;&gt;Organize References into Collections&lt;/h4&gt;
+&lt;p&gt;References can be organized into many collections. Collections or subcollections can be created by right clicking within the left menu and choosing the appropriate option. References are added to collections by highlighting and dropping and dragging them to the appropriate collection. References can belong to multiple collections. Collections are not hierarchical: membership in a subcollection does not guarantee membership in the higher collection.&lt;/p&gt;
+&lt;p&gt;Group collections are a shared resource. These are created on the Zotero website and other zotero users can be invited to join. These can be private or public.&lt;/p&gt;
+&lt;h4 id=&#34;finding-references&#34;&gt;Finding References&lt;/h4&gt;
+&lt;p&gt;You can sort references by several of the fields in the references: date, title author, date added, attachments. References can be searched with the search bar by &amp;ldquo;everything&amp;rdquo; or &amp;ldquo;all fields and tags&amp;rdquo; or &amp;ldquo;Title, creator, date&amp;rdquo;. Tags are the equivalent of &amp;ldquo;keywords&amp;rdquo; used in classifying journal articles. Searches can also be restricted to within collections.&lt;/p&gt;
+&lt;img src=&#34;zotero_filter.png&#34; alt=&#34;zotero_filter&#34; style=&#34;width: 450px;&#34;/&gt;
+ ![zotero_filter](/zotero_filter.png)
+&lt;h3 id=&#34;citations&#34;&gt;Citations&lt;/h3&gt;
+&lt;p&gt;Automated citation management is perhaps the most useful aspects of a reference software. With Zotero, it&#39;s also very easy to use.&lt;/p&gt;
+&lt;p&gt;First, you need to install the desired citation style. Major journals have made their styles available on the 
+&lt;a href=&#34;https://www.zotero.org/styles&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Zotero Style Repository&lt;/strong&gt;&lt;/a&gt;
+. To download one, you can directly download it from the Zotero style repository webpage and import into Zotero. Alternatively, Zotero provides an option directly in their user interface through &amp;ldquo;Zotero&amp;rdquo; &amp;gt; &amp;ldquo;Preferences&amp;rdquo; &amp;gt; &amp;ldquo;Cite&amp;rdquo;:&lt;/p&gt;
+&lt;img src=&#34;zotero_styles.png&#34; alt=&#34;zotero_styles&#34; style=&#34;width: 450px;&#34;/&gt;
+ ![zotero_styles](zotero_styles.png)
+&lt;p&gt;&lt;strong&gt;Inserting and Editing References&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Open a word document and try to insert a reference where your cursor is located in the document with &amp;ldquo;Add/Edit Citation&amp;rdquo;. It will prompt you to choose a style the first time you do this.&lt;/p&gt;
+&lt;p&gt;To change the content in a single group of references, place your cursor in the reference and click &amp;ldquo;Add/Edit Citation&amp;rdquo;. You can delete and/or add references.&lt;/p&gt;
+&lt;p&gt;References can be moved around as whole text or deleted entirely like any normal document text. Zotero will automatically detect their removal and update the bibliography.&lt;/p&gt;
+&lt;p&gt;Users may want to cite papers as such: &amp;ldquo;Coombe (1976) found that&amp;hellip;&amp;quot;. In this example, the default format &amp;ldquo;Coombe (Coombe 1976) found that&amp;hellip;&amp;rdquo; is incorrect. To remove the author name from the citation, choose &amp;ldquo;classic view&amp;rdquo; from the dropdown menu:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_dropdown.png&#34; alt=&#34;zotero_webpage&#34;&gt;&lt;/p&gt;
+&lt;p&gt;and click &amp;ldquo;suppress author&amp;rdquo;:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;zotero_author.png&#34; alt=&#34;zotero_author&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Adding a Bibliography&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To add a list of ordered cited works to a document, place your cursor where you would like the reference list inserted and click &amp;ldquo;Add/Edit Bibliography&amp;rdquo;. This can be added and deleted repeatedly if needed.&lt;/p&gt;
+&lt;p&gt;The button &amp;ldquo;Document Preferences&amp;rdquo; can be used to change the citation style across the entire document if needed.&lt;/p&gt;
+&lt;p&gt;Note that the bibliography formatting will default to the text type defined for the block (usually &amp;ldquo;normal&amp;rdquo;). If you want it to look different (smaller, different font, etc), you will have to redefine that block or the elements of that type.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Unlink Citations&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This will remove all links between references, so be careful using this button, as you will have to manually edit references from this point forward. It is probably best to copy your document first.&lt;/p&gt;
+&lt;h3 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;For some reason, normal journals are being formatted as webpages.&lt;/strong&gt;
+This can happen if the URL field is filled out. Delete or move that content for the references in question.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I accidentially added the wrong PDF to the article.&lt;/strong&gt;
+Duplicate the reference within Zotero, delete the old reference and add the correct attachment.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Oh snap - my whole library was wiped. What should I do?&lt;/strong&gt;
+You should back it up from this point forward. 
+&lt;a href=&#34;https://www.zotero.org/support/zotero_data&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Here are some instructions&lt;/strong&gt;&lt;/a&gt;
+. There are some 
+&lt;a href=&#34;https://www.techradar.com/news/the-best-free-data-recovery-software&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;file recovery tools&lt;/strong&gt;&lt;/a&gt;
+ for individual systems. There is also a 
+&lt;a href=&#34;https://rintze.zelle.me/ref-extractor/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Zotero plugin&lt;/strong&gt;&lt;/a&gt;
+ for pulling references out of your papers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I accidentially imported all references from a single article rather than only the citation for that article.&lt;/strong&gt;
+Sort the references from the date added and remove all those added at that particular time stamp.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I think there are tons of duplicates in my library - how can I fix this?&lt;/strong&gt;
+Zotero has a feature for removing duplicates. Look on the left menu for &amp;ldquo;Duplicate Items&amp;rdquo; to clean those up.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Help! I&#39;m having some mystery issue that no one has ever experienced.&lt;/strong&gt;
+Zotero has a huge userbase who take advantage of the 
+&lt;a href=&#34;https://forums.zotero.org/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;forums&lt;/strong&gt;&lt;/a&gt;
+ for troubleshooting. If you cannot find your solution there, then post your problem, and the community is likely to help you.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

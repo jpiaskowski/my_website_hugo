@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vanderzande, Stijn | Julia Piaskowski</title>
+    <link>/authors/vanderzande-stijn/</link>
+      <atom:link href="/authors/vanderzande-stijn/index.xml" rel="self" type="application/rss+xml" />
+    <description>Vanderzande, Stijn</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Vanderzande, Stijn</title>
+      <link>/authors/vanderzande-stijn/</link>
+    </image>
+    
+    <item>
+      <title>Prediction of Genetic Value for Sweet Cherry Fruit Maturity among Environments Using a 6K SNP Array.</title>
+      <link>/publication/sweet_cherry_maturity/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/sweet_cherry_maturity/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Crossing the finish line: how to develop diagnostic DNA tests as breeding tools after QTL discovery</title>
+      <link>/publication/dna_testing/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/dna_testing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

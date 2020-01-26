@@ -5,7 +5,7 @@
     <link>/publication_types/2/</link>
       <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>2</title>
@@ -13,24 +13,64 @@
     </image>
     
     <item>
-      <title>An example journal article</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
+      <title>Genomic heritability estimates in sweet cherry reveal non-additive genetic variance is relevant for industry-prioritized traits.</title>
+      <link>/publication/cherry_gebv/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/cherry_gebv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Near-infrared calibration of soluble stem carbohydrates for predicting drought tolerance in spring wheat</title>
+      <link>/publication/nir_calib/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/nir_calib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prediction of Genetic Value for Sweet Cherry Fruit Maturity among Environments Using a 6K SNP Array.</title>
+      <link>/publication/sweet_cherry_maturity/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/sweet_cherry_maturity/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;
-.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Quantitative Trait Loci for Cold Tolerance in Chickpea.</title>
+      <link>/publication/chickpea_qtl_cold/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/chickpea_qtl_cold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crossing the finish line: how to develop diagnostic DNA tests as breeding tools after QTL discovery</title>
+      <link>/publication/dna_testing/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/dna_testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perennial wheat lines have highly admixed population structure and elevated rates of outcrossing</title>
+      <link>/publication/perennial_wheat/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/perennial_wheat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Building supportive networks among agricultural innovators through a symposium on dryland organic farming</title>
+      <link>/publication/networks/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/networks/</guid>
+      <description></description>
     </item>
     
   </channel>

@@ -5,7 +5,7 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Julia Piaskowski</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 10:50:02 -0700</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Julia Piaskowski</title>
@@ -13,295 +13,405 @@
     </image>
     
     <item>
-      <title>An example preprint / working paper</title>
-      <link>/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;
-.&lt;/p&gt;
-</description>
+      <title>Star Wars and Bad Data Management</title>
+      <link>/post/starwars_bad_data/</link>
+      <pubDate>Sat, 01 Feb 2020 10:50:02 -0700</pubDate>
+      <guid>/post/starwars_bad_data/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Display Jupyter Notebooks with Academic</title>
-      <link>/post/jupyter/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/post/jupyter/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
-Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_1_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Welcome to Academic!&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;Welcome to Academic!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;install-python-and-jupyterlab&#34;&gt;Install Python and JupyterLab&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.anaconda.com/distribution/#download-section&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Install Anaconda&lt;/a&gt;
- which includes Python 3 and JupyterLab.&lt;/p&gt;
-&lt;p&gt;Alternatively, install JupyterLab with &lt;code&gt;pip3 install jupyterlab&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;create-or-upload-a-jupyter-notebook&#34;&gt;Create or upload a Jupyter notebook&lt;/h2&gt;
-&lt;p&gt;Run the following commands in your Terminal, substituting &lt;code&gt;&amp;lt;MY-WEBSITE-FOLDER&amp;gt;&lt;/code&gt; and &lt;code&gt;&amp;lt;SHORT-POST-TITLE&amp;gt;&lt;/code&gt; with the file path to your Academic website folder and a short title for your blog post (use hyphens instead of spaces), respectively:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir -p &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-cd &amp;lt;MY-WEBSITE-FOLDER&amp;gt;/content/post/&amp;lt;SHORT-POST-TITLE&amp;gt;/
-jupyter lab index.ipynb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;jupyter&lt;/code&gt; command above will launch the JupyterLab editor, allowing us to add Academic metadata and write the content.&lt;/p&gt;
-&lt;h2 id=&#34;edit-your-post-metadata&#34;&gt;Edit your post metadata&lt;/h2&gt;
-&lt;p&gt;The first cell of your Jupter notebook will contain your post metadata (
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/front-matter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;front matter&lt;/a&gt;
-).&lt;/p&gt;
-&lt;p&gt;In Jupter, choose &lt;em&gt;Markdown&lt;/em&gt; as the type of the first cell and wrap your Academic metadata in three dashes, indicating that it is YAML front matter:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-title: My post&#39;s title
-date: 2019-09-01
-
-# Put any other Academic metadata here...
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Edit the metadata of your post, using the 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;documentation&lt;/a&gt;
- as a guide to the available options.&lt;/p&gt;
-&lt;p&gt;To set a 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;featured image&lt;/a&gt;
-, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&#39;s folder.&lt;/p&gt;
-&lt;p&gt;For other tips, such as using math, see the guide on 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;writing content with Academic&lt;/a&gt;
-.&lt;/p&gt;
-&lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;example&#34;&gt;Example&lt;/h2&gt;
-&lt;p&gt;This post was created with Jupyter. The orginal files can be found at &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&#34;&gt;https://github.com/gcushen/hugo-academic/tree/master/exampleSite/content/post/jupyter&lt;/a&gt;&lt;/p&gt;
-</description>
+      <title>Genomic heritability estimates in sweet cherry reveal non-additive genetic variance is relevant for industry-prioritized traits.</title>
+      <link>/publication/cherry_gebv/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/cherry_gebv/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Academic: the website builder for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/post/getting-started/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt;
- of what you&#39;ll get in less than 10 minutes, or 
-&lt;a href=&#34;https://sourcethemes.com/academic/#expo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt;
- of personal, project, and business sites.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;👉 
-&lt;a href=&#34;#install&#34;&gt;&lt;strong&gt;Get Started&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;📚 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;View the &lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;💬 
-&lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Ask a question&lt;/strong&gt; on the forum&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;👥 
-&lt;a href=&#34;https://spectrum.chat/academic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;community&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: 
-&lt;a href=&#34;https://twitter.com/source_themes&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@source_themes&lt;/a&gt;
- 
-&lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCushen&lt;/a&gt;
- 
-&lt;a href=&#34;https://twitter.com/search?q=%23MadeWithAcademic&amp;amp;src=typd&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithAcademic&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;💡 
-&lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating?&lt;/strong&gt; View the 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Guide&lt;/a&gt;
- and 
-&lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;❤ &lt;strong&gt;Support development&lt;/strong&gt; of Academic:
-&lt;ul&gt;
-&lt;li&gt;☕️ 
-&lt;a href=&#34;https://paypal.me/cushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Donate a coffee&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;💵 
-&lt;a href=&#34;https://www.patreon.com/cushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Become a backer on &lt;strong&gt;Patreon&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;🖼️ 
-&lt;a href=&#34;https://www.redbubble.com/people/neutreno/works/34387919-academic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Decorate your laptop or journal with an Academic &lt;strong&gt;sticker&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;👕 
-&lt;a href=&#34;https://academic.threadless.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wear the &lt;strong&gt;T-shirt&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;👩‍💻 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/contribute/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Contribute&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;figure&gt;
-
-
-  &lt;a data-fancybox=&#34;&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; data-caption=&#34;Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34;&gt;
-&lt;img data-src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; &gt;&lt;/a&gt;
-
-
-  
-  
-  &lt;figcaption&gt;
-    Academic is mobile first with a responsive design to ensure that your site looks stunning on every device.
-  &lt;/figcaption&gt;
-
-
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;Key features:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt;
- and 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;
-, 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/jupyter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;
-, or 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable 
-&lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and 
-&lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX math&lt;/a&gt;
- supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - 
-&lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Analytics&lt;/a&gt;
-, 
-&lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disqus commenting&lt;/a&gt;
-, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 15+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;p&gt;Academic comes with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can  choose their preferred mode - click the sun/moon icon in the top right of the 
-&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt;
- to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://sourcethemes.com/academic/themes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt;
- for your site. Themes are fully 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/customization/#custom-theme&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;customizable&lt;/a&gt;
-.&lt;/p&gt;
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;
-&lt;a href=&#34;https://github.com/sourcethemes/academic-admin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Academic Admin&lt;/a&gt;
-:&lt;/strong&gt; An admin tool to import publications from BibTeX or import assets for an offline site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;
-&lt;a href=&#34;https://github.com/sourcethemes/academic-scripts&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Academic Scripts&lt;/a&gt;
-:&lt;/strong&gt; Scripts to help migrate content to new versions of Academic&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-web-browser&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;one-click install using your web browser (recommended)&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-git&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;install on your computer using &lt;strong&gt;Git&lt;/strong&gt; with the Command Prompt/Terminal app&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;install on your computer by downloading the &lt;strong&gt;ZIP files&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;install on your computer with &lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Then 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/get-started/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;personalize and deploy your new site&lt;/a&gt;
-.&lt;/p&gt;
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;View the Update Guide&lt;/a&gt;
-.&lt;/p&gt;
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on 
-&lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;
- to help keep track of 
-&lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;updates&lt;/a&gt;
-.&lt;/p&gt;
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present 
-&lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;
-.&lt;/p&gt;
-&lt;p&gt;Released under the 
-&lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt;
- license.&lt;/p&gt;
-</description>
+      <title>Near-infrared calibration of soluble stem carbohydrates for predicting drought tolerance in spring wheat</title>
+      <link>/publication/nir_calib/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/nir_calib/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>An example journal article</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
+      <title>Prediction of Genetic Value for Sweet Cherry Fruit Maturity among Environments Using a 6K SNP Array.</title>
+      <link>/publication/sweet_cherry_maturity/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/sweet_cherry_maturity/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;
-.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>An example conference paper</title>
-      <link>/publication/conference-paper/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including 
-&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;
-.&lt;/p&gt;
+      <title>Quantitative Trait Loci for Cold Tolerance in Chickpea.</title>
+      <link>/publication/chickpea_qtl_cold/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/chickpea_qtl_cold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Crossing the finish line: how to develop diagnostic DNA tests as breeding tools after QTL discovery</title>
+      <link>/publication/dna_testing/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/dna_testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob</title>
+      <link>/post/vm_wsu/</link>
+      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
+      <guid>/post/vm_wsu/</guid>
+      <description>&lt;h2 id=&#34;basic-info&#34;&gt;Basic Info&lt;/h2&gt;
+&lt;p&gt;I came back from PAG (Plant &amp;amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.&lt;/p&gt;
+&lt;p&gt;I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University&#39;s College of Agriculture, Human and Natural Resource Sciences (CAHNRS).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt;  Request a virtual machine. I used the 
+&lt;a href=&#34;https://it.cahnrs.wsu.edu/service-catalog/vm-hosting/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;CAHNRS webform&lt;/strong&gt;&lt;/a&gt;
+. I went with CentOS 7 - a Linux distribution that had been recommended to me as “full featured” (this remains to be seen). This step may take a few weeks.&lt;/p&gt;
+&lt;p&gt;It helps to know exactly what you want to do so CAHNRS IT can properly set up the VM and “rules” (exceptions to their standing rules) to allow you to do the work you want. Running RStudio server means having at least one port open. The RStudio Server default port is 8787 (although than can be easily changed). Remote desktop needs port 3350 open. Jupyter Hub will have its own conventions - all described in their documentation. I recommend you consult the documentation for what you want &lt;em&gt;before&lt;/em&gt; ordering a VM.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Download the 
+&lt;a href=&#34;https://its.wsu.edu/ssl-vpn/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;WSU VPN client&lt;/strong&gt;&lt;/a&gt;
+. Whoever is the admin will need have the WSU SSLVPN to tunnel in through a secure connection in order to do any work remotely. This is the probably the easiest step of the entire process. Who doesn’t love point-and-click installations?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Download software for SSH. Initially, you will need an SSH program to connect through secure, encrypted tunnel. 
+&lt;a href=&#34;https://www.chiark.greenend.org.uk/~sgtatham/putty/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Putty&lt;/strong&gt;&lt;/a&gt;
+ is a popular option. I like secure shell, which I found 
+&lt;a href=&#34;https://www.wm.edu/offices/it/services/software/licensedsoftware/webeditingsftp/sshsecureshell/index.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;
+. This is actually a rather convenient way to manage the VM, so its utility will likely stretch past the setup phase.&lt;/p&gt;
+&lt;h2 id=&#34;general-linux-notes&#34;&gt;General Linux notes:&lt;/h2&gt;
+&lt;p&gt;This is CentOS, an alternative distribution to its more popular relative, Ubuntu. While most commands are the same across Linux distributions, some things are a little different. FYI, Centos is similar to .rhel and Red Hat if you are combing forums for help.&lt;/p&gt;
+&lt;p&gt;Check out these 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;standards for Linux filesystems&lt;/strong&gt;&lt;/a&gt;
+. It will help you understand how the machine is organized. Don’t spend too much time here; it’s more of a reference than pleasure reading.&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.centos.org/docs/5/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;The Centos documentation&lt;/strong&gt;&lt;/a&gt;
+ can be helpful, as well.&lt;/p&gt;
+&lt;h3 id=&#34;miscellaneous-useful-commands&#34;&gt;Miscellaneous useful commands:&lt;/h3&gt;
+&lt;p&gt;Most of the command listed here for VM setup require root privileges, which can be accomplished with “sudo”. You’ll find you need to be root 98% of time during VM setup, so do this:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo su&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This changes the console from:
+&lt;code&gt;$ &lt;/code&gt;
+to:
+&lt;code&gt;#   &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Use Ctrl-D to leave root. And be careful when you are root!&lt;/p&gt;
+&lt;p&gt;Print current working directory:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pwd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Change the working directory to go up a level:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cd .. &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Absolute path (will work everywhere):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ cd /&amp;lt;path&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Relative path (only sees child directories):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cd &amp;lt;path&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This produces a long list of all files and directories in your current working directory:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ll -a&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To see options associated with a particular command:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;command&amp;gt; --help&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To remove a single file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rm &amp;lt;your_file.txt&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To remove an entire directory:&lt;br&gt;
+‘r’ does it recursively&lt;br&gt;
+‘f’ will do it without asking again (it skips the step that is essentially asking “are you sure you want to delete this????”)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rm -rf &amp;lt;your_directory&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To install a piece of software for all users:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo yum install &amp;lt;library&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To view files:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;more &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To edit files. This command requires sudo for most of the files you will need to look at for VM setup.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nano &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;There’s also the vim editor, but use it your own risk. Here is the best description I have ever read of it:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“If you want an outstanding free text editor and don&#39;t mind a seemingly vertical learning curve plus long days of pain and suffering while all your neural pathways are rewired, try Vim.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;vi &amp;lt;file&amp;gt; &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;To escape vim:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; :q &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Make a new directory:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mkdir &amp;lt;dir_name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Setting your VM to the correct timezone (Pacific in this case). It is helpful to have the correct time when you are inspecting the logs during troubleshooting:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;timedatectl set-timezone &#39;America/Los_Angeles&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;managing-users&#34;&gt;Managing Users&lt;/h3&gt;
+&lt;p&gt;It is important to think thru how to organize the users into groups and create folders with shared permissions in order to enable collaboration.&lt;/p&gt;
+&lt;p&gt;Below are some common commands. Note that they all require root or sudo access. Centos provides excellent 
+&lt;a href=&#34;https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-users-tools.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;
+ on this.&lt;/p&gt;
+&lt;p&gt;Add a new user (the second option adds a new user to an existing group):&lt;br&gt;
+&lt;code&gt;useradd &amp;lt;username&amp;gt;&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;useradd &amp;lt;username&amp;gt; -g &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Set user password:&lt;br&gt;
+&lt;code&gt;passwd &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Add a group:&lt;br&gt;
+&lt;code&gt;groupadd &amp;lt;groupname&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Add an existing user to an existing group:&lt;br&gt;
+&lt;code&gt;sudo usermod -a -G &amp;lt;groupname&amp;gt; &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Enable file ownership by a group:&lt;br&gt;
+&lt;code&gt;chown :&amp;lt;groupname&amp;gt; &amp;lt;path/to/directory&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Enable file ownership by a user:&lt;br&gt;
+&lt;code&gt;chown :&amp;lt;username&amp;gt; &amp;lt;path/to/directory&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Delete a user:&lt;br&gt;
+&lt;code&gt;userdel &amp;lt;username&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Link directories:&lt;br&gt;
+&lt;code&gt;ln -s &amp;lt;path/to/file&amp;gt; &amp;lt;path/to/link&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;if-you-want-to-run-remote-desktop&#34;&gt;If you want to run remote desktop:&lt;/h2&gt;
+&lt;p&gt;There are other desktop environments, but Gnome is a popular one, so why not?&lt;/p&gt;
+&lt;p&gt;See what is available:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum group list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install Gnome desktop environment:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum install gnome
+sudo yum install gnome desktop environment
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Check that it is running&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ps -aux | grep gnome
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install and configure the EPEL repository:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Add the nux repository:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Install xrdp:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum -y install xrdp tigervnc*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You’ll need to start xrdp and xrdp-sesman (“session manager”) as a service (so they are always running) and enable them both to autostart:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl start xrdp
+sudo systemctl enable xrdp
+sudo systemctl start xrdp-sesman
+sudo systemctl enable xrdp-sesman
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And check:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl status xrdp
+sudo systemctl status xrdp-sesman
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These should indicate that xrdp and xrdp-sesman are &lt;em&gt;active&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Open a port to allow remote desktop connections:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo firewall-cmd --permanent --zone=public --add-port=3389/tcp
+sudo firewall-cmd --reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Configure SELinux:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo chcon --type=bin_t /usr/sbin/xrdp
+sudo chcon --type=bin_t /usr/sbin/xrdp-sesman
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And check that the port is open:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;netstat -plan | grep xrdp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, vnc has to be started. It is tied to a user, so get out of root if you are there (and don’t use sudo).&lt;/p&gt;
+&lt;p&gt;Set a password:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vncpasswd -&amp;lt;user&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It will return a prompt, asking you for a password. This is what you will use for remote desktop. You can definitely skip the  step of having a read-only password by answering “n” for no. (It’s unclear to me why anyone would want a password for that as opposed to whole new user account with read-only permissions, but what do I know?).&lt;/p&gt;
+&lt;p&gt;Next, start the server. Try to only do this once.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vnc server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you end up with multiple vnc server instances running on just ONE user account, kill the extra processes and delete their log files. Here are the steps:&lt;/p&gt;
+&lt;p&gt;First, find the process ID’s:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ps aux | grep vnc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The process ID&#39;s (pid) are located in the second column from the left. Kill the extra vnc pid&#39;s:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kill -9 &amp;lt;pid&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Find the associated files and delete them. I found there here:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /var/log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;They will have names like &amp;ldquo;Xorg.9.log&amp;rdquo;.&lt;/p&gt;
+&lt;h3 id=&#34;troubleshooting-remote-desktop&#34;&gt;Troubleshooting Remote Desktop&lt;/h3&gt;
+&lt;p&gt;If you run into trouble, try disabling SELinux:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo setenforce 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Check:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;getenforce
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;(it should say “permissive” NOT “enforcing)&lt;/p&gt;
+&lt;p&gt;Check for problems (as root):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /var/logs
+more xrdp.log
+more xrdp-sesman.log
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;These are cleared rapidly and folded into the xrdp .tar files, so do not be alarmed if the log files are empty. If you really want to see something in the xrdp logs, stop and restart xrdp.&lt;/p&gt;
+&lt;p&gt;The most useful file is the messages file, but it’s very long, so just show the end:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo tail -55 messages
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If you &lt;em&gt;really&lt;/em&gt; want to see what&#39;s going on, watch the file in real time:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tail -f messages&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ctlr-C to leave&lt;/p&gt;
+&lt;p&gt;The firewalld file in the /var/log/ directory is stuffed with known, but currently unresolved bugs so it’s not very useful for diagnosing problems at this time.&lt;/p&gt;
+&lt;p&gt;There&#39;s a number of remote desktop applications which can be used to access the VM. Windows RDP is easy to use and secure.&lt;/p&gt;
+&lt;h3 id=&#34;run-r-in-remote-desktop&#34;&gt;Run R in remote desktop&lt;/h3&gt;
+&lt;p&gt;Start by installing R. WSU would not let me access the internet directly from the remote desktop internet browser, but I could through the SSH. So here are command line instructions:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum install epel-release
+sudo yum update
+sudo yum install R -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, install RStudio. Get current link from the 
+&lt;a href=&#34;https://www.rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio website&lt;/strong&gt;&lt;/a&gt;
+. The link below worked March 19, 2018:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://download1.rstudio.org/rstudio-1.1.442-x86_6
+sudo rpm -Uvh rstudio-1.1.442-x86_64.rpm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;other&#34;&gt;Other&lt;/h2&gt;
+&lt;p&gt;It&#39;s also helpful to have an office suite&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo yum install libreoffice
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Okay, all done! Go and solve the world’s problems!&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>What I learned at the UseR! conference</title>
+      <link>/post/user_2018/</link>
+      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
+      <guid>/post/user_2018/</guid>
+      <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
+&lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
+&lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;
+ provided by R Consortium YouTube channel) I&#39;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The hex wall was just straight up cool. Here&#39;s the 
+&lt;a href=&#34;https://blog.mitchelloharawild.com/blog/user-2018-feature-wall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code for that&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I participated in a half day workshop on Rcpp (
+&lt;a href=&#34;https://www.youtube.com/watch?v=FZ0LcJbxPF0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+ and 
+&lt;a href=&#34;https://www.youtube.com/watch?v=EXGhR-kyjRg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+). This continues to be a very popular suite of packages to help users increase the speed and efficiency of their programs. I say &amp;ldquo;suite&amp;rdquo; because in addition to 3 major functions provided by Rcpp, a number of accessory packages have been written to extend its functionality. Several of these accessory packages essentially are providing templates for invoking C++ commands without having to actually know C. Dirk Eddelbuttel introduced the 3 major functions for extending R with C/C++:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;evalCpp: for evaluating ad hoc anonymous expressions&lt;/li&gt;
+&lt;li&gt;cppFunction: standard function written in C/C++ and invoked in a program&lt;/li&gt;
+&lt;li&gt;sourceCpp: source C/C++ objects &amp;amp; functions from external file
+These functions must be compiled each time a fresh R session is started. Building an Rcpp package avoids this and is easy to do:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;Rcpp.package.skeleton(&amp;quot;mypackage&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;The other useful workshop I participated in was methods for speeding up R, delivered by Thomas Lumley, formerly of UW and now of U of Auckland. He focused on a few major recommendations:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Vectorise whenever possible. This also implies that you know your vectorised functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lapply/apply/sapply/vapply/tapply&lt;/li&gt;
+&lt;li&gt;rowMeans, rowSums&lt;/li&gt;
+&lt;li&gt;colMeans, colSums&lt;/li&gt;
+&lt;li&gt;Consider parallelised functions: mclapply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Base functions are often designed to handle wildly different input. It may make sense in some instances to rewrite functions, making assumptions (e.g. about the input data) that fit your circumstances.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data frames should be avoided if possible - they are expensive to create and often copied in whole when modified.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using an optimized matrix algebra library (not LAPACK) may be worth the time to install that. These libraries have optimized how data is accessed from disk.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Some rec&#39;s on how to handle large objects that reasonably don&#39;t fit in memory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;buy a computer with more memory (not always a reasonable option)&lt;/li&gt;
+&lt;li&gt;put your data in database and access with tools like dbplyr. One recommendation is MonetDBLite, a column-optimized database good for scientific applications for that reason.&lt;/li&gt;
+&lt;li&gt;Use special file formats for bigger data sets: HDF5, GitLFS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;But, first and foremost, he emphasized the use of profiling tools and benchmarking functions. find out where the bottleneck in your program actually are! And be careful to not waste too much time on optimizing code - time saved may not be worth time invested. R is automatically running a JIT (just in time) compiler that makes code run faster each time it is called. It makes sense to turn this off while doing benchmarking:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;enableJIT(0)
+
+# to turn back on:
+
+enableJIT(1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Course notes available on his github repo 
+&lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UseRfasteR&lt;/a&gt;
+.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Excellent keynotes all-around. 
+&lt;a href=&#34;https://www.youtube.com/watch?v=27FxbDtCFoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Steph da Silva&lt;/a&gt;
+ emphasized the importance of &lt;em&gt;community&lt;/em&gt; in open-source community - what that can look like, how to contribute  how your contribution helps develop camaraderie to support sharing of code and development of analysts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=5033jBHFiHE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Roger Peng discussed development of R&lt;/a&gt;
+ as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&#39;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Jenny Bryan&#39;s talk on 
+&lt;a href=&#34;https://youtu.be/7oyiPBjLAWY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;Code Smells and Feels&amp;rdquo;&lt;/a&gt;
+ provided a great introduction to how to identify and fix poorly written code. According to 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;
+, &amp;ldquo;Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning. Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.&amp;rdquo;
+Based on the book, &lt;em&gt;Refactoring: Improving the Design of Existing Code&lt;/em&gt;, she gave a few simple directives to create simple code that is easy to understand, debug, and maintain. Hooray!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Hoist entry or exit conditionals to the top of functions&lt;/li&gt;
+&lt;li&gt;Use functions as much as possible&lt;/li&gt;
+&lt;li&gt;Avoid overly nested code (e.g. a long cascade of nested &amp;ldquo;if&amp;rdquo; statements)&lt;/li&gt;
+&lt;li&gt;Not every &amp;ldquo;if&amp;rdquo; needs an else&lt;/li&gt;
+&lt;li&gt;Consider implementing true object-oriented programming when working with classes&lt;/li&gt;
+&lt;li&gt;Don&#39;t&amp;rsquo; be afraid to write short helper functions
+There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&#39;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Excellent set of talks on data handling and workflow. In particular, 
+&lt;a href=&#34;https://www.youtube.com/watch?v=GrqM2VqIQ20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a talk on the website builder&lt;/a&gt;
+ for documenting data analysis called 
+&lt;a href=&#34;https://github.com/jdblischak/workflowr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;workflowr&amp;rdquo;&lt;/a&gt;
+. 
+&lt;a href=&#34;https://www.youtube.com/watch?v=IYfZ6kd7aT0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Discussion on consistent workflows&lt;/a&gt;
+, recommended conventions for naming variables, creating consistent set of directories for each project, using version controls. Obvious to a data scientist, but rarely used by regular scientist. This resonates strongly with me due to ongoing issues with data management in the agricultural sciences.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=3Bu7QUxzIbA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Excellent talk on precision in R&lt;/a&gt;
+. Use .Machine to find out more, but basically R is only good to 16 decimal points. Subtraction of one number similar to it can result in cancellation where the result essentially slides to zero, losing precision. Ways to avoid this include working in log space, perhaps adding a zero if needed: log(x + 1), -log(1 - exp(x)). Also, there is the 
+&lt;a href=&#34;https://cran.r-project.org/web/packages/Rmpfr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rmpfr package&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=XQmBcpQl8K8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Glue package&lt;/a&gt;
+ - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&#39;s printf(), but glue makes this easier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=L6FawdEA3W0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fun talk on vwline package&lt;/a&gt;
+ for creating variable-width lines, like in Menaurd&#39;s famous plot of Napolean&#39;s march through Russia.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;./napoleon.jpg&#34; alt=&#34;napolean_plot&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Perennial wheat lines have highly admixed population structure and elevated rates of outcrossing</title>
+      <link>/publication/perennial_wheat/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/perennial_wheat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Building supportive networks among agricultural innovators through a symposium on dryland organic farming</title>
+      <link>/publication/networks/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/networks/</guid>
+      <description></description>
     </item>
     
   </channel>

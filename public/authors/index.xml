@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 10:50:02 -0700</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Authors</title>
@@ -15,17 +15,329 @@
     <item>
       <title></title>
       <link>/authors/admin/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Feb 2020 10:50:02 -0700</pubDate>
       <guid>/authors/admin/</guid>
       <description>&lt;p&gt;Julia Piaskowski is a consulting statistician serving the College of Agriculture and Life Sciences. Her research interests include general agricultural statistics, spatial statistics, and quantitative genetics. Lately, she is focused on encouraging reproducible analytical workflows and the safe guarding of data from long term agricultural research projects.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Robert Ford</title>
-      <link>/authors/robert-ford/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/robert-ford/</guid>
+      <title>Abbo, Shahal</title>
+      <link>/authors/abbo-shahal/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/abbo-shahal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Barreneche, Teresa</title>
+      <link>/authors/barreneche-teresa/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/barreneche-teresa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brown, David</title>
+      <link>/authors/brown-david/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/brown-david/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cai, Lichun</title>
+      <link>/authors/cai-lichun/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/cai-lichun/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Campbell, Kimberly Garland</title>
+      <link>/authors/campbell-kimberly-garland/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/campbell-kimberly-garland/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Campoy, José Antonio</title>
+      <link>/authors/campoy-jose-antonio/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/campoy-jose-antonio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Charlot, Gérard</title>
+      <link>/authors/charlot-gerard/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/charlot-gerard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coyne, Clarice J.</title>
+      <link>/authors/coyne-clarice-j./</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/coyne-clarice-j./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Giovannini, Daniela</title>
+      <link>/authors/giovannini-daniela/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/giovannini-daniela/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hardner, Craig</title>
+      <link>/authors/hardner-craig/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/hardner-craig/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hardner, Craig M.</title>
+      <link>/authors/hardner-craig-m./</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/hardner-craig-m./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hayes, Ben J.</title>
+      <link>/authors/hayes-ben-j./</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/hayes-ben-j./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iezzoni, Amy</title>
+      <link>/authors/iezzoni-amy/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/iezzoni-amy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kumar, Satish</title>
+      <link>/authors/kumar-satish/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/kumar-satish/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Landry, Erik</title>
+      <link>/authors/landry-erik/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/landry-erik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Liverani, Alessandro</title>
+      <link>/authors/liverani-alessandro/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/liverani-alessandro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ma, Yu</title>
+      <link>/authors/ma-yu/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/ma-yu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Main, Doreen</title>
+      <link>/authors/main-doreen/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/main-doreen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>McGee, Rebecca</title>
+      <link>/authors/mcgee-rebecca/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/mcgee-rebecca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mugabe, Deus</title>
+      <link>/authors/mugabe-deus/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/mugabe-deus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Oraguzie, Nnadozie</title>
+      <link>/authors/oraguzie-nnadozie/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/oraguzie-nnadozie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peace, Cameron</title>
+      <link>/authors/peace-cameron/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/peace-cameron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peace, Cameron P.</title>
+      <link>/authors/peace-cameron-p./</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/peace-cameron-p./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quero-Garcia, José</title>
+      <link>/authors/quero-garcia-jose/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/quero-garcia-jose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vandemark, George</title>
+      <link>/authors/vandemark-george/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/vandemark-george/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vanderzande, Stijn</title>
+      <link>/authors/vanderzande-stijn/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/vanderzande-stijn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Villamil-Castro, Miguel</title>
+      <link>/authors/villamil-castro-miguel/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/villamil-castro-miguel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zhang, Hongbin</title>
+      <link>/authors/zhang-hongbin/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/zhang-hongbin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zhao, Yunyang</title>
+      <link>/authors/zhao-yunyang/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/zhao-yunyang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zheng, Ping</title>
+      <link>/authors/zheng-ping/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/zheng-ping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Edge-Garza, D</title>
+      <link>/authors/edge-garza-d/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/edge-garza-d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Luo, F</title>
+      <link>/authors/luo-f/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/luo-f/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Peace, C</title>
+      <link>/authors/peace-c/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/peace-c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jones, Stephen</title>
+      <link>/authors/jones-stephen/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/jones-stephen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kisha, Theodore</title>
+      <link>/authors/kisha-theodore/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/kisha-theodore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Murphy, Kevin</title>
+      <link>/authors/murphy-kevin/</link>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/murphy-kevin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Carpenter-Boggs, L</title>
+      <link>/authors/carpenter-boggs-l/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/carpenter-boggs-l/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuerst, E.P.</title>
+      <link>/authors/fuerst-e.p./</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/fuerst-e.p./</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Roberts, D</title>
+      <link>/authors/roberts-d/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/roberts-d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Weddell, B</title>
+      <link>/authors/weddell-b/</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/weddell-b/</guid>
       <description></description>
     </item>
     

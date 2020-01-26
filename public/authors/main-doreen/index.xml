@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Main, Doreen | Julia Piaskowski</title>
+    <link>/authors/main-doreen/</link>
+      <atom:link href="/authors/main-doreen/index.xml" rel="self" type="application/rss+xml" />
+    <description>Main, Doreen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Main, Doreen</title>
+      <link>/authors/main-doreen/</link>
+    </image>
+    
+    <item>
+      <title>Quantitative Trait Loci for Cold Tolerance in Chickpea.</title>
+      <link>/publication/chickpea_qtl_cold/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/chickpea_qtl_cold/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Julia Piaskowski">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Sources Thomas Lumley, Github repo useRfasteR Hadley Wickham, Profiling , Advanced R
+Dirk Eddelbuettel, Rcpp The Process for Improving Code: (quote from Advanced R)
+  Find the biggest bottleneck (the slowest part of your code). Try to eliminate it (you may not succeed but that’s ok). Repeat until your code is “fast enough.”   Easy peasy, right???
+Some general guidelines for speeding up R code  Use data frames less - they are expensive to create, often copied in whole when modified, and their rownames attribute can really slow things down.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/code_profiling/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/code_profiling/">
+
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Julia Piaskowski">
+  <meta property="og:url" content="/post/code_profiling/">
+  <meta property="og:title" content="Faster R Scripts through Code Profiling | Julia Piaskowski">
+  <meta property="og:description" content="Sources Thomas Lumley, Github repo useRfasteR Hadley Wickham, Profiling , Advanced R
+Dirk Eddelbuettel, Rcpp The Process for Improving Code: (quote from Advanced R)
+  Find the biggest bottleneck (the slowest part of your code). Try to eliminate it (you may not succeed but that’s ok). Repeat until your code is “fast enough.”   Easy peasy, right???
+Some general guidelines for speeding up R code  Use data frames less - they are expensive to create, often copied in whole when modified, and their rownames attribute can really slow things down."><meta property="og:image" content="/post/code_profiling/featured.jpg">
+  <meta property="twitter:image" content="/post/code_profiling/featured.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2018-09-19T10:50:02-07:00">
+    
+    <meta property="article:modified_time" content="2018-09-19T10:50:02-07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/code_profiling/"
+  },
+  "headline": "Faster R Scripts through Code Profiling",
+  
+  "image": [
+    "/post/code_profiling/featured.jpg"
+  ],
+  
+  "datePublished": "2018-09-19T10:50:02-07:00",
+  "dateModified": "2018-09-19T10:50:02-07:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Julia Piaskowski"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Julia Piaskowski",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "img//"
+    }
+  },
+  "description": "Sources Thomas Lumley, Github repo useRfasteR Hadley Wickham, Profiling , Advanced R\nDirk Eddelbuettel, Rcpp The Process for Improving Code: (quote from Advanced R)\n  Find the biggest bottleneck (the slowest part of your code). Try to eliminate it (you may not succeed but that’s ok). Repeat until your code is “fast enough.”   Easy peasy, right???\nSome general guidelines for speeding up R code  Use data frames less - they are expensive to create, often copied in whole when modified, and their rownames attribute can really slow things down."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Faster R Scripts through Code Profiling | Julia Piaskowski</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Julia Piaskowski</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Julia Piaskowski</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#hero"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Faster R Scripts through Code Profiling</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 19, 2018
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/r-language/">R language</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width: 1204px; max-height: 788px;">
+  <div style="position: relative">
+    <img src="/post/code_profiling/featured.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Image credit: <a href="https://www.hackerearth.com/blog/python/faster-python-code/"><strong>HackerImage website</strong></a></span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h5 id="sources">Sources</h5>
+<p>Thomas Lumley, Github repo 
+<a href="https://github.com/tslumley/useRfasteR" target="_blank" rel="noopener">useRfasteR</a>
+<br>
+Hadley Wickham, 
+<a href="http://adv-r.had.co.nz/Profiling.html" target="_blank" rel="noopener">Profiling</a>
+, <em>Advanced R</em><br>
+Dirk Eddelbuettel, 
+<a href="http://www.rcpp.org/" target="_blank" rel="noopener">Rcpp</a>
+</p>
+<h4 id="the-process-for-improving-code">The Process for Improving Code:</h4>
+<p>(quote from <em>Advanced R</em>)</p>
+<blockquote>
+<ol>
+<li>Find the biggest bottleneck (the slowest part of your code).</li>
+<li>Try to eliminate it (you may not succeed but that’s ok).</li>
+<li>Repeat until your code is “fast enough.”</li>
+</ol>
+</blockquote>
+<p><strong>Easy peasy, right???</strong></p>
+<p><img src="./owl.png" alt="owl"></p>
+<h4 id="some-general-guidelines-for-speeding-up-r-code">Some general guidelines for speeding up R code</h4>
+<ol>
+<li>Use data frames less - they are expensive to create, often copied in whole when modified, and their rownames attribute can really slow things down.</li>
+<li>Be wary of using functions that copy objects in whole: c(), append(), cbind(), rbind(), or paste(). When used in loops, you can get a massive proliferation of objects in memory.</li>
+<li>Use vectorised functions:
+<ul>
+<li>apply, lapply, sapply, vapply, tapply, mapply</li>
+<li>rowSums, colSums, rowMeans, colMeans, cumsum, diff</li>
+</ul>
+</li>
+<li>Base functions are designed to handle wildly different input. Consider rewriting base functions for highly repetitive tasks.</li>
+<li>Use parallel::mclapply for parallelising functions.</li>
+<li>Consider an optimized matrix algebra library (beyond BLAS) for better performance (e.g. 
+<a href="https://developer.apple.com/documentation/accelerate/blas" target="_blank" rel="noopener">Apple vecLib BLAS</a>
+, 
+<a href="https://www.openblas.net/" target="_blank" rel="noopener">openBLAS</a>
+).</li>
+<li>If you work with sparse matrices, use tools for them like the package &lsquo;Matrix&rsquo;.</li>
+<li>For huge objects, consider storing the information in a database and accessing it with &lsquo;dbplyr&rsquo;. The packages &lsquo;dbglm&rsquo; and &lsquo;tidypredict&rsquo; will also do model fitting with data inside a database.</li>
+<li>Another solution for large objects are specialized formats like 
+<a href="https://portal.hdfgroup.org/display/support" target="_blank" rel="noopener">HDF5</a>
+ or 
+<a href="https://www.unidata.ucar.edu/software/netcdf/" target="_blank" rel="noopener">netCDF</a>
+.</li>
+<li>Take advantage of the Rcpp suite of programs - not just for C/C++ programmers (e.g. RcppArmadillo::fastlm).</li>
+<li>Use an alternative implementation of R (e.g., 
+<a href="https://github.com/oracle/fastr]" target="_blank" rel="noopener">fastR</a>
+, 
+<a href="http://www.pqr-project.org/" target="_blank" rel="noopener">pqR</a>
+).</li>
+<li>Check your code with benchmarking!!!</li>
+</ol>
+<h4 id="lets-do-some-benchmarking">Let's do some benchmarking!</h4>
+<p>Important: don't (re)install &lsquo;compiler&rsquo;; you should just be able to load it in R v3.5 and later.</p>
+<pre><code class="language-{r}">pck &lt;- c(&quot;pryr&quot;,&quot;microbenchmark&quot;, &quot;profvis&quot;, &quot;compiler&quot;, &quot;mnormt&quot;)
+invisible(lapply(pck, library, character.only = T))
+</code></pre>
+<p>First, Turn off the just-in-time compiler. Note that return value is what the JIT was set at previously (default = 3).</p>
+<pre><code>enableJIT(0)
+</code></pre>
+<h5 id="the-microbenchmark-function">The microbenchmark function</h5>
+<ul>
+<li>for evaluating small snippets of code</li>
+<li>below is a comparison of several approaches to calculating a mean</li>
+</ul>
+<pre><code class="language-{r}">a &lt;- function() {
+  m &lt;- sample(1:100, 2)
+  data.x &lt;- lapply(m, function(x) rnorm(1e4, mean = x))
+  do.call(&quot;cbind&quot;, data.x)
+}
+
+some_data &lt;- a()
+dim(some_data)
+
+microbenchmark(
+  mean_loop = apply(some_data, 2, mean),
+  mean_vec = colMeans(some_data),
+  mean_manual = apply(some_data, 2, function(x) sum(x)/length(x)),
+  mean_manual_ultra = apply(some_data, 2, function(x){
+    total = 0
+    n = 0
+    i = 1
+    while(!is.na(x[i])) {
+      total = total + x[i]
+      n = n+1
+      i = i+1
+    }
+    total/n
+  })
+)
+</code></pre>
+<h5 id="prevent-multiple-dispatch">Prevent multiple dispatch:</h5>
+<ul>
+<li>the function mean() is meant to handle several different types of data</li>
+<li>specifying the method (thus implying a certain type of input) can speed up the process for small data sets</li>
+<li>the function mean() calls a different function depending on the object specified:</li>
+</ul>
+<pre><code class="language-{r}">methods(mean)
+
+x1 &lt;- list(e2 = runif(1e2), e4 = runif(1e4), e6 = runif(1e6))
+
+lapply(x1, function(x)
+  microbenchmark(
+    mean(x),
+    mean.default(x)
+  )
+)
+</code></pre>
+<p>I suspect the improvement in speed for smaller objects but larger objects is related to big O notation &ndash; these smaller objects are impacted by constants</p>
+<p>Other approaches for finding source code:</p>
+<pre><code class="language-{r}"># tracking package type, etc
+otype(mean)
+ftype(mean)
+showMethods(mean) #for S4
+methods(mean)
+</code></pre>
+<p>The function methods() does not always work, but there are alternatives:</p>
+<pre><code class="language-{r}">methods(var)
+getAnywhere(var)
+</code></pre>
+<h5 id="find-the-bottlenecks-with-rprof">Find the bottlenecks with Rprof()</h5>
+<ul>
+<li>writes stack calls to disk along with memory usage and vector duplication</li>
+<li>you create a .prof file to do this and then close it when done with profiling</li>
+</ul>
+<pre><code class="language-{r}">Rprof(&quot;permute.prof&quot;, memory.profiling = T)
+
+sigma.mv &lt;- diag(1, nrow = 5, ncol = 5)
+sigma.mv[upper.tri(sigma.mv)] = 0.5
+sigma.mv[lower.tri(sigma.mv)] = 0.5
+
+mvn.data &lt;- rmnorm(1e3, mean = rep(0, 5), varcov = sigma.mv)
+colnames(mvn.data) &lt;- c(paste0(&quot;x&quot;,1:5))
+
+kmeans.Ftest &lt;- function(kmean_obj) {
+  df.1 = length(kmean_obj$size) - 1
+  df.2 = length(kmean_obj$cluster) - length(kmean_obj$size)
+  betw_ms &lt;- kmean_obj$tot.withinss/df.1
+  with_ms &lt;- kmean_obj$betweenss/df.2
+  fratio = betw_ms/with_ms
+  pval &lt;- pf(fratio, df1 = df.2, df2 = df.1, lower.tail = F)
+  stuff = c(fratio, df.1, df.2, pval)
+  names(stuff) &lt;- c('F-ratio', 'df 1','df 2', 'p-value')
+  return(stuff)
+}
+
+kmeans.optimiz &lt;- lapply(2:10, function(x) {
+    results = kmeans(mvn.data, centers = x, nstart = 15, algorithm = &quot;MacQueen&quot;,
+                        iter.max = 50)
+    kmeans.Ftest(results)
+})
+
+kmeans.final &lt;- do.call(&quot;rbind&quot;, kmeans.optimiz)
+
+Rprof(NULL)
+summaryRprof(&quot;permute.prof&quot;) #, memory = &quot;both&quot;)
+</code></pre>
+<h5 id="use-profvis-to-visualize-performance">Use profvis to visualize performance</h5>
+<ul>
+<li>nice graphical output</li>
+<li>native in RStudio (there is extensive 
+<a href="https://support.rstudio.com/hc/en-us/articles/218221837-Profiling-with-RStudio" target="_blank" rel="noopener">documentation</a>
+)</li>
+<li>you can view output in browser</li>
+</ul>
+<pre><code class="language-{r}">p &lt;- profvis({
+mean_loop = apply(some_data, 2, mean)
+mean_vec = colMeans(some_data)
+mean_manual = apply(some_data, 2, function(x) sum(x)/length(x))
+mean_manual_ultra = apply(some_data, 2, function(x){
+  total = 0
+  n = 0
+  i = 1
+  while(!is.na(x[i])) {
+      total = total + x[i]
+      n = n+1
+      i = i+1
+    }
+    total/n
+  })
+})
+htmlwidgets::saveWidget(p, &quot;profile.html&quot;)
+
+browseURL(&quot;profile.html&quot;)
+</code></pre>
+<h5 id="explore-source-code">Explore source code</h5>
+<p><strong>How to access function source code</strong>
+(if you didn't write the function yourself)</p>
+<ol>
+<li>Type the function name (without parentheses): <code>eigen</code></li>
+<li>Find namespace and methods associated: <code>methods(&quot;princomp&quot;); getAnywhere(&quot;princomp.default&quot;)</code></li>
+<li>Use pryr::show_c_source() to search for C code on GitHub (which may or may not be helpful)</li>
+<li>Download the entire package and explore the code</li>
+</ol>
+<pre><code class="language-{r}">svd
+La.svd
+
+try(show_c_source(.Internal(La_svd(x))))
+show_c_source(.Internal(mean(x)))
+
+download.packages(&quot;broman&quot;, repos = &quot;https://cloud.r-project.org&quot;,
+  destdir = getwd(),type = &quot;source&quot;)
+</code></pre>
+<h5 id="trace-objects-copied">Trace objects copied</h5>
+<ul>
+<li>use tracemem() to track particular objects</li>
+</ul>
+<pre><code class="language-{r}">a &lt;- letters[sample(10)]
+tracemem(a)
+a[1] &lt;- &quot;Z&quot;
+b &lt;- a[1:5]  # not copied
+</code></pre>
+<h5 id="memory">Memory</h5>
+<ul>
+<li>How much memory is being used? Note that R requests memory from your computer in big chunks then manages it itself.</li>
+</ul>
+<pre><code class="language-{r}">mem_used()
+object.size(x1) #base
+object_size(x1) #pryr
+compare_size(x1) #between base R and pryr
+</code></pre>
+<p>Read the 
+<a href="https://www.rdocumentation.org/packages/pryr/versions/0.1.4" target="_blank" rel="noopener">documentation for pryr functions</a>
+ for more useful functions.</p>
+<p>Now that we are all done, turn the JIT compiler back on:</p>
+<pre><code class="language-{r}">enableJIT(3)
+</code></pre>
+<h5 id="more-tips-from-advanced-r">More Tips from <em>Advanced R</em></h5>
+<p>These are designed to reduce internal checks</p>
+<ol>
+<li>read.csv(): specify known column types with colClasses.</li>
+<li>factor(): specify known levels with levels.</li>
+<li>cut(): don't generate labels with labels = FALSE if you don't need them, or, even better, use findInterval().</li>
+<li>unlist(x, use.names = FALSE) is much faster than unlist(x).</li>
+<li>interaction(): if you only need combinations that exist in the data, use drop = TRUE.</li>
+</ol>
+<h3 id="remember">Remember!</h3>
+<p><img src="./xkcd1205.png" alt="xkcd1205"></p>
+<p>
+<a href="https://xkcd.com/1205/" target="_blank" rel="noopener">xckd comic</a>
+</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/profvis/">profvis</a>
+  
+  <a class="badge badge-light" href="/tags/profiling/">profiling</a>
+  
+  <a class="badge badge-light" href="/tags/jupyter/">Jupyter</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/code_profiling/&amp;text=Faster%20R%20Scripts%20through%20Code%20Profiling" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/code_profiling/&amp;t=Faster%20R%20Scripts%20through%20Code%20Profiling" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Faster%20R%20Scripts%20through%20Code%20Profiling&amp;body=/post/code_profiling/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/code_profiling/&amp;title=Faster%20R%20Scripts%20through%20Code%20Profiling" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Faster%20R%20Scripts%20through%20Code%20Profiling%20/post/code_profiling/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/code_profiling/&amp;title=Faster%20R%20Scripts%20through%20Code%20Profiling" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu23192bffe630d6064b8497253778ffcd_528777_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Julia Piaskowski</a></h5>
+      <h6 class="card-subtitle">Statistical Consultant</h6>
+      <p class="card-text">I am interested in agricultural statistic, analysis workflow and data management, quantitative genetics and integration of spatial statistics into routine analysis of agricultural field trials.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/SeedsAndBreeds" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?authuser=1&amp;user=PMN2WZEAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/jpiaskowski" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/vm_wsu/">How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.3/mermaid.min.js" integrity="" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

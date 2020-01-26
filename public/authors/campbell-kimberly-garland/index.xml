@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Campbell, Kimberly Garland | Julia Piaskowski</title>
+    <link>/authors/campbell-kimberly-garland/</link>
+      <atom:link href="/authors/campbell-kimberly-garland/index.xml" rel="self" type="application/rss+xml" />
+    <description>Campbell, Kimberly Garland</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Campbell, Kimberly Garland</title>
+      <link>/authors/campbell-kimberly-garland/</link>
+    </image>
+    
+    <item>
+      <title>Near-infrared calibration of soluble stem carbohydrates for predicting drought tolerance in spring wheat</title>
+      <link>/publication/nir_calib/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/nir_calib/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

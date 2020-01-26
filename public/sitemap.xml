@@ -3,33 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/courses/example/example1/</loc>
+    <loc>/tutorials/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/courses/example/</loc>
+    <loc>/tutorials/example/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/courses/example/example2/</loc>
+    <loc>/tutorials/zotero/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/zotero/zotero_workshop/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/example/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,68 +33,298 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2020-02-09T10:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/writing-technical-content/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <loc>/talk/</loc>
+    <lastmod>2020-02-09T10:20:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/admin/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/3/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/preprint/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
     <loc>/authors/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>/tags/data-workflow/</loc>
+    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
+    <loc>/post/starwars_bad_data/</loc>
+    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
+    <loc>/publication_types/2/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <loc>/authors/abbo-shahal/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+    <loc>/authors/barreneche-teresa/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/brown-david/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/cai-lichun/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/campbell-kimberly-garland/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/campoy-jose-antonio/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/charlot-gerard/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/coyne-clarice-j./</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/drought-tolerance/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/genetics/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/cherry_gebv/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/giovannini-daniela/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/hardner-craig/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/hardner-craig-m./</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/hayes-ben-j./</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/iezzoni-amy/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/kumar-satish/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/landry-erik/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/liverani-alessandro/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/ma-yu/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/main-doreen/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/mcgee-rebecca/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/mugabe-deus/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/nir_calib/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/oraguzie-nnadozie/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/peace-cameron/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/peace-cameron-p./</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/plant-breeding/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/sweet_cherry_maturity/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/pulse-crops/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/chickpea_qtl_cold/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/quero-garcia-jose/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/sweet-cherry/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/vandemark-george/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/vanderzande-stijn/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/villamil-castro-miguel/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/wheat/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/zhang-hongbin/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/zhao-yunyang/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/zheng-ping/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2018-09-19T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/code_profiling/</loc>
+    <lastmod>2018-09-19T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/jupyter/</loc>
+    <lastmod>2018-09-19T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/profiling/</loc>
+    <lastmod>2018-09-19T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/profvis/</loc>
+    <lastmod>2018-09-19T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r-language/</loc>
+    <lastmod>2018-09-19T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/workflow_basics/</loc>
+    <lastmod>2018-08-07T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/reproducibility/</loc>
+    <lastmod>2018-08-07T10:50:02-07:00</lastmod>
   </url>
   
   <url>
@@ -110,6 +335,76 @@
   <url>
     <loc>/terms/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/dna_testing/</loc>
+    <lastmod>2018-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/edge-garza-d/</loc>
+    <lastmod>2018-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/luo-f/</loc>
+    <lastmod>2018-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/peace-c/</loc>
+    <lastmod>2018-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/vm_wsu/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/rcpp/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/virtual-machine/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/user_2018/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/workflow/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/jones-stephen/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/kisha-theodore/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/murphy-kevin/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/publication/perennial_wheat/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/population-genetics/</loc>
+    <lastmod>2017-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -138,77 +433,42 @@
   </url>
   
   <url>
-    <loc>/tags/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+    <loc>/publication/networks/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/getting-started/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+    <loc>/authors/carpenter-boggs-l/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+    <loc>/tags/dryland-agriculture/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/demo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
+    <loc>/tags/extension/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/2/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    <loc>/authors/fuerst-e.p./</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/journal-article/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    <loc>/authors/roberts-d/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/robert-ford/</loc>
-    <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    <loc>/authors/weddell-b/</loc>
+    <lastmod>2013-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/plot/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r-markdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/1/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/conference-paper/</loc>
-    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/courses/</loc>
+    <loc>/tutorials/</loc>
   </url>
   
 </urlset>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zhao, Yunyang | Julia Piaskowski</title>
+    <link>/authors/zhao-yunyang/</link>
+      <atom:link href="/authors/zhao-yunyang/index.xml" rel="self" type="application/rss+xml" />
+    <description>Zhao, Yunyang</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Zhao, Yunyang</title>
+      <link>/authors/zhao-yunyang/</link>
+    </image>
+    
+    <item>
+      <title>Genomic heritability estimates in sweet cherry reveal non-additive genetic variance is relevant for industry-prioritized traits.</title>
+      <link>/publication/cherry_gebv/</link>
+      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/cherry_gebv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
