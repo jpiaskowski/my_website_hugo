@@ -10,7 +10,7 @@ date: "2013-03-01T00:00:00Z"
 doi: ""
 featured: false
 image:
-  caption: 'Image credit: [**J. Piaskowski**]'
+  caption: 'Image credit: **Erin Dunn**'
   focal_point: ""
   preview_only: false
 projects: []

@@ -9,7 +9,7 @@ date: "2017-09-01T00:00:00Z"
 doi: "10.1007/s10681-017-1961-x"
 featured: false
 image:
-  caption: 'Image credit: [**J. Piaskowski**]'
+  caption: 'Image credit: **Wikimedia Commons**'
   focal_point: ""
   preview_only: false
 projects: []

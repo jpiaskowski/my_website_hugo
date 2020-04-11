@@ -21,11 +21,11 @@ date: "2020-01-22T00:00:00Z"
 doi: "https://doi.org/10.1038/s41438-018-0081-7"
 featured: false
 image:
-  caption: 'Image credit: [**J Piaskowski**]'
+  caption: 'Image credit: **J Piaskowski**'
   focal_point: ""
   preview_only: false
 projects: []
-publication: '*Horticulture Research*(1)'
+publication: '*Horticulture Research* (1)'
 publication_short: ""
 publication_types:
 - "2"

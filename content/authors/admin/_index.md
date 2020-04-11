@@ -1,7 +1,7 @@
 ---
 authors:
 - admins
-bio: I am interested in agricultural statistic, analysis workflow and data management, quantitative genetics and integration of spatial statistics into routine analysis of agricultural field trials. 
+bio: I work in agricultural statists. My focal areas are data management and analytic workflow, quantitative genetics and integration of spatial statistics into routine analysis of agricultural field trials. 
 education:
   courses:
   - course: PhD in Crop Science
@@ -42,5 +42,5 @@ user_groups:
 - Visitors
 ---
 
-Julia Piaskowski is a consulting statistician serving the College of Agriculture and Life Sciences. Her research interests include general agricultural statistics, spatial statistics, and quantitative genetics. Lately, she is focused on encouraging reproducible analytical workflows and the safe guarding of data from long term agricultural research projects. 
+Julia Piaskowski is a consulting statistician serving the College of Agriculture and Life Sciences. Her research interests include agricultural statistics, spatial statistics, and quantitative genetics. Lately, she is focused on encouraging reproducible analytical workflows and the safe guarding of data from long term agricultural research projects. 
 

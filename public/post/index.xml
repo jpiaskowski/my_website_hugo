@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Feb 2020 10:50:02 -0700</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Julia Piaskowski, 2020</copyright><lastBuildDate>Sat, 01 Feb 2020 10:50:02 -0700</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
@@ -13,11 +13,45 @@
     </image>
     
     <item>
-      <title>Star Wars and Bad Data Management</title>
+      <title>Bad Data Management: A Star Wars Story</title>
       <link>/post/starwars_bad_data/</link>
       <pubDate>Sat, 01 Feb 2020 10:50:02 -0700</pubDate>
       <guid>/post/starwars_bad_data/</guid>
-      <description></description>
+      <description>&lt;p&gt;Most of us think of Star Wars as the rebellion versus the empire &amp;ndash; good versus evil with key figures: the Jedi, the Sith, Darth Vader, Luke Skywalker, the Emperor, Rey, Kylo Ren. But, The downfall of the governing bodies was not Darth Vader, Luke Skywalker, Kylo Ren or Palpatine. Actually, Star Wars is a story of really bad data management practices.&lt;/p&gt;
+&lt;h4 id=&#34;the-republic&#34;&gt;The Republic:&lt;/h4&gt;
+&lt;p&gt;The Jedi maintained decent, well-organised archives in a large library and they even had paid librarians on staff. But any jedi can delete information and no record is left regarding this? For heaven’s sake, an entire planet was removed from said archives That ain’t good. It led to the Clone wars and eventual rise of the Galactic Empire. It also turns out that a person just has to look like a jedi in order 
+&lt;a href=&#34;https://starwars.fandom.com/wiki/Holocron_Heist&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;to steal secured jedi archives&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;younglings.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;original-galatic-empire&#34;&gt;Original Galatic Empire:*&lt;/h4&gt;
+&lt;p&gt;This is where all the bad stuff starts. Initially, they had a good system for managing their vasts amount of data and an off-site backup with a very powerful firewall. However, once that firewall was breached, there was poor security inside - I mean, a dead archivist’s hand could be used to access &lt;em&gt;the entire system&lt;/em&gt;, presumably as a root user. Their storage facility also relied on a rather inconvenient system for accessing data: a massive tower than required a remote-controlled tool for physical retrieval of data files.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;archive_joystick.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The tool itself required manual operation and apparently the entire facility had no backup generator to maintain secruity and functioning in case of a power loss. Incredibly, there was also no search tool. Data archives had to be &lt;em&gt;browsed&lt;/em&gt; (what???). it’s really quite astonishing that anyone ever found what they needed. Options for sending out the data were also remarkably cumbersome - a satellite dish the size of a Star Destroyer has to manually turned in the correct direction to send a file out (was the Empire capable of automating anything?). I also wonder about the file compression capabilities - seriously, is there any file so large it needs a satellite dish of that size?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;scarif_tower.JPG&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;the-first-order&#34;&gt;The First Order:&lt;/h4&gt;
+&lt;p&gt;The First Order inherits a number of problems from the original Galatic Empire, most notably insufficient backups resulting in lost information. A map to Luke Skywalker is lost, making it nigh impossible to find him. A map to Exogol had two copies ever made, one of them on a destroyed death star sitting in the middle of raging ocean? It’s amazing these were very found. Without these maps, we have no Sith and no Jedi (maybe not such a bad thing).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;skywalker_map.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The point is that if the Jedi had better data practices, then they might have avoided the rise of the empire. And perhaps if the Empire had better data practices, they may not undergone such a rapid downfall.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;death_star_wreckage.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;what-happens-with-good-data-management&#34;&gt;What happens with good data management:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Secure data that can only be modified by authorised users&lt;/li&gt;
+&lt;li&gt;Validation of data values to prevent errors&lt;/li&gt;
+&lt;li&gt;Data is accessible: it can be accessed in many places, by many, in formats that are easy to use&lt;/li&gt;
+&lt;li&gt;Stored data is easy to search and summarise&lt;/li&gt;
+&lt;li&gt;There are sufficient backups if something goes wrong&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;wait-this-actually-matters&#34;&gt;Wait! This actually matters!&lt;/h4&gt;
+&lt;p&gt;This is more than a story to amuse folks, though. Poor data management is a rampant issue across academia. I have observed that most researchers do not document their data processing in sufficient detail to recreate the process. Who else has read this statement &amp;ldquo;outliers were removed&amp;rdquo; with no details into how those outliers were eliminated or the numerical values of those &amp;ldquo;outliers&amp;rdquo;?&lt;/p&gt;
+&lt;p&gt;From a research standpoint this means the analytical procedure is not replicable. That means someone starting with the same raw data will not obtain the same results following the described analtical procedure &amp;ndash; because the description was inadequate. This can also mean data are unreliable. If the orginal version of data become lost as individuals clean up the data and do not document their process, then there is no way to evaluate if the cleaning was correctly done or justified. Data loss is always a risk when files are emailed around rather than shared via a more permanent data storage solution. All of these risks become amplified when an individual leaves a research program and can no longer be reached to resolve data questions.&lt;/p&gt;
+&lt;h4 id=&#34;tools-for-better-data-management&#34;&gt;Tools for better data management&lt;/h4&gt;
+&lt;p&gt;Handily, many many tools exist to assist in data management. I give a bare bones outline in this 
+&lt;a href=&#34;/post/workflow_basics/&#34;&gt;post&lt;/a&gt;
+ (please read this!!). Below is an even more bare &amp;lsquo;bare bones&amp;rsquo; outline.&lt;/p&gt;
+&lt;p&gt;One of the best solutions is to put your data in a database. This a great tool for large quantities of data that follow a regular format and are frequently updated - such as variety testing data.&lt;/p&gt;
+&lt;p&gt;However, most agricultural researchers are not so lucky to have such structured data. At the very least, maintaining research outputs in a shared and secured location is a good start. Archiving raw versions of data is paramount. This maybe never be needed, but if it is needed, there is not replacement if those data are lost. Requiring complete documentation from all research contributors on the data set generation and processing is also good. A &amp;ldquo;codebook&amp;rdquo; is another great tool. This is a file accompanying a data set that provides the name of each column, what data are present in that column, and optionally, the units of those data and the range of values expected. If a column contains contains numeric values btweeen 0 and 100, then others will know that 980 is probably an error.&lt;/p&gt;
+&lt;p&gt;Most of the researchers I work with were trained in a different era - when data was expensive to obtain and as a result, there was considerably less data to deal with. I count myself among this group. At that time, data management tools were less relevant because we had the time to comprehensively examine a data set for errors. Furthermore, data sharing and data reuse were not widely done. But, we all now those days are long over. We are now expected to process a large quantity of data rapidly, analyse it and eventually arhive it publicaly for possible reuse by someone else. Engaging in practices that enable quality data management is essential for participation in today&#39;s research environment.&lt;/p&gt;
+</description>
     </item>
     
     <item>

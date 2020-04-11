@@ -27,9 +27,10 @@ subtitle = ""
   description = ""  
   
 [[feature]]
-  icon = "mountain"
-  icon_pack = "fas"
-  name = "trail running"
+  icon = "python"
+  icon_pack = "fab"
+  name = "python"
   description = ""
+
 
 +++

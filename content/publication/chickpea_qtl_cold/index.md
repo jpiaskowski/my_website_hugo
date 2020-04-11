@@ -17,7 +17,7 @@ date: "2020-01-22T00:00:00Z"
 doi: "10.2135/cropsci2018.08.0504"
 featured: false
 image:
-  caption: 'Image credit: [**J Piaskowski**]'
+  caption: 'Image credit: **CSIRO ScienceImage**'
   focal_point: ""
   preview_only: false
 projects: []

@@ -12,7 +12,7 @@ date: "2020-01-22T00:00:00Z"
 doi: "10.1186/s12863-018-0609-8"
 featured: false
 image:
-  caption: 'Image credit: [**J Piaskowski**]'
+  caption: 'Image credit: **J Piaskowski**'
   focal_point: ""
   preview_only: false
 projects: []

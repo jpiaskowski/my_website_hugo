@@ -5,7 +5,7 @@
     <link>/tags/rcpp/</link>
       <atom:link href="/tags/rcpp/index.xml" rel="self" type="application/rss+xml" />
     <description>Rcpp</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 18 Mar 2018 10:50:02 -0700</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Julia Piaskowski, 2020</copyright><lastBuildDate>Sun, 18 Mar 2018 10:50:02 -0700</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Rcpp</title>

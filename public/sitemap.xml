@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tutorials/example/example1/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/zotero/</loc>
     <lastmod>2018-03-18T10:50:02-07:00</lastmod>
   </url>
@@ -20,11 +10,6 @@
   <url>
     <loc>/tutorials/zotero/zotero_workshop/</loc>
     <lastmod>2018-03-18T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/example/example2/</loc>
-    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -53,17 +38,17 @@
   </url>
   
   <url>
+    <loc>/post/starwars_bad_data/</loc>
+    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/data-workflow/</loc>
     <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/starwars_bad_data/</loc>
     <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
@@ -405,31 +390,6 @@
   <url>
     <loc>/tags/population-genetics/</loc>
     <lastmod>2017-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/internal-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
