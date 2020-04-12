@@ -3,8 +3,8 @@ title:  "Bad Data Management: A Star Wars Story"
 authors:
 - admin
 date:   2020-02-01 10:50:02 -0700
-draft: true
-featured: false
+draft: false
+featured: true
 diagram: true
 image:
   caption: []
