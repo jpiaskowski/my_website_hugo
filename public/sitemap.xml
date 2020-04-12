@@ -18,11 +18,6 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-02-09T10:20:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/talk/</loc>
     <lastmod>2020-02-09T10:20:00+00:00</lastmod>
   </url>
@@ -188,6 +183,11 @@
   </url>
   
   <url>
+    <loc>/authors/peace-c/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/peace-cameron/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
@@ -313,6 +313,11 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/privacy/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url>
@@ -338,17 +343,17 @@
   </url>
   
   <url>
-    <loc>/authors/peace-c/</loc>
-    <lastmod>2018-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/vm_wsu/</loc>
     <lastmod>2018-03-18T10:50:02-07:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/rcpp/</loc>
+    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/</loc>
     <lastmod>2018-03-18T10:50:02-07:00</lastmod>
   </url>
   
@@ -425,10 +430,6 @@
   <url>
     <loc>/authors/weddell-b/</loc>
     <lastmod>2013-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/</loc>
   </url>
   
 </urlset>

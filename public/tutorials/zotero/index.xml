@@ -104,7 +104,7 @@
 &lt;img src=&#34;zotero_filter.png&#34; alt=&#34;zotero_filter&#34; style=&#34;width: 450px;&#34;/&gt;
  ![zotero_filter](/zotero_filter.png)
 &lt;h3 id=&#34;citations&#34;&gt;Citations&lt;/h3&gt;
-&lt;p&gt;Automated citation management is perhaps the most useful aspects of a reference software. With Zotero, it&#39;s also very easy to use.&lt;/p&gt;
+&lt;p&gt;Automated citation management is perhaps the most useful aspects of a reference software. With Zotero, it&amp;rsquo;s also very easy to use.&lt;/p&gt;
 &lt;p&gt;First, you need to install the desired citation style. Major journals have made their styles available on the 
 &lt;a href=&#34;https://www.zotero.org/styles&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Zotero Style Repository&lt;/strong&gt;&lt;/a&gt;
 . To download one, you can directly download it from the Zotero style repository webpage and import into Zotero. Alternatively, Zotero provides an option directly in their user interface through &amp;ldquo;Zotero&amp;rdquo; &amp;gt; &amp;ldquo;Preferences&amp;rdquo; &amp;gt; &amp;ldquo;Cite&amp;rdquo;:&lt;/p&gt;
@@ -141,7 +141,7 @@ You should back it up from this point forward.
 Sort the references from the date added and remove all those added at that particular time stamp.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;I think there are tons of duplicates in my library - how can I fix this?&lt;/strong&gt;
 Zotero has a feature for removing duplicates. Look on the left menu for &amp;ldquo;Duplicate Items&amp;rdquo; to clean those up.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Help! I&#39;m having some mystery issue that no one has ever experienced.&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;Help! I&amp;rsquo;m having some mystery issue that no one has ever experienced.&lt;/strong&gt;
 Zotero has a huge userbase who take advantage of the 
 &lt;a href=&#34;https://forums.zotero.org/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;forums&lt;/strong&gt;&lt;/a&gt;
  for troubleshooting. If you cannot find your solution there, then post your problem, and the community is likely to help you.&lt;/p&gt;

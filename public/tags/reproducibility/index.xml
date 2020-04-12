@@ -21,11 +21,11 @@
 &lt;p&gt;This was the not the first nor the last messy data set with an unknown history that complicated my capacity to organize and analyse the information.&lt;/p&gt;
 &lt;p&gt;Other problems I encountered with poorly managed data sets:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Date sets with outliers removed based on individual&#39;s researchers assessment on what looked weird or not.&lt;/li&gt;
+&lt;li&gt;Date sets with outliers removed based on individual&amp;rsquo;s researchers assessment on what looked weird or not.&lt;/li&gt;
 &lt;li&gt;An Excel file several thousand lines with miscellaneous comments added every so often indicating a data point may be suspect.&lt;/li&gt;
 &lt;li&gt;An Excel file several sheets wide of the same information across different years - yet the column names did not match, and some sheets included summary stats for groups of data, using empty rows to differentiate groups (again, I think this was what going on&amp;hellip;).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;There&#39;s no way to sugarcoat it: management of raw experimental data and the analysis workflow is largely abysmal in the agricultural sciences, my academic home for 14 years. The process of cleaning, rearranging, filtering and preparing experimental data for downstream analyses is poorly described, if at all, in most papers. As many of know, much of data conditioning and preparation is done by students and technicians with little formal guidance or documentation of their work.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s no way to sugarcoat it: management of raw experimental data and the analysis workflow is largely abysmal in the agricultural sciences, my academic home for 14 years. The process of cleaning, rearranging, filtering and preparing experimental data for downstream analyses is poorly described, if at all, in most papers. As many of know, much of data conditioning and preparation is done by students and technicians with little formal guidance or documentation of their work.&lt;/p&gt;
 &lt;p&gt;Since data sets can and should live on for decades - as part of long-term agriculture research, for meta-analyses or other uses, understanding how the raw data were parsed, cleaned and interpreted is important. Assumptions that made sense in the initial analysis may need re-evaluation later. Intermediate files can turn out to be useful. Organization of an analysis workflow can help researchers conduct their research in a regimented and reproducible way.&lt;/p&gt;
 &lt;p&gt;Here are a few concrete recommendations for improving workflow:&lt;/p&gt;
 &lt;ul&gt;
@@ -38,7 +38,7 @@
 &lt;li&gt;Avoid creating data that relies on a particular order of the observations (for instance, every 5th row is the mean of the previous 4 rows). One sorting step can ruin this. If a special order is needed, create a column which implements this.&lt;/li&gt;
 &lt;li&gt;Make a &amp;ldquo;codebook&amp;rdquo; documenting what each variable means, what scale it is on, expected levels or range of data. This can be one sheet of information - very brief, but handy. Giving variables short, descriptive names is also helpful.&lt;/li&gt;
 &lt;li&gt;Document what happens to a data set - and make that information available to others. I prefer to use a command line tool like R, but a text file could do. This is to ensure your work can be duplicated. I realize programming is not for everyone, but using a command-line program like R, Python, Julia, SAS, or even bash, is one of the best ways to document how information is pre-processed. Changes made through point-and-click interfaces like Excel are not reproducible because they are almost always incompletely documented or not documented at all. In addition, manual manipulation in a spreadsheet program also results in user-generated errors: misspellings, misclassifications, cut-and-paste errors and so on.&lt;/li&gt;
-&lt;li&gt;Accountability and follow up: attach people&#39;s names to their data and/or analysis.&lt;/li&gt;
+&lt;li&gt;Accountability and follow up: attach people&amp;rsquo;s names to their data and/or analysis.&lt;/li&gt;
 &lt;li&gt;Back up your data: across at least 2 locations over the life of your project. Version control make it possible for your work to be undone by accessing earlier versions. Git is one such tool, but saving intermediate file versions (often!) can also help. By providing descriptive comments at each new commit (a version), that can help downstream researchers sift through previous versions of the data. Also, some cloud storage providers (like Dropbox) offer options for data recovery.&lt;/li&gt;
 &lt;li&gt;Coordinate with project collaborators regarding workflow expectations and processes&lt;/li&gt;
 &lt;/ul&gt;
@@ -47,7 +47,7 @@
 .&lt;/p&gt;
 &lt;p&gt;For more information, see this 
 &lt;a href=&#34;https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;excellent article&lt;/em&gt;&lt;/a&gt;
- by Kara Woo and Karl Broman - it&#39;s short and gives easy-to-follow best practices when working with spreadsheets.&lt;/p&gt;
+ by Kara Woo and Karl Broman - it&amp;rsquo;s short and gives easy-to-follow best practices when working with spreadsheets.&lt;/p&gt;
 &lt;p&gt;Scott Long at the University of Indiana put together an 
 &lt;a href=&#34;https://www.ihrp.uic.edu/files/Workflow%20Slides%20JSLong%20110410.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;informative set of slides&lt;/a&gt;
  delving further into the principles of data workflow. Patrick Schloss, of the bioinformatics program &lt;em&gt;mothur&lt;/em&gt;, recently published an 

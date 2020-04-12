@@ -709,8 +709,8 @@ Dirk Eddelbuettel,
 ).</li>
 <li>Check your code with benchmarking!!!</li>
 </ol>
-<h4 id="lets-do-some-benchmarking">Let's do some benchmarking!</h4>
-<p>Important: don't (re)install &lsquo;compiler&rsquo;; you should just be able to load it in R v3.5 and later.</p>
+<h4 id="lets-do-some-benchmarking">Let&rsquo;s do some benchmarking!</h4>
+<p>Important: don&rsquo;t (re)install &lsquo;compiler&rsquo;; you should just be able to load it in R v3.5 and later.</p>
 <pre><code class="language-{r}">pck &lt;- c(&quot;pryr&quot;,&quot;microbenchmark&quot;, &quot;profvis&quot;, &quot;compiler&quot;, &quot;mnormt&quot;)
 invisible(lapply(pck, library, character.only = T))
 </code></pre>
@@ -844,7 +844,7 @@ browseURL(&quot;profile.html&quot;)
 </code></pre>
 <h5 id="explore-source-code">Explore source code</h5>
 <p><strong>How to access function source code</strong>
-(if you didn't write the function yourself)</p>
+(if you didn&rsquo;t write the function yourself)</p>
 <ol>
 <li>Type the function name (without parentheses): <code>eigen</code></li>
 <li>Find namespace and methods associated: <code>methods(&quot;princomp&quot;); getAnywhere(&quot;princomp.default&quot;)</code></li>
@@ -889,7 +889,7 @@ compare_size(x1) #between base R and pryr
 <ol>
 <li>read.csv(): specify known column types with colClasses.</li>
 <li>factor(): specify known levels with levels.</li>
-<li>cut(): don't generate labels with labels = FALSE if you don't need them, or, even better, use findInterval().</li>
+<li>cut(): don&rsquo;t generate labels with labels = FALSE if you don&rsquo;t need them, or, even better, use findInterval().</li>
 <li>unlist(x, use.names = FALSE) is much faster than unlist(x).</li>
 <li>interaction(): if you only need combinations that exist in the data, use drop = TRUE.</li>
 </ol>

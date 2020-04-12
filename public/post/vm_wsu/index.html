@@ -667,7 +667,7 @@ I had considered this before - enterprise deployment of RStudio server or Jupyte
     <div class="article-style">
       <h2 id="basic-info">Basic Info</h2>
 <p>I came back from PAG (Plant &amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.</p>
-<p>I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University's College of Agriculture, Human and Natural Resource Sciences (CAHNRS).</p>
+<p>I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University&rsquo;s College of Agriculture, Human and Natural Resource Sciences (CAHNRS).</p>
 <p><strong>Step 1:</strong>  Request a virtual machine. I used the 
 <a href="https://it.cahnrs.wsu.edu/service-catalog/vm-hosting/" target="_blank" rel="noopener"><strong>CAHNRS webform</strong></a>
 . I went with CentOS 7 - a Linux distribution that had been recommended to me as “full featured” (this remains to be seen). This step may take a few weeks.</p>
@@ -722,7 +722,7 @@ to:
 <p><code>nano &lt;file&gt;</code></p>
 <p>There’s also the vim editor, but use it your own risk. Here is the best description I have ever read of it:</p>
 <blockquote>
-<p>“If you want an outstanding free text editor and don't mind a seemingly vertical learning curve plus long days of pain and suffering while all your neural pathways are rewired, try Vim.”</p>
+<p>“If you want an outstanding free text editor and don&rsquo;t mind a seemingly vertical learning curve plus long days of pain and suffering while all your neural pathways are rewired, try Vim.”</p>
 </blockquote>
 <p><code>vi &lt;file&gt; </code></p>
 <p>To escape vim:</p>
@@ -809,7 +809,7 @@ sudo chcon --type=bin_t /usr/sbin/xrdp-sesman
 <p>First, find the process ID’s:</p>
 <pre><code>ps aux | grep vnc
 </code></pre>
-<p>The process ID's (pid) are located in the second column from the left. Kill the extra vnc pid's:</p>
+<p>The process ID&rsquo;s (pid) are located in the second column from the left. Kill the extra vnc pid&rsquo;s:</p>
 <pre><code>kill -9 &lt;pid&gt;
 </code></pre>
 <p>Find the associated files and delete them. I found there here:</p>
@@ -833,11 +833,11 @@ more xrdp-sesman.log
 <p>The most useful file is the messages file, but it’s very long, so just show the end:</p>
 <pre><code>sudo tail -55 messages
 </code></pre>
-<p>If you <em>really</em> want to see what's going on, watch the file in real time:</p>
+<p>If you <em>really</em> want to see what&rsquo;s going on, watch the file in real time:</p>
 <p><code>tail -f messages</code></p>
 <p>Ctlr-C to leave</p>
 <p>The firewalld file in the /var/log/ directory is stuffed with known, but currently unresolved bugs so it’s not very useful for diagnosing problems at this time.</p>
-<p>There's a number of remote desktop applications which can be used to access the VM. Windows RDP is easy to use and secure.</p>
+<p>There&rsquo;s a number of remote desktop applications which can be used to access the VM. Windows RDP is easy to use and secure.</p>
 <h3 id="run-r-in-remote-desktop">Run R in remote desktop</h3>
 <p>Start by installing R. WSU would not let me access the internet directly from the remote desktop internet browser, but I could through the SSH. So here are command line instructions:</p>
 <pre><code>sudo yum install epel-release
@@ -851,7 +851,7 @@ sudo yum install R -y
 sudo rpm -Uvh rstudio-1.1.442-x86_64.rpm
 </code></pre>
 <h2 id="other">Other</h2>
-<p>It's also helpful to have an office suite</p>
+<p>It&rsquo;s also helpful to have an office suite</p>
 <pre><code>sudo yum install libreoffice
 </code></pre>
 <p>Okay, all done! Go and solve the world’s problems!</p>

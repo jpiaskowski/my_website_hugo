@@ -50,7 +50,7 @@
  (please read this!!). Below is an even more bare &amp;lsquo;bare bones&amp;rsquo; outline.&lt;/p&gt;
 &lt;p&gt;One of the best solutions is to put your data in a database. This a great tool for large quantities of data that follow a regular format and are frequently updated - such as variety testing data.&lt;/p&gt;
 &lt;p&gt;However, most agricultural researchers are not so lucky to have such structured data. At the very least, maintaining research outputs in a shared and secured location is a good start. Archiving raw versions of data is paramount. This maybe never be needed, but if it is needed, there is not replacement if those data are lost. Requiring complete documentation from all research contributors on the data set generation and processing is also good. A &amp;ldquo;codebook&amp;rdquo; is another great tool. This is a file accompanying a data set that provides the name of each column, what data are present in that column, and optionally, the units of those data and the range of values expected. If a column contains contains numeric values btweeen 0 and 100, then others will know that 980 is probably an error.&lt;/p&gt;
-&lt;p&gt;Most of the researchers I work with were trained in a different era - when data was expensive to obtain and as a result, there was considerably less data to deal with. I count myself among this group. At that time, data management tools were less relevant because we had the time to comprehensively examine a data set for errors. Furthermore, data sharing and data reuse were not widely done. But, we all now those days are long over. We are now expected to process a large quantity of data rapidly, analyse it and eventually arhive it publicaly for possible reuse by someone else. Engaging in practices that enable quality data management is essential for participation in today&#39;s research environment.&lt;/p&gt;
+&lt;p&gt;Most of the researchers I work with were trained in a different era - when data was expensive to obtain and as a result, there was considerably less data to deal with. I count myself among this group. At that time, data management tools were less relevant because we had the time to comprehensively examine a data set for errors. Furthermore, data sharing and data reuse were not widely done. But, we all now those days are long over. We are now expected to process a large quantity of data rapidly, analyse it and eventually arhive it publicaly for possible reuse by someone else. Engaging in practices that enable quality data management is essential for participation in today&amp;rsquo;s research environment.&lt;/p&gt;
 </description>
     </item>
     
@@ -112,8 +112,8 @@ Dirk Eddelbuettel,
 ).&lt;/li&gt;
 &lt;li&gt;Check your code with benchmarking!!!&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;lets-do-some-benchmarking&#34;&gt;Let&#39;s do some benchmarking!&lt;/h4&gt;
-&lt;p&gt;Important: don&#39;t (re)install &amp;lsquo;compiler&amp;rsquo;; you should just be able to load it in R v3.5 and later.&lt;/p&gt;
+&lt;h4 id=&#34;lets-do-some-benchmarking&#34;&gt;Let&amp;rsquo;s do some benchmarking!&lt;/h4&gt;
+&lt;p&gt;Important: don&amp;rsquo;t (re)install &amp;lsquo;compiler&amp;rsquo;; you should just be able to load it in R v3.5 and later.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;pck &amp;lt;- c(&amp;quot;pryr&amp;quot;,&amp;quot;microbenchmark&amp;quot;, &amp;quot;profvis&amp;quot;, &amp;quot;compiler&amp;quot;, &amp;quot;mnormt&amp;quot;)
 invisible(lapply(pck, library, character.only = T))
 &lt;/code&gt;&lt;/pre&gt;
@@ -247,7 +247,7 @@ browseURL(&amp;quot;profile.html&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h5 id=&#34;explore-source-code&#34;&gt;Explore source code&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;How to access function source code&lt;/strong&gt;
-(if you didn&#39;t write the function yourself)&lt;/p&gt;
+(if you didn&amp;rsquo;t write the function yourself)&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Type the function name (without parentheses): &lt;code&gt;eigen&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Find namespace and methods associated: &lt;code&gt;methods(&amp;quot;princomp&amp;quot;); getAnywhere(&amp;quot;princomp.default&amp;quot;)&lt;/code&gt;&lt;/li&gt;
@@ -292,7 +292,7 @@ compare_size(x1) #between base R and pryr
 &lt;ol&gt;
 &lt;li&gt;read.csv(): specify known column types with colClasses.&lt;/li&gt;
 &lt;li&gt;factor(): specify known levels with levels.&lt;/li&gt;
-&lt;li&gt;cut(): don&#39;t generate labels with labels = FALSE if you don&#39;t need them, or, even better, use findInterval().&lt;/li&gt;
+&lt;li&gt;cut(): don&amp;rsquo;t generate labels with labels = FALSE if you don&amp;rsquo;t need them, or, even better, use findInterval().&lt;/li&gt;
 &lt;li&gt;unlist(x, use.names = FALSE) is much faster than unlist(x).&lt;/li&gt;
 &lt;li&gt;interaction(): if you only need combinations that exist in the data, use drop = TRUE.&lt;/li&gt;
 &lt;/ol&gt;
@@ -313,11 +313,11 @@ compare_size(x1) #between base R and pryr
 &lt;p&gt;This was the not the first nor the last messy data set with an unknown history that complicated my capacity to organize and analyse the information.&lt;/p&gt;
 &lt;p&gt;Other problems I encountered with poorly managed data sets:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Date sets with outliers removed based on individual&#39;s researchers assessment on what looked weird or not.&lt;/li&gt;
+&lt;li&gt;Date sets with outliers removed based on individual&amp;rsquo;s researchers assessment on what looked weird or not.&lt;/li&gt;
 &lt;li&gt;An Excel file several thousand lines with miscellaneous comments added every so often indicating a data point may be suspect.&lt;/li&gt;
 &lt;li&gt;An Excel file several sheets wide of the same information across different years - yet the column names did not match, and some sheets included summary stats for groups of data, using empty rows to differentiate groups (again, I think this was what going on&amp;hellip;).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;There&#39;s no way to sugarcoat it: management of raw experimental data and the analysis workflow is largely abysmal in the agricultural sciences, my academic home for 14 years. The process of cleaning, rearranging, filtering and preparing experimental data for downstream analyses is poorly described, if at all, in most papers. As many of know, much of data conditioning and preparation is done by students and technicians with little formal guidance or documentation of their work.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s no way to sugarcoat it: management of raw experimental data and the analysis workflow is largely abysmal in the agricultural sciences, my academic home for 14 years. The process of cleaning, rearranging, filtering and preparing experimental data for downstream analyses is poorly described, if at all, in most papers. As many of know, much of data conditioning and preparation is done by students and technicians with little formal guidance or documentation of their work.&lt;/p&gt;
 &lt;p&gt;Since data sets can and should live on for decades - as part of long-term agriculture research, for meta-analyses or other uses, understanding how the raw data were parsed, cleaned and interpreted is important. Assumptions that made sense in the initial analysis may need re-evaluation later. Intermediate files can turn out to be useful. Organization of an analysis workflow can help researchers conduct their research in a regimented and reproducible way.&lt;/p&gt;
 &lt;p&gt;Here are a few concrete recommendations for improving workflow:&lt;/p&gt;
 &lt;ul&gt;
@@ -330,7 +330,7 @@ compare_size(x1) #between base R and pryr
 &lt;li&gt;Avoid creating data that relies on a particular order of the observations (for instance, every 5th row is the mean of the previous 4 rows). One sorting step can ruin this. If a special order is needed, create a column which implements this.&lt;/li&gt;
 &lt;li&gt;Make a &amp;ldquo;codebook&amp;rdquo; documenting what each variable means, what scale it is on, expected levels or range of data. This can be one sheet of information - very brief, but handy. Giving variables short, descriptive names is also helpful.&lt;/li&gt;
 &lt;li&gt;Document what happens to a data set - and make that information available to others. I prefer to use a command line tool like R, but a text file could do. This is to ensure your work can be duplicated. I realize programming is not for everyone, but using a command-line program like R, Python, Julia, SAS, or even bash, is one of the best ways to document how information is pre-processed. Changes made through point-and-click interfaces like Excel are not reproducible because they are almost always incompletely documented or not documented at all. In addition, manual manipulation in a spreadsheet program also results in user-generated errors: misspellings, misclassifications, cut-and-paste errors and so on.&lt;/li&gt;
-&lt;li&gt;Accountability and follow up: attach people&#39;s names to their data and/or analysis.&lt;/li&gt;
+&lt;li&gt;Accountability and follow up: attach people&amp;rsquo;s names to their data and/or analysis.&lt;/li&gt;
 &lt;li&gt;Back up your data: across at least 2 locations over the life of your project. Version control make it possible for your work to be undone by accessing earlier versions. Git is one such tool, but saving intermediate file versions (often!) can also help. By providing descriptive comments at each new commit (a version), that can help downstream researchers sift through previous versions of the data. Also, some cloud storage providers (like Dropbox) offer options for data recovery.&lt;/li&gt;
 &lt;li&gt;Coordinate with project collaborators regarding workflow expectations and processes&lt;/li&gt;
 &lt;/ul&gt;
@@ -339,7 +339,7 @@ compare_size(x1) #between base R and pryr
 .&lt;/p&gt;
 &lt;p&gt;For more information, see this 
 &lt;a href=&#34;https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;excellent article&lt;/em&gt;&lt;/a&gt;
- by Kara Woo and Karl Broman - it&#39;s short and gives easy-to-follow best practices when working with spreadsheets.&lt;/p&gt;
+ by Kara Woo and Karl Broman - it&amp;rsquo;s short and gives easy-to-follow best practices when working with spreadsheets.&lt;/p&gt;
 &lt;p&gt;Scott Long at the University of Indiana put together an 
 &lt;a href=&#34;https://www.ihrp.uic.edu/files/Workflow%20Slides%20JSLong%20110410.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;informative set of slides&lt;/a&gt;
  delving further into the principles of data workflow. Patrick Schloss, of the bioinformatics program &lt;em&gt;mothur&lt;/em&gt;, recently published an 
@@ -355,7 +355,7 @@ compare_size(x1) #between base R and pryr
       <guid>/post/vm_wsu/</guid>
       <description>&lt;h2 id=&#34;basic-info&#34;&gt;Basic Info&lt;/h2&gt;
 &lt;p&gt;I came back from PAG (Plant &amp;amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.&lt;/p&gt;
-&lt;p&gt;I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University&#39;s College of Agriculture, Human and Natural Resource Sciences (CAHNRS).&lt;/p&gt;
+&lt;p&gt;I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University&amp;rsquo;s College of Agriculture, Human and Natural Resource Sciences (CAHNRS).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt;  Request a virtual machine. I used the 
 &lt;a href=&#34;https://it.cahnrs.wsu.edu/service-catalog/vm-hosting/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;CAHNRS webform&lt;/strong&gt;&lt;/a&gt;
 . I went with CentOS 7 - a Linux distribution that had been recommended to me as “full featured” (this remains to be seen). This step may take a few weeks.&lt;/p&gt;
@@ -410,7 +410,7 @@ to:
 &lt;p&gt;&lt;code&gt;nano &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;There’s also the vim editor, but use it your own risk. Here is the best description I have ever read of it:&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;“If you want an outstanding free text editor and don&#39;t mind a seemingly vertical learning curve plus long days of pain and suffering while all your neural pathways are rewired, try Vim.”&lt;/p&gt;
+&lt;p&gt;“If you want an outstanding free text editor and don&amp;rsquo;t mind a seemingly vertical learning curve plus long days of pain and suffering while all your neural pathways are rewired, try Vim.”&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;code&gt;vi &amp;lt;file&amp;gt; &lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;To escape vim:&lt;/p&gt;
@@ -497,7 +497,7 @@ sudo chcon --type=bin_t /usr/sbin/xrdp-sesman
 &lt;p&gt;First, find the process ID’s:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;ps aux | grep vnc
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The process ID&#39;s (pid) are located in the second column from the left. Kill the extra vnc pid&#39;s:&lt;/p&gt;
+&lt;p&gt;The process ID&amp;rsquo;s (pid) are located in the second column from the left. Kill the extra vnc pid&amp;rsquo;s:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;kill -9 &amp;lt;pid&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Find the associated files and delete them. I found there here:&lt;/p&gt;
@@ -521,11 +521,11 @@ more xrdp-sesman.log
 &lt;p&gt;The most useful file is the messages file, but it’s very long, so just show the end:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo tail -55 messages
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you &lt;em&gt;really&lt;/em&gt; want to see what&#39;s going on, watch the file in real time:&lt;/p&gt;
+&lt;p&gt;If you &lt;em&gt;really&lt;/em&gt; want to see what&amp;rsquo;s going on, watch the file in real time:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;tail -f messages&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Ctlr-C to leave&lt;/p&gt;
 &lt;p&gt;The firewalld file in the /var/log/ directory is stuffed with known, but currently unresolved bugs so it’s not very useful for diagnosing problems at this time.&lt;/p&gt;
-&lt;p&gt;There&#39;s a number of remote desktop applications which can be used to access the VM. Windows RDP is easy to use and secure.&lt;/p&gt;
+&lt;p&gt;There&amp;rsquo;s a number of remote desktop applications which can be used to access the VM. Windows RDP is easy to use and secure.&lt;/p&gt;
 &lt;h3 id=&#34;run-r-in-remote-desktop&#34;&gt;Run R in remote desktop&lt;/h3&gt;
 &lt;p&gt;Start by installing R. WSU would not let me access the internet directly from the remote desktop internet browser, but I could through the SSH. So here are command line instructions:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo yum install epel-release
@@ -539,7 +539,7 @@ sudo yum install R -y
 sudo rpm -Uvh rstudio-1.1.442-x86_64.rpm
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;other&#34;&gt;Other&lt;/h2&gt;
-&lt;p&gt;It&#39;s also helpful to have an office suite&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s also helpful to have an office suite&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;sudo yum install libreoffice
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Okay, all done! Go and solve the world’s problems!&lt;/p&gt;
@@ -554,10 +554,10 @@ sudo rpm -Uvh rstudio-1.1.442-x86_64.rpm
       <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
 &lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
 &lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;
- provided by R Consortium YouTube channel) I&#39;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
+ provided by R Consortium YouTube channel) I&amp;rsquo;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;The hex wall was just straight up cool. Here&#39;s the 
+&lt;p&gt;The hex wall was just straight up cool. Here&amp;rsquo;s the 
 &lt;a href=&#34;https://blog.mitchelloharawild.com/blog/user-2018-feature-wall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code for that&lt;/a&gt;
 .&lt;/p&gt;
 &lt;/li&gt;
@@ -600,7 +600,7 @@ These functions must be compiled each time a fresh R session is started. Buildin
 &lt;p&gt;Using an optimized matrix algebra library (not LAPACK) may be worth the time to install that. These libraries have optimized how data is accessed from disk.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Some rec&#39;s on how to handle large objects that reasonably don&#39;t fit in memory:&lt;/p&gt;
+&lt;p&gt;Some rec&amp;rsquo;s on how to handle large objects that reasonably don&amp;rsquo;t fit in memory:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;buy a computer with more memory (not always a reasonable option)&lt;/li&gt;
 &lt;li&gt;put your data in database and access with tools like dbplyr. One recommendation is MonetDBLite, a column-optimized database good for scientific applications for that reason.&lt;/li&gt;
@@ -629,10 +629,10 @@ enableJIT(1)
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.youtube.com/watch?v=5033jBHFiHE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Roger Peng discussed development of R&lt;/a&gt;
- as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&#39;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
+ as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&amp;rsquo;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Jenny Bryan&#39;s talk on 
+&lt;p&gt;Jenny Bryan&amp;rsquo;s talk on 
 &lt;a href=&#34;https://youtu.be/7oyiPBjLAWY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;Code Smells and Feels&amp;rdquo;&lt;/a&gt;
  provided a great introduction to how to identify and fix poorly written code. According to 
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;
@@ -646,8 +646,8 @@ Based on the book, &lt;em&gt;Refactoring: Improving the Design of Existing Code&
 &lt;li&gt;Avoid overly nested code (e.g. a long cascade of nested &amp;ldquo;if&amp;rdquo; statements)&lt;/li&gt;
 &lt;li&gt;Not every &amp;ldquo;if&amp;rdquo; needs an else&lt;/li&gt;
 &lt;li&gt;Consider implementing true object-oriented programming when working with classes&lt;/li&gt;
-&lt;li&gt;Don&#39;t&amp;rsquo; be afraid to write short helper functions
-There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&#39;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t&amp;rsquo; be afraid to write short helper functions
+There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&amp;rsquo;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -669,12 +669,12 @@ There was also a brief discussion on how to tell a person their code smells bad 
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.youtube.com/watch?v=XQmBcpQl8K8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Glue package&lt;/a&gt;
- - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&#39;s printf(), but glue makes this easier.&lt;/p&gt;
+ - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&amp;rsquo;s printf(), but glue makes this easier.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.youtube.com/watch?v=L6FawdEA3W0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fun talk on vwline package&lt;/a&gt;
- for creating variable-width lines, like in Menaurd&#39;s famous plot of Napolean&#39;s march through Russia.&lt;/p&gt;
+ for creating variable-width lines, like in Menaurd&amp;rsquo;s famous plot of Napolean&amp;rsquo;s march through Russia.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;./napoleon.jpg&#34; alt=&#34;napolean_plot&#34;&gt;&lt;/p&gt;

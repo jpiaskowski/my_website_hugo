@@ -20,10 +20,10 @@
       <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
 &lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
 &lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;
- provided by R Consortium YouTube channel) I&#39;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
+ provided by R Consortium YouTube channel) I&amp;rsquo;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;The hex wall was just straight up cool. Here&#39;s the 
+&lt;p&gt;The hex wall was just straight up cool. Here&amp;rsquo;s the 
 &lt;a href=&#34;https://blog.mitchelloharawild.com/blog/user-2018-feature-wall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code for that&lt;/a&gt;
 .&lt;/p&gt;
 &lt;/li&gt;
@@ -66,7 +66,7 @@ These functions must be compiled each time a fresh R session is started. Buildin
 &lt;p&gt;Using an optimized matrix algebra library (not LAPACK) may be worth the time to install that. These libraries have optimized how data is accessed from disk.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Some rec&#39;s on how to handle large objects that reasonably don&#39;t fit in memory:&lt;/p&gt;
+&lt;p&gt;Some rec&amp;rsquo;s on how to handle large objects that reasonably don&amp;rsquo;t fit in memory:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;buy a computer with more memory (not always a reasonable option)&lt;/li&gt;
 &lt;li&gt;put your data in database and access with tools like dbplyr. One recommendation is MonetDBLite, a column-optimized database good for scientific applications for that reason.&lt;/li&gt;
@@ -95,10 +95,10 @@ enableJIT(1)
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.youtube.com/watch?v=5033jBHFiHE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Roger Peng discussed development of R&lt;/a&gt;
- as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&#39;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
+ as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&amp;rsquo;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Jenny Bryan&#39;s talk on 
+&lt;p&gt;Jenny Bryan&amp;rsquo;s talk on 
 &lt;a href=&#34;https://youtu.be/7oyiPBjLAWY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;Code Smells and Feels&amp;rdquo;&lt;/a&gt;
  provided a great introduction to how to identify and fix poorly written code. According to 
 &lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;
@@ -112,8 +112,8 @@ Based on the book, &lt;em&gt;Refactoring: Improving the Design of Existing Code&
 &lt;li&gt;Avoid overly nested code (e.g. a long cascade of nested &amp;ldquo;if&amp;rdquo; statements)&lt;/li&gt;
 &lt;li&gt;Not every &amp;ldquo;if&amp;rdquo; needs an else&lt;/li&gt;
 &lt;li&gt;Consider implementing true object-oriented programming when working with classes&lt;/li&gt;
-&lt;li&gt;Don&#39;t&amp;rsquo; be afraid to write short helper functions
-There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&#39;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t&amp;rsquo; be afraid to write short helper functions
+There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&amp;rsquo;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -135,12 +135,12 @@ There was also a brief discussion on how to tell a person their code smells bad 
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.youtube.com/watch?v=XQmBcpQl8K8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Glue package&lt;/a&gt;
- - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&#39;s printf(), but glue makes this easier.&lt;/p&gt;
+ - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&amp;rsquo;s printf(), but glue makes this easier.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://www.youtube.com/watch?v=L6FawdEA3W0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fun talk on vwline package&lt;/a&gt;
- for creating variable-width lines, like in Menaurd&#39;s famous plot of Napolean&#39;s march through Russia.&lt;/p&gt;
+ for creating variable-width lines, like in Menaurd&amp;rsquo;s famous plot of Napolean&amp;rsquo;s march through Russia.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;./napoleon.jpg&#34; alt=&#34;napolean_plot&#34;&gt;&lt;/p&gt;

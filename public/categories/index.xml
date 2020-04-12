@@ -12,21 +12,5 @@
       <link>/categories/</link>
     </image>
     
-    <item>
-      <title>R language</title>
-      <link>/categories/r-language/</link>
-      <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
-      <guid>/categories/r-language/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>workflow</title>
-      <link>/categories/workflow/</link>
-      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
-      <guid>/categories/workflow/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

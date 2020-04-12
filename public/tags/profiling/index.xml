@@ -70,8 +70,8 @@ Dirk Eddelbuettel,
 ).&lt;/li&gt;
 &lt;li&gt;Check your code with benchmarking!!!&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;lets-do-some-benchmarking&#34;&gt;Let&#39;s do some benchmarking!&lt;/h4&gt;
-&lt;p&gt;Important: don&#39;t (re)install &amp;lsquo;compiler&amp;rsquo;; you should just be able to load it in R v3.5 and later.&lt;/p&gt;
+&lt;h4 id=&#34;lets-do-some-benchmarking&#34;&gt;Let&amp;rsquo;s do some benchmarking!&lt;/h4&gt;
+&lt;p&gt;Important: don&amp;rsquo;t (re)install &amp;lsquo;compiler&amp;rsquo;; you should just be able to load it in R v3.5 and later.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-{r}&#34;&gt;pck &amp;lt;- c(&amp;quot;pryr&amp;quot;,&amp;quot;microbenchmark&amp;quot;, &amp;quot;profvis&amp;quot;, &amp;quot;compiler&amp;quot;, &amp;quot;mnormt&amp;quot;)
 invisible(lapply(pck, library, character.only = T))
 &lt;/code&gt;&lt;/pre&gt;
@@ -205,7 +205,7 @@ browseURL(&amp;quot;profile.html&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h5 id=&#34;explore-source-code&#34;&gt;Explore source code&lt;/h5&gt;
 &lt;p&gt;&lt;strong&gt;How to access function source code&lt;/strong&gt;
-(if you didn&#39;t write the function yourself)&lt;/p&gt;
+(if you didn&amp;rsquo;t write the function yourself)&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Type the function name (without parentheses): &lt;code&gt;eigen&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Find namespace and methods associated: &lt;code&gt;methods(&amp;quot;princomp&amp;quot;); getAnywhere(&amp;quot;princomp.default&amp;quot;)&lt;/code&gt;&lt;/li&gt;
@@ -250,7 +250,7 @@ compare_size(x1) #between base R and pryr
 &lt;ol&gt;
 &lt;li&gt;read.csv(): specify known column types with colClasses.&lt;/li&gt;
 &lt;li&gt;factor(): specify known levels with levels.&lt;/li&gt;
-&lt;li&gt;cut(): don&#39;t generate labels with labels = FALSE if you don&#39;t need them, or, even better, use findInterval().&lt;/li&gt;
+&lt;li&gt;cut(): don&amp;rsquo;t generate labels with labels = FALSE if you don&amp;rsquo;t need them, or, even better, use findInterval().&lt;/li&gt;
 &lt;li&gt;unlist(x, use.names = FALSE) is much faster than unlist(x).&lt;/li&gt;
 &lt;li&gt;interaction(): if you only need combinations that exist in the data, use drop = TRUE.&lt;/li&gt;
 &lt;/ol&gt;
