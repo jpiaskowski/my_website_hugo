@@ -313,6 +313,16 @@
   </url>
   
   <url>
+    <loc>/tags/rcpp/</loc>
+    <lastmod>2018-07-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/user_2018/</loc>
+    <lastmod>2018-07-18T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url>
@@ -348,22 +358,12 @@
   </url>
   
   <url>
-    <loc>/tags/rcpp/</loc>
-    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tutorials/</loc>
     <lastmod>2018-03-18T10:50:02-07:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/virtual-machine/</loc>
-    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/user_2018/</loc>
     <lastmod>2018-03-18T10:50:02-07:00</lastmod>
   </url>
   

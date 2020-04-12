@@ -2,7 +2,7 @@
 title:  "What I learned at the UseR! conference"
 authors:
 - admin
-date:   2018-03-18 10:50:02 -0700
+date:   2018-07-18 10:50:02 -0700
 draft: false
 featured: false
 diagram: true

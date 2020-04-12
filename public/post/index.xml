@@ -349,6 +349,141 @@ compare_size(x1) #between base R and pryr
     </item>
     
     <item>
+      <title>What I learned at the UseR! conference</title>
+      <link>/post/user_2018/</link>
+      <pubDate>Wed, 18 Jul 2018 10:50:02 -0700</pubDate>
+      <guid>/post/user_2018/</guid>
+      <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
+&lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
+&lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;
+ provided by R Consortium YouTube channel) I&amp;rsquo;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The hex wall was just straight up cool. Here&amp;rsquo;s the 
+&lt;a href=&#34;https://blog.mitchelloharawild.com/blog/user-2018-feature-wall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code for that&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I participated in a half day workshop on Rcpp (
+&lt;a href=&#34;https://www.youtube.com/watch?v=FZ0LcJbxPF0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+ and 
+&lt;a href=&#34;https://www.youtube.com/watch?v=EXGhR-kyjRg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+). This continues to be a very popular suite of packages to help users increase the speed and efficiency of their programs. I say &amp;ldquo;suite&amp;rdquo; because in addition to 3 major functions provided by Rcpp, a number of accessory packages have been written to extend its functionality. Several of these accessory packages essentially are providing templates for invoking C++ commands without having to actually know C. Dirk Eddelbuttel introduced the 3 major functions for extending R with C/C++:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;evalCpp: for evaluating ad hoc anonymous expressions&lt;/li&gt;
+&lt;li&gt;cppFunction: standard function written in C/C++ and invoked in a program&lt;/li&gt;
+&lt;li&gt;sourceCpp: source C/C++ objects &amp;amp; functions from external file
+These functions must be compiled each time a fresh R session is started. Building an Rcpp package avoids this and is easy to do:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;Rcpp.package.skeleton(&amp;quot;mypackage&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;The other useful workshop I participated in was methods for speeding up R, delivered by Thomas Lumley, formerly of UW and now of U of Auckland. He focused on a few major recommendations:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Vectorise whenever possible. This also implies that you know your vectorised functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lapply/apply/sapply/vapply/tapply&lt;/li&gt;
+&lt;li&gt;rowMeans, rowSums&lt;/li&gt;
+&lt;li&gt;colMeans, colSums&lt;/li&gt;
+&lt;li&gt;Consider parallelised functions: mclapply&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Base functions are often designed to handle wildly different input. It may make sense in some instances to rewrite functions, making assumptions (e.g. about the input data) that fit your circumstances.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data frames should be avoided if possible - they are expensive to create and often copied in whole when modified.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using an optimized matrix algebra library (not LAPACK) may be worth the time to install that. These libraries have optimized how data is accessed from disk.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Some rec&amp;rsquo;s on how to handle large objects that reasonably don&amp;rsquo;t fit in memory:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;buy a computer with more memory (not always a reasonable option)&lt;/li&gt;
+&lt;li&gt;put your data in database and access with tools like dbplyr. One recommendation is MonetDBLite, a column-optimized database good for scientific applications for that reason.&lt;/li&gt;
+&lt;li&gt;Use special file formats for bigger data sets: HDF5, GitLFS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;But, first and foremost, he emphasized the use of profiling tools and benchmarking functions. find out where the bottleneck in your program actually are! And be careful to not waste too much time on optimizing code - time saved may not be worth time invested. R is automatically running a JIT (just in time) compiler that makes code run faster each time it is called. It makes sense to turn this off while doing benchmarking:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;enableJIT(0)
+
+# to turn back on:
+
+enableJIT(1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Course notes available on his github repo 
+&lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UseRfasteR&lt;/a&gt;
+.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Excellent keynotes all-around. 
+&lt;a href=&#34;https://www.youtube.com/watch?v=27FxbDtCFoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Steph da Silva&lt;/a&gt;
+ emphasized the importance of &lt;em&gt;community&lt;/em&gt; in open-source community - what that can look like, how to contribute  how your contribution helps develop camaraderie to support sharing of code and development of analysts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=5033jBHFiHE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Roger Peng discussed development of R&lt;/a&gt;
+ as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&amp;rsquo;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Jenny Bryan&amp;rsquo;s talk on 
+&lt;a href=&#34;https://youtu.be/7oyiPBjLAWY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;Code Smells and Feels&amp;rdquo;&lt;/a&gt;
+ provided a great introduction to how to identify and fix poorly written code. According to 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;
+, &amp;ldquo;Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning. Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.&amp;rdquo;
+Based on the book, &lt;em&gt;Refactoring: Improving the Design of Existing Code&lt;/em&gt;, she gave a few simple directives to create simple code that is easy to understand, debug, and maintain. Hooray!&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Hoist entry or exit conditionals to the top of functions&lt;/li&gt;
+&lt;li&gt;Use functions as much as possible&lt;/li&gt;
+&lt;li&gt;Avoid overly nested code (e.g. a long cascade of nested &amp;ldquo;if&amp;rdquo; statements)&lt;/li&gt;
+&lt;li&gt;Not every &amp;ldquo;if&amp;rdquo; needs an else&lt;/li&gt;
+&lt;li&gt;Consider implementing true object-oriented programming when working with classes&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t&amp;rsquo; be afraid to write short helper functions
+There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&amp;rsquo;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Excellent set of talks on data handling and workflow. In particular, 
+&lt;a href=&#34;https://www.youtube.com/watch?v=GrqM2VqIQ20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a talk on the website builder&lt;/a&gt;
+ for documenting data analysis called 
+&lt;a href=&#34;https://github.com/jdblischak/workflowr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;workflowr&amp;rdquo;&lt;/a&gt;
+. 
+&lt;a href=&#34;https://www.youtube.com/watch?v=IYfZ6kd7aT0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Discussion on consistent workflows&lt;/a&gt;
+, recommended conventions for naming variables, creating consistent set of directories for each project, using version controls. Obvious to a data scientist, but rarely used by regular scientist. This resonates strongly with me due to ongoing issues with data management in the agricultural sciences.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=3Bu7QUxzIbA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Excellent talk on precision in R&lt;/a&gt;
+. Use .Machine to find out more, but basically R is only good to 16 decimal points. Subtraction of one number similar to it can result in cancellation where the result essentially slides to zero, losing precision. Ways to avoid this include working in log space, perhaps adding a zero if needed: log(x + 1), -log(1 - exp(x)). Also, there is the 
+&lt;a href=&#34;https://cran.r-project.org/web/packages/Rmpfr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rmpfr package&lt;/a&gt;
+.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=XQmBcpQl8K8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Glue package&lt;/a&gt;
+ - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&amp;rsquo;s printf(), but glue makes this easier.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=L6FawdEA3W0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fun talk on vwline package&lt;/a&gt;
+ for creating variable-width lines, like in Menaurd&amp;rsquo;s famous plot of Napolean&amp;rsquo;s march through Russia.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;./napoleon.jpg&#34; alt=&#34;napolean_plot&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob</title>
       <link>/post/vm_wsu/</link>
       <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
@@ -543,141 +678,6 @@ sudo rpm -Uvh rstudio-1.1.442-x86_64.rpm
 &lt;pre&gt;&lt;code&gt;sudo yum install libreoffice
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Okay, all done! Go and solve the world’s problems!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>What I learned at the UseR! conference</title>
-      <link>/post/user_2018/</link>
-      <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
-      <guid>/post/user_2018/</guid>
-      <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
-&lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
-&lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;
- provided by R Consortium YouTube channel) I&amp;rsquo;ll skip loads of it and just focus on the top 10 cool stuff.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;The hex wall was just straight up cool. Here&amp;rsquo;s the 
-&lt;a href=&#34;https://blog.mitchelloharawild.com/blog/user-2018-feature-wall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code for that&lt;/a&gt;
-.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;I participated in a half day workshop on Rcpp (
-&lt;a href=&#34;https://www.youtube.com/watch?v=FZ0LcJbxPF0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
- and 
-&lt;a href=&#34;https://www.youtube.com/watch?v=EXGhR-kyjRg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
-). This continues to be a very popular suite of packages to help users increase the speed and efficiency of their programs. I say &amp;ldquo;suite&amp;rdquo; because in addition to 3 major functions provided by Rcpp, a number of accessory packages have been written to extend its functionality. Several of these accessory packages essentially are providing templates for invoking C++ commands without having to actually know C. Dirk Eddelbuttel introduced the 3 major functions for extending R with C/C++:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;evalCpp: for evaluating ad hoc anonymous expressions&lt;/li&gt;
-&lt;li&gt;cppFunction: standard function written in C/C++ and invoked in a program&lt;/li&gt;
-&lt;li&gt;sourceCpp: source C/C++ objects &amp;amp; functions from external file
-These functions must be compiled each time a fresh R session is started. Building an Rcpp package avoids this and is easy to do:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;Rcpp.package.skeleton(&amp;quot;mypackage&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol&gt;
-&lt;li&gt;The other useful workshop I participated in was methods for speeding up R, delivered by Thomas Lumley, formerly of UW and now of U of Auckland. He focused on a few major recommendations:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Vectorise whenever possible. This also implies that you know your vectorised functions:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;lapply/apply/sapply/vapply/tapply&lt;/li&gt;
-&lt;li&gt;rowMeans, rowSums&lt;/li&gt;
-&lt;li&gt;colMeans, colSums&lt;/li&gt;
-&lt;li&gt;Consider parallelised functions: mclapply&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Base functions are often designed to handle wildly different input. It may make sense in some instances to rewrite functions, making assumptions (e.g. about the input data) that fit your circumstances.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Data frames should be avoided if possible - they are expensive to create and often copied in whole when modified.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Using an optimized matrix algebra library (not LAPACK) may be worth the time to install that. These libraries have optimized how data is accessed from disk.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Some rec&amp;rsquo;s on how to handle large objects that reasonably don&amp;rsquo;t fit in memory:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;buy a computer with more memory (not always a reasonable option)&lt;/li&gt;
-&lt;li&gt;put your data in database and access with tools like dbplyr. One recommendation is MonetDBLite, a column-optimized database good for scientific applications for that reason.&lt;/li&gt;
-&lt;li&gt;Use special file formats for bigger data sets: HDF5, GitLFS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;But, first and foremost, he emphasized the use of profiling tools and benchmarking functions. find out where the bottleneck in your program actually are! And be careful to not waste too much time on optimizing code - time saved may not be worth time invested. R is automatically running a JIT (just in time) compiler that makes code run faster each time it is called. It makes sense to turn this off while doing benchmarking:&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;enableJIT(0)
-
-# to turn back on:
-
-enableJIT(1)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Course notes available on his github repo 
-&lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UseRfasteR&lt;/a&gt;
-.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Excellent keynotes all-around. 
-&lt;a href=&#34;https://www.youtube.com/watch?v=27FxbDtCFoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Steph da Silva&lt;/a&gt;
- emphasized the importance of &lt;em&gt;community&lt;/em&gt; in open-source community - what that can look like, how to contribute  how your contribution helps develop camaraderie to support sharing of code and development of analysts.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.youtube.com/watch?v=5033jBHFiHE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Roger Peng discussed development of R&lt;/a&gt;
- as it strives to fit both programmers and regular ole scientists analyzing their data. He summarized his own talk quite well in this essay. He described the rise of &amp;ldquo;worse is better&amp;rdquo;, that is, the simplying of options in R to make it easier for new users to learn. The tidyverse is considered such an example. However, as a long-time user, I find dplyr&amp;rsquo;s group-and-summarise options (among others) to be incredibly handy. And I will never go back to using reshape() now that we have gather() and spread(). Even reshape2() is a massive improvement in usability!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Jenny Bryan&amp;rsquo;s talk on 
-&lt;a href=&#34;https://youtu.be/7oyiPBjLAWY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;Code Smells and Feels&amp;rdquo;&lt;/a&gt;
- provided a great introduction to how to identify and fix poorly written code. According to 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Code_smell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;
-, &amp;ldquo;Code smells are usually not bugs; they are not technically incorrect and do not prevent the program from functioning. Instead, they indicate weaknesses in design that may slow down development or increase the risk of bugs or failures in the future.&amp;rdquo;
-Based on the book, &lt;em&gt;Refactoring: Improving the Design of Existing Code&lt;/em&gt;, she gave a few simple directives to create simple code that is easy to understand, debug, and maintain. Hooray!&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;Hoist entry or exit conditionals to the top of functions&lt;/li&gt;
-&lt;li&gt;Use functions as much as possible&lt;/li&gt;
-&lt;li&gt;Avoid overly nested code (e.g. a long cascade of nested &amp;ldquo;if&amp;rdquo; statements)&lt;/li&gt;
-&lt;li&gt;Not every &amp;ldquo;if&amp;rdquo; needs an else&lt;/li&gt;
-&lt;li&gt;Consider implementing true object-oriented programming when working with classes&lt;/li&gt;
-&lt;li&gt;Don&amp;rsquo;t&amp;rsquo; be afraid to write short helper functions
-There was also a brief discussion on how to tell a person their code smells bad (&amp;ldquo;that&amp;rsquo;s what we have funny names like &amp;lsquo;excessive use of literals&amp;rsquo;&amp;quot;).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Excellent set of talks on data handling and workflow. In particular, 
-&lt;a href=&#34;https://www.youtube.com/watch?v=GrqM2VqIQ20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;a talk on the website builder&lt;/a&gt;
- for documenting data analysis called 
-&lt;a href=&#34;https://github.com/jdblischak/workflowr&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;workflowr&amp;rdquo;&lt;/a&gt;
-. 
-&lt;a href=&#34;https://www.youtube.com/watch?v=IYfZ6kd7aT0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Discussion on consistent workflows&lt;/a&gt;
-, recommended conventions for naming variables, creating consistent set of directories for each project, using version controls. Obvious to a data scientist, but rarely used by regular scientist. This resonates strongly with me due to ongoing issues with data management in the agricultural sciences.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.youtube.com/watch?v=3Bu7QUxzIbA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Excellent talk on precision in R&lt;/a&gt;
-. Use .Machine to find out more, but basically R is only good to 16 decimal points. Subtraction of one number similar to it can result in cancellation where the result essentially slides to zero, losing precision. Ways to avoid this include working in log space, perhaps adding a zero if needed: log(x + 1), -log(1 - exp(x)). Also, there is the 
-&lt;a href=&#34;https://cran.r-project.org/web/packages/Rmpfr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rmpfr package&lt;/a&gt;
-.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.youtube.com/watch?v=XQmBcpQl8K8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Glue package&lt;/a&gt;
- - for &amp;ldquo;gluing&amp;rdquo; strings to data, like string interpolation in bash (&amp;ldquo;$&amp;rdquo;) or python f&amp;rdquo;{&amp;hellip;}&amp;quot;. R does have sprintf() with with identical functionality to C&amp;rsquo;s printf(), but glue makes this easier.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://www.youtube.com/watch?v=L6FawdEA3W0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fun talk on vwline package&lt;/a&gt;
- for creating variable-width lines, like in Menaurd&amp;rsquo;s famous plot of Napolean&amp;rsquo;s march through Russia.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;./napoleon.jpg&#34; alt=&#34;napolean_plot&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
