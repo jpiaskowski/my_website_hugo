@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 10  # Order that this section will appear.
 
-title = "Rewind"
+title = "Welcome_"
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 hero_media = "simple_rewind.png"
@@ -40,5 +40,5 @@ hero_media = "simple_rewind.png"
 
 +++
 
-Welcome_
+
 

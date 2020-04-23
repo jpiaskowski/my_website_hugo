@@ -7,16 +7,18 @@ menu:
   recipe:
 summary: A detailed set of instructions on how to make macarons
 image:
-  caption: 'Image credit: **Pixelated Crumb**'
+  caption: 'Image credit: **[Pixelated Crumb](http://pixelatedcrumb.com/tag/macaron/)**'
   placement: 3
-title: recipe
+title: instructions
 toc: false
 type: docs
 weight: 2 
 ---
 
 
-*Recipe from [BBC Good Food magazine]()*
+*Recipe from [BBC Good Food Magazine](https://www.bbcgoodfood.com/recipes/macarons)*
+
+#### Recipe 
 
 170 g ground almond flour  
 160 g powdered sugar   
