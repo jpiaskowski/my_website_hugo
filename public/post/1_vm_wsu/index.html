@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Julia Piaskowski">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Basic Info I came back from PAG (Plant &amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.
+I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/1_vm_wsu/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu492c46c2c0e0b3b4bdcf40ffbdb718f2_16688_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu492c46c2c0e0b3b4bdcf40ffbdb718f2_16688_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/1_vm_wsu/">
+
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@seedsandbreeds">
+  <meta property="twitter:creator" content="@seedsandbreeds">
+  
+  <meta property="og:site_name" content="Julia Piaskowski">
+  <meta property="og:url" content="/post/1_vm_wsu/">
+  <meta property="og:title" content="How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob | Julia Piaskowski">
+  <meta property="og:description" content="Basic Info I came back from PAG (Plant &amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.
+I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me."><meta property="og:image" content="/post/1_vm_wsu/featured.png">
+  <meta property="twitter:image" content="/post/1_vm_wsu/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2018-03-18T10:50:02-07:00">
+    
+    <meta property="article:modified_time" content="2018-03-18T10:50:02-07:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/1_vm_wsu/"
+  },
+  "headline": "How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob",
+  
+  "image": [
+    "/post/1_vm_wsu/featured.png"
+  ],
+  
+  "datePublished": "2018-03-18T10:50:02-07:00",
+  "dateModified": "2018-03-18T10:50:02-07:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Julia Piaskowski"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Julia Piaskowski",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "img//"
+    }
+  },
+  "description": "Basic Info I came back from PAG (Plant \u0026amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.\nI had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob | Julia Piaskowski</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Julia Piaskowski</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Julia Piaskowski</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#hero"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/tutorials/"><span>Tutorials</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/admin/">Julia Piaskowski</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 18, 2018
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categories/workflow/">workflow</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header container-fluid featured-image-wrapper mt-4 mb-4" style="max-width: 1280px; max-height: 1024px;">
+  <div style="position: relative">
+    <img src="/post/1_vm_wsu/featured.png" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="basic-info">Basic Info</h2>
+<p>I came back from PAG (Plant &amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.</p>
+<p>I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University&rsquo;s College of Agriculture, Human and Natural Resource Sciences (CAHNRS).</p>
+<p><strong>Step 1:</strong>  Request a virtual machine. I used the 
+<a href="https://it.cahnrs.wsu.edu/service-catalog/vm-hosting/" target="_blank" rel="noopener"><strong>CAHNRS webform</strong></a>
+. I went with CentOS 7 - a Linux distribution that had been recommended to me as “full featured” (this remains to be seen). This step may take a few weeks.</p>
+<p>It helps to know exactly what you want to do so CAHNRS IT can properly set up the VM and “rules” (exceptions to their standing rules) to allow you to do the work you want. Running RStudio server means having at least one port open. The RStudio Server default port is 8787 (although than can be easily changed). Remote desktop needs port 3350 open. Jupyter Hub will have its own conventions - all described in their documentation. I recommend you consult the documentation for what you want <em>before</em> ordering a VM.</p>
+<p><strong>Step 2:</strong> Download the 
+<a href="https://its.wsu.edu/ssl-vpn/" target="_blank" rel="noopener"><strong>WSU VPN client</strong></a>
+. Whoever is the admin will need have the WSU SSLVPN to tunnel in through a secure connection in order to do any work remotely. This is the probably the easiest step of the entire process. Who doesn’t love point-and-click installations?</p>
+<p><strong>Step 3:</strong> Download software for SSH. Initially, you will need an SSH program to connect through secure, encrypted tunnel. 
+<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank" rel="noopener"><strong>Putty</strong></a>
+ is a popular option. I like secure shell, which I found 
+<a href="https://www.wm.edu/offices/it/services/software/licensedsoftware/webeditingsftp/sshsecureshell/index.php" target="_blank" rel="noopener"><strong>here</strong></a>
+. This is actually a rather convenient way to manage the VM, so its utility will likely stretch past the setup phase.</p>
+<h2 id="general-linux-notes">General Linux notes:</h2>
+<p>This is CentOS, an alternative distribution to its more popular relative, Ubuntu. While most commands are the same across Linux distributions, some things are a little different. FYI, Centos is similar to .rhel and Red Hat if you are combing forums for help.</p>
+<p>Check out these 
+<a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard" target="_blank" rel="noopener"><strong>standards for Linux filesystems</strong></a>
+. It will help you understand how the machine is organized. Don’t spend too much time here; it’s more of a reference than pleasure reading.</p>
+<p>
+<a href="https://www.centos.org/docs/5/" target="_blank" rel="noopener"><strong>The Centos documentation</strong></a>
+ can be helpful, as well.</p>
+<h3 id="miscellaneous-useful-commands">Miscellaneous useful commands:</h3>
+<p>Most of the command listed here for VM setup require root privileges, which can be accomplished with “sudo”. You’ll find you need to be root 98% of time during VM setup, so do this:</p>
+<p><code>sudo su</code></p>
+<p>This changes the console from:
+<code>$ </code>
+to:
+<code>#   </code></p>
+<p>Use Ctrl-D to leave root. And be careful when you are root!</p>
+<p>Print current working directory:</p>
+<p><code>pwd</code></p>
+<p>Change the working directory to go up a level:</p>
+<p><code>cd .. </code></p>
+<p>Absolute path (will work everywhere):</p>
+<p><code>$ cd /&lt;path&gt;</code></p>
+<p>Relative path (only sees child directories):</p>
+<p><code>cd &lt;path&gt;</code></p>
+<p>This produces a long list of all files and directories in your current working directory:</p>
+<p><code>ll -a</code></p>
+<p>To see options associated with a particular command:</p>
+<p><code>&lt;command&gt; --help</code></p>
+<p>To remove a single file:</p>
+<p><code>rm &lt;your_file.txt&gt;</code></p>
+<p>To remove an entire directory:<br>
+‘r’ does it recursively<br>
+‘f’ will do it without asking again (it skips the step that is essentially asking “are you sure you want to delete this????”)</p>
+<p><code>rm -rf &lt;your_directory&gt;</code></p>
+<p>To install a piece of software for all users:</p>
+<p><code>sudo yum install &lt;library&gt;</code></p>
+<p>To view files:</p>
+<p><code>more &lt;file&gt;</code></p>
+<p>To edit files. This command requires sudo for most of the files you will need to look at for VM setup.</p>
+<p><code>nano &lt;file&gt;</code></p>
+<p>There’s also the vim editor, but use it your own risk. Here is the best description I have ever read of it:</p>
+<blockquote>
+<p>“If you want an outstanding free text editor and don&rsquo;t mind a seemingly vertical learning curve plus long days of pain and suffering while all your neural pathways are rewired, try Vim.”</p>
+</blockquote>
+<p><code>vi &lt;file&gt; </code></p>
+<p>To escape vim:</p>
+<p><code> :q </code></p>
+<p>Make a new directory:</p>
+<p><code>mkdir &lt;dir_name&gt;</code></p>
+<p>Setting your VM to the correct timezone (Pacific in this case). It is helpful to have the correct time when you are inspecting the logs during troubleshooting:</p>
+<pre><code>timedatectl set-timezone 'America/Los_Angeles'
+</code></pre>
+<h3 id="managing-users">Managing Users</h3>
+<p>It is important to think thru how to organize the users into groups and create folders with shared permissions in order to enable collaboration.</p>
+<p>Below are some common commands. Note that they all require root or sudo access. Centos provides excellent 
+<a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/s1-users-tools.html" target="_blank" rel="noopener"><strong>documentation</strong></a>
+ on this.</p>
+<p>Add a new user (the second option adds a new user to an existing group):<br>
+<code>useradd &lt;username&gt;</code><br>
+<code>useradd &lt;username&gt; -g &lt;groupname&gt;</code></p>
+<p>Set user password:<br>
+<code>passwd &lt;username&gt;</code></p>
+<p>Add a group:<br>
+<code>groupadd &lt;groupname&gt;</code></p>
+<p>Add an existing user to an existing group:<br>
+<code>sudo usermod -a -G &lt;groupname&gt; &lt;username&gt;</code></p>
+<p>Enable file ownership by a group:<br>
+<code>chown :&lt;groupname&gt; &lt;path/to/directory&gt;</code></p>
+<p>Enable file ownership by a user:<br>
+<code>chown :&lt;username&gt; &lt;path/to/directory&gt;</code></p>
+<p>Delete a user:<br>
+<code>userdel &lt;username&gt;</code></p>
+<p>Link directories:<br>
+<code>ln -s &lt;path/to/file&gt; &lt;path/to/link&gt;</code></p>
+<h2 id="if-you-want-to-run-remote-desktop">If you want to run remote desktop:</h2>
+<p>There are other desktop environments, but Gnome is a popular one, so why not?</p>
+<p>See what is available:</p>
+<pre><code>yum group list
+</code></pre>
+<p>Install Gnome desktop environment:</p>
+<pre><code>sudo yum install gnome
+sudo yum install gnome desktop environment
+</code></pre>
+<p>Check that it is running</p>
+<pre><code>ps -aux | grep gnome
+</code></pre>
+<p>Install and configure the EPEL repository:</p>
+<pre><code>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</code></pre>
+<p>Add the nux repository:</p>
+<pre><code>sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
+</code></pre>
+<p>Install xrdp:</p>
+<pre><code>sudo yum -y install xrdp tigervnc*
+</code></pre>
+<p>You’ll need to start xrdp and xrdp-sesman (“session manager”) as a service (so they are always running) and enable them both to autostart:</p>
+<pre><code>sudo systemctl start xrdp
+sudo systemctl enable xrdp
+sudo systemctl start xrdp-sesman
+sudo systemctl enable xrdp-sesman
+</code></pre>
+<p>And check:</p>
+<pre><code>sudo systemctl status xrdp
+sudo systemctl status xrdp-sesman
+</code></pre>
+<p>These should indicate that xrdp and xrdp-sesman are <em>active</em>.</p>
+<p>Open a port to allow remote desktop connections:</p>
+<pre><code>sudo firewall-cmd --permanent --zone=public --add-port=3389/tcp
+sudo firewall-cmd --reload
+</code></pre>
+<p>Configure SELinux:</p>
+<pre><code>sudo chcon --type=bin_t /usr/sbin/xrdp
+sudo chcon --type=bin_t /usr/sbin/xrdp-sesman
+</code></pre>
+<p>And check that the port is open:</p>
+<pre><code>netstat -plan | grep xrdp
+</code></pre>
+<p>Next, vnc has to be started. It is tied to a user, so get out of root if you are there (and don’t use sudo).</p>
+<p>Set a password:</p>
+<pre><code>vncpasswd -&lt;user&gt;
+</code></pre>
+<p>It will return a prompt, asking you for a password. This is what you will use for remote desktop. You can definitely skip the  step of having a read-only password by answering “n” for no. (It’s unclear to me why anyone would want a password for that as opposed to whole new user account with read-only permissions, but what do I know?).</p>
+<p>Next, start the server. Try to only do this once.</p>
+<pre><code>vnc server
+</code></pre>
+<p>If you end up with multiple vnc server instances running on just ONE user account, kill the extra processes and delete their log files. Here are the steps:</p>
+<p>First, find the process ID’s:</p>
+<pre><code>ps aux | grep vnc
+</code></pre>
+<p>The process ID&rsquo;s (pid) are located in the second column from the left. Kill the extra vnc pid&rsquo;s:</p>
+<pre><code>kill -9 &lt;pid&gt;
+</code></pre>
+<p>Find the associated files and delete them. I found there here:</p>
+<pre><code>cd /var/log
+</code></pre>
+<p>They will have names like &ldquo;Xorg.9.log&rdquo;.</p>
+<h3 id="troubleshooting-remote-desktop">Troubleshooting Remote Desktop</h3>
+<p>If you run into trouble, try disabling SELinux:</p>
+<pre><code>sudo setenforce 0
+</code></pre>
+<p>Check:</p>
+<pre><code>getenforce
+</code></pre>
+<p>(it should say “permissive” NOT “enforcing)</p>
+<p>Check for problems (as root):</p>
+<pre><code>cd /var/logs
+more xrdp.log
+more xrdp-sesman.log
+</code></pre>
+<p>These are cleared rapidly and folded into the xrdp .tar files, so do not be alarmed if the log files are empty. If you really want to see something in the xrdp logs, stop and restart xrdp.</p>
+<p>The most useful file is the messages file, but it’s very long, so just show the end:</p>
+<pre><code>sudo tail -55 messages
+</code></pre>
+<p>If you <em>really</em> want to see what&rsquo;s going on, watch the file in real time:</p>
+<p><code>tail -f messages</code></p>
+<p>Ctlr-C to leave</p>
+<p>The firewalld file in the /var/log/ directory is stuffed with known, but currently unresolved bugs so it’s not very useful for diagnosing problems at this time.</p>
+<p>There&rsquo;s a number of remote desktop applications which can be used to access the VM. Windows RDP is easy to use and secure.</p>
+<h3 id="run-r-in-remote-desktop">Run R in remote desktop</h3>
+<p>Start by installing R. WSU would not let me access the internet directly from the remote desktop internet browser, but I could through the SSH. So here are command line instructions:</p>
+<pre><code>sudo yum install epel-release
+sudo yum update
+sudo yum install R -y
+</code></pre>
+<p>Next, install RStudio. Get current link from the 
+<a href="https://www.rstudio.com/products/rstudio/download/" target="_blank" rel="noopener"><strong>RStudio website</strong></a>
+. The link below worked March 19, 2018:</p>
+<pre><code>wget https://download1.rstudio.org/rstudio-1.1.442-x86_6
+sudo rpm -Uvh rstudio-1.1.442-x86_64.rpm
+</code></pre>
+<h2 id="other">Other</h2>
+<p>It&rsquo;s also helpful to have an office suite</p>
+<pre><code>sudo yum install libreoffice
+</code></pre>
+<p>Okay, all done! Go and solve the world’s problems!</p>
+
+    </div>
+
+    
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/virtual-machine/">virtual machine</a>
+  
+  <a class="badge badge-light" href="/tags/jupyter/">Jupyter</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/1_vm_wsu/&amp;text=How%20to%20Set%20Up%20a%20Virtual%20Machine%20for%20Data%20Analysis%20If%20You%20Are%20an%20IT%20Admin%20Noob" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=How%20to%20Set%20Up%20a%20Virtual%20Machine%20for%20Data%20Analysis%20If%20You%20Are%20an%20IT%20Admin%20Noob&amp;body=/post/1_vm_wsu/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/1_vm_wsu/&amp;title=How%20to%20Set%20Up%20a%20Virtual%20Machine%20for%20Data%20Analysis%20If%20You%20Are%20an%20IT%20Admin%20Noob" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/1_vm_wsu/&amp;title=How%20to%20Set%20Up%20a%20Virtual%20Machine%20for%20Data%20Analysis%20If%20You%20Are%20an%20IT%20Admin%20Noob" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu4f2f7d9b1fe1e59ebdeaf703537258fe_46000589_270x270_fill_lanczos_center_2.png" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Julia Piaskowski</a></h5>
+      <h6 class="card-subtitle">Statistical Consultant</h6>
+      <p class="card-text">I work in agricultural statists. My focal areas are data management and analytic workflow, quantitative genetics and integration of spatial statistics into routine analysis of agricultural field trials.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/SeedsAndBreeds" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?authuser=1&amp;user=PMN2WZEAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/jpiaskowski" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.3/mermaid.min.js" integrity="" crossorigin="anonymous" title="mermaid"></script>
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.a0d331bcd05dbe8b31e244f796710f08.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    Julia Piaskowski, 2020 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

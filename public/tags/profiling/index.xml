@@ -14,9 +14,9 @@
     
     <item>
       <title>Faster R Scripts through Code Profiling</title>
-      <link>/post/code_profiling/</link>
+      <link>/post/4_code_profiling/</link>
       <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
-      <guid>/post/code_profiling/</guid>
+      <guid>/post/4_code_profiling/</guid>
       <description>&lt;h5 id=&#34;sources&#34;&gt;Sources&lt;/h5&gt;
 &lt;p&gt;Thomas Lumley, Github repo 
 &lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;useRfasteR&lt;/a&gt;

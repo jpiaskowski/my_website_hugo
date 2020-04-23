@@ -14,9 +14,9 @@
     
     <item>
       <title>Faster R Scripts through Code Profiling</title>
-      <link>/post/code_profiling/</link>
+      <link>/post/4_code_profiling/</link>
       <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
-      <guid>/post/code_profiling/</guid>
+      <guid>/post/4_code_profiling/</guid>
       <description>&lt;h5 id=&#34;sources&#34;&gt;Sources&lt;/h5&gt;
 &lt;p&gt;Thomas Lumley, Github repo 
 &lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;useRfasteR&lt;/a&gt;
@@ -264,9 +264,9 @@ compare_size(x1) #between base R and pryr
     
     <item>
       <title>How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob</title>
-      <link>/post/vm_wsu/</link>
+      <link>/post/1_vm_wsu/</link>
       <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
-      <guid>/post/vm_wsu/</guid>
+      <guid>/post/1_vm_wsu/</guid>
       <description>&lt;h2 id=&#34;basic-info&#34;&gt;Basic Info&lt;/h2&gt;
 &lt;p&gt;I came back from PAG (Plant &amp;amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.&lt;/p&gt;
 &lt;p&gt;I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University&amp;rsquo;s College of Agriculture, Human and Natural Resource Sciences (CAHNRS).&lt;/p&gt;

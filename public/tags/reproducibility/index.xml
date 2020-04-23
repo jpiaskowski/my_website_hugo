@@ -14,9 +14,9 @@
     
     <item>
       <title>Best Practices for Data Workflows in Ag Science</title>
-      <link>/post/workflow_basics/</link>
+      <link>/post/3_workflow_basics/</link>
       <pubDate>Tue, 07 Aug 2018 10:50:02 -0700</pubDate>
-      <guid>/post/workflow_basics/</guid>
+      <guid>/post/3_workflow_basics/</guid>
       <description>&lt;p&gt;I was struggling with the data set. The first 50 rows were summary stats (&amp;hellip;I think), and then the actual data started. The file was over 250 columns wide, composed largely of phenotypic traits. Perhaps one third of the columns were unique variables gathered over several years, but, the variable names were inconsistent across years. Actually, there was no information on the variables, what they were measuring, and what scale they were on. The closest hint was a pattern of color coding applied to groups of columns: yellow, green, blue. There appeared to be partial duplication and/or combination of of some columns, but we could not reconstruct exactly what had happened to the data. No one could recall the full history of the file, what that color coding meant, who had pre-processed data, or what they had done. We did know that the raw data were long lost.&lt;/p&gt;
 &lt;p&gt;This was the not the first nor the last messy data set with an unknown history that complicated my capacity to organize and analyse the information.&lt;/p&gt;
 &lt;p&gt;Other problems I encountered with poorly managed data sets:&lt;/p&gt;

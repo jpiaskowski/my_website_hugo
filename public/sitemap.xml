@@ -13,6 +13,51 @@
   </url>
   
   <url>
+    <loc>/tutorials/macarons/</loc>
+    <lastmod>2020-04-22T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2020-04-25T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/6_web_scraping_intro/</loc>
+    <lastmod>2020-04-25T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-04-25T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-04-25T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2020-04-25T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-04-25T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/web-scraping/</loc>
+    <lastmod>2020-04-25T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tutorials/</loc>
+    <lastmod>2020-04-22T10:50:02-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/talk/pycas2020/</loc>
     <lastmod>2020-02-09T10:20:00+00:00</lastmod>
   </url>
@@ -23,32 +68,12 @@
   </url>
   
   <url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/starwars_bad_data/</loc>
+    <loc>/post/5_starwars_bad_data/</loc>
     <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/data-workflow/</loc>
-    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-02-01T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-02-01T10:50:02-07:00</lastmod>
   </url>
   
@@ -278,7 +303,7 @@
   </url>
   
   <url>
-    <loc>/post/code_profiling/</loc>
+    <loc>/post/4_code_profiling/</loc>
     <lastmod>2018-09-19T10:50:02-07:00</lastmod>
   </url>
   
@@ -303,7 +328,7 @@
   </url>
   
   <url>
-    <loc>/post/workflow_basics/</loc>
+    <loc>/post/3_workflow_basics/</loc>
     <lastmod>2018-08-07T10:50:02-07:00</lastmod>
   </url>
   
@@ -318,7 +343,7 @@
   </url>
   
   <url>
-    <loc>/post/user_2018/</loc>
+    <loc>/post/2_user_2018/</loc>
     <lastmod>2018-07-18T10:50:02-07:00</lastmod>
   </url>
   
@@ -353,12 +378,7 @@
   </url>
   
   <url>
-    <loc>/post/vm_wsu/</loc>
-    <lastmod>2018-03-18T10:50:02-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tutorials/</loc>
+    <loc>/post/1_vm_wsu/</loc>
     <lastmod>2018-03-18T10:50:02-07:00</lastmod>
   </url>
   

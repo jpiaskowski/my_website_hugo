@@ -10,5 +10,5 @@ share: false
 title: Privacy Policy
 ---
 
-add text?? 
+I'm not tracking any site visitors at all with any tools. Your privacy is assured! 
 ...

@@ -14,9 +14,9 @@
     
     <item>
       <title>Bad Data Management: A Star Wars Story</title>
-      <link>/post/starwars_bad_data/</link>
+      <link>/post/5_starwars_bad_data/</link>
       <pubDate>Sat, 01 Feb 2020 10:50:02 -0700</pubDate>
-      <guid>/post/starwars_bad_data/</guid>
+      <guid>/post/5_starwars_bad_data/</guid>
       <description>&lt;p&gt;Most of us think of Star Wars as the rebellion versus the empire &amp;ndash; good versus evil with key figures: the Jedi, the Sith, Darth Vader, Luke Skywalker, the Emperor, Rey, Kylo Ren. But, The downfall of the governing bodies was not Darth Vader, Luke Skywalker, Kylo Ren or Palpatine. Actually, Star Wars is a story of really bad data management practices.&lt;/p&gt;
 &lt;h4 id=&#34;the-republic&#34;&gt;The Republic:&lt;/h4&gt;
 &lt;p&gt;The Jedi maintained decent, well-organised archives in a large library and they even had paid librarians on staff. But any jedi can delete information and no record is left regarding this? For heaven’s sake, an entire planet was removed from said archives That ain’t good. It led to the Clone wars and eventual rise of the Galactic Empire. It also turns out that a person just has to look like a jedi in order 
@@ -56,9 +56,9 @@
     
     <item>
       <title>Best Practices for Data Workflows in Ag Science</title>
-      <link>/post/workflow_basics/</link>
+      <link>/post/3_workflow_basics/</link>
       <pubDate>Tue, 07 Aug 2018 10:50:02 -0700</pubDate>
-      <guid>/post/workflow_basics/</guid>
+      <guid>/post/3_workflow_basics/</guid>
       <description>&lt;p&gt;I was struggling with the data set. The first 50 rows were summary stats (&amp;hellip;I think), and then the actual data started. The file was over 250 columns wide, composed largely of phenotypic traits. Perhaps one third of the columns were unique variables gathered over several years, but, the variable names were inconsistent across years. Actually, there was no information on the variables, what they were measuring, and what scale they were on. The closest hint was a pattern of color coding applied to groups of columns: yellow, green, blue. There appeared to be partial duplication and/or combination of of some columns, but we could not reconstruct exactly what had happened to the data. No one could recall the full history of the file, what that color coding meant, who had pre-processed data, or what they had done. We did know that the raw data were long lost.&lt;/p&gt;
 &lt;p&gt;This was the not the first nor the last messy data set with an unknown history that complicated my capacity to organize and analyse the information.&lt;/p&gt;
 &lt;p&gt;Other problems I encountered with poorly managed data sets:&lt;/p&gt;
@@ -100,9 +100,9 @@
     
     <item>
       <title>What I learned at the UseR! conference</title>
-      <link>/post/user_2018/</link>
+      <link>/post/2_user_2018/</link>
       <pubDate>Wed, 18 Jul 2018 10:50:02 -0700</pubDate>
-      <guid>/post/user_2018/</guid>
+      <guid>/post/2_user_2018/</guid>
       <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
 &lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
 &lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;

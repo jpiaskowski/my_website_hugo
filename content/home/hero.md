@@ -40,5 +40,5 @@ hero_media = "simple_rewind.png"
 
 +++
 
-**(Welcome)**
+Welcome_
 

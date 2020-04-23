@@ -149,6 +149,309 @@ Zotero has a huge userbase who take advantage of the
     </item>
     
     <item>
+      <title>Adventures in Babysitting: Web Scraping for the Python and HTML Novice</title>
+      <link>/post/6_web_scraping_intro/</link>
+      <pubDate>Sat, 25 Apr 2020 10:50:02 -0700</pubDate>
+      <guid>/post/6_web_scraping_intro/</guid>
+      <description>
+
+
+&lt;p&gt;&lt;em&gt;This is adapted from a talk I gave at Pycascades in Portland, Oregon 2020-02-09.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;All the resources from this talk are available at my &lt;a href=&#34;https://github.com/jpiaskowski/pycas2020_web_scraping&#34;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;div id=&#34;here-is-a-great-way-to-learn-python&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Here is a Great Way to Learn Python!&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;webscraping-book.png&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;But in truth, who actually reads these A to Z?? (spoiler: not me) Many people find these instructional books useful, but as a new Python user, I do not typically read this books front to back. I learn by doing a project, struggling, figuring some things out, and then reading a book like that! (it’s probably time I read that book, actually).&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&#34;luke_lightsaber_throwaway.gif&#34; style=&#34;width:100%&#34;&gt;
+&lt;figcaption&gt;
+me and my programming books
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;This post provides a guide to my first scraping project in Python. It is very low on assumed knowledge in Python and html. This is intended to be a guide into how to access web page content with the library &lt;strong&gt;requests&lt;/strong&gt; and parse the content using &lt;strong&gt;BeatifulSoup4&lt;/strong&gt;, as well as &lt;strong&gt;json&lt;/strong&gt; and &lt;strong&gt;pandas&lt;/strong&gt;. I will briefly introduce &lt;strong&gt;Selenium&lt;/strong&gt;, but I will not delve deeply into how to use that library (that topic deserves its own tutorial). I hope to show you some tricks and tips to make web scraping less overwhelming.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-main-requirements-for-a-successful-web-scraping-project&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;The Main Requirements for a Successful Web Scraping Project:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Information that is worth the effort it takes to build a working web scraper&lt;/li&gt;
+&lt;li&gt;Information that can be legally and ethically gathered by a web scraper&lt;/li&gt;
+&lt;li&gt;The tools available in the libraries &lt;code&gt;BeautifulSoup&lt;/code&gt; and &lt;code&gt;requests&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Knowledge on how to find the target information in html code&lt;/li&gt;
+&lt;li&gt;Knowledge on how to parse json objects (I will use &lt;code&gt;json&lt;/code&gt; in this tutorial).&lt;/li&gt;
+&lt;li&gt;Rudimentary &lt;code&gt;pandas&lt;/code&gt; skills&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;A comment on html:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;While html is the beast than runs the internet, what we mostly need to understand is how tags work. A tag is a collection of information sandwiched between angle-bracket enclosed labels. Here is my pretend tag, called “pro-tip”:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;pro-tip&amp;gt; All you need to know about html is how tags work &amp;lt;/pro-tip&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;We can access the information in there (“All you need to know…”) by calling its tag, “pro-tip”. How to find and access a tag will be addressed further in this tutorial.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-to-look-for-in-a-scraping-project&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;What to Look for in a Scraping Project:&lt;/h4&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;No public API is available for the data. This would be much easier to use and would help clarify both the legality and ethics of gathering the data.&lt;/li&gt;
+&lt;li&gt;There needs to be a sizable amount of structured data with a regular repeatable format to justify this effort. Web scraping can be a pain. &lt;strong&gt;BeautifulSoup&lt;/strong&gt; makes this easier, but there is no avoiding the individual idiosyncrasies of websites that will require customisation.&lt;/li&gt;
+&lt;li&gt;Identical formatting of the data is not required, but it does make things easier The more “edge cases” (departures from the norm) present, the more complicated the scraping will be.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;spidermen.jpg&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;legal-ethical-considerations&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Legal &amp;amp; Ethical Considerations&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;(note: I have zero legal training - this is not legal advice!)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Accessing vast troves of information can be intoxicating.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Just because it’s possible doesn’t mean it should be done&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Most websites have a &lt;a href=&#34;https://www.contentkingapp.com/academy/robotstxt/&#34;&gt;robots.txt&lt;/a&gt; file associated with the site indicating which scraping activities are permitted and which are not. It’s largely there for interacting with search engines (the ultimate web scrapers). However, much of the information on websites is considered public information. As such, some consider the robot.txt file as a set of &lt;em&gt;instructions&lt;/em&gt; rather than a legally binding document. The robots.txt file does not address topics such as ethical gathering and usage of the data.&lt;/p&gt;
+&lt;p&gt;Questions I ask myself before before beginning a scraping project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Am I scraping copyrighted material?&lt;/li&gt;
+&lt;li&gt;Will my scraping activity compromise individual privacy?&lt;/li&gt;
+&lt;li&gt;Am I making a large number of request that may overload or damage a server?&lt;/li&gt;
+&lt;li&gt;Is it possible the scraping will expose intellectual property I do not own?&lt;/li&gt;
+&lt;li&gt;Are there terms of service governing use of the website and am I following those?&lt;/li&gt;
+&lt;li&gt;Will my scraping activities diminish the value of the original data? (for example, do I plan to repackage the data as is and perhaps siphon off website traffic from the original source?)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When I scrap a site, I make sure I can answer “No” to all of those questions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Other resources on this Subjecy:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.researchgate.net/publication/324907302_Legality_and_Ethics_of_Web_Scraping&#34;&gt;Krotov and Silva, 2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3221625&#34;&gt;Sellars 2-18&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;now-its-time-to-scrape&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Now It’s Time to Scrape!&lt;/h3&gt;
+&lt;p&gt;My goal was to extract addresses for all Family Dollar stores in Idaho. These have an out sized presence in rural areas, so I wanted to understand how many there are in Idaho and their locations.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;familydollar1.png&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The starting point: &lt;a href=&#34;https://locations.familydollar.com/id/&#34; class=&#34;uri&#34;&gt;https://locations.familydollar.com/id/&lt;/a&gt;&lt;/p&gt;
+&lt;div id=&#34;step-1-load-the-libraries&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 1: Load the Libraries&lt;/h4&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;import requests # for making standard html requests
+from bs4 import BeautifulSoup # magical tool for parsing html data
+import json # for parsing data
+from pandas import DataFrame as df # premier library for data organization&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-2-request-data-from-target-url&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 2: Request Data from Target URL&lt;/h4&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;page = requests.get(&amp;quot;https://locations.familydollar.com/id/&amp;quot;)
+soup = BeautifulSoup(page.text, &amp;#39;html.parser&amp;#39;) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Beautiful Soup will take html or xml content and transform it into a complex tree of objects. Here are several common object types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;BeautifulSoup&lt;/code&gt; - the soup (the parsed content)&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Tag&lt;/code&gt; - a standard html tag, the main type of bs4 element you will encounter&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NavigableString&lt;/code&gt; - a string of text within a tag&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Comment&lt;/code&gt; - special type of NavigableString&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;More on&lt;/strong&gt; &lt;code&gt;requests.get()&lt;/code&gt; &lt;strong&gt;output:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I’ve only used &lt;code&gt;page.text()&lt;/code&gt; to translate the requested page into something readable, but there are other output types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;page.text()&lt;/code&gt; for text (most common)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;page.content()&lt;/code&gt; for byte-by-byte output&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;page.json()&lt;/code&gt; for json objects&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;page.raw()&lt;/code&gt; for the raw socket response (no thank you)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I have only worked on English-only sites using the Latin alphabet. The default encoding settings in &lt;strong&gt;requests&lt;/strong&gt; have worked fine for that. However, there is a rich rich internet world beyond English-only sites. To ensure that &lt;strong&gt;requests&lt;/strong&gt; correct parses the content, you can set the encoding for the text:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;page = requests.get(URL)
+page.encoding = &amp;#39;ISO-885901&amp;#39; 
+soup = BeautifulSoup(page.text, &amp;#39;html.parser&amp;#39;) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;**More on BS4 tags:*&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The bs4 element ‘tag’ is capturing an html tag&lt;/li&gt;
+&lt;li&gt;it has both a name and attributes that can be accessed like a dictionary: &lt;code&gt;tag[&#39;someAttribute&#39;]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;if a tag has multiple attributes with the same name, only the first instance is accessed&lt;/li&gt;
+&lt;li&gt;a tag’s children is accessed via &lt;code&gt;tag.contents&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;all tag descendants can be accessed with &lt;code&gt;tag.descendants&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;you can always access the full contents as a stringwith: &lt;code&gt;re.compile(&amp;quot;your_string&amp;quot;)&lt;/code&gt; instead of navigating the html tree.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-3-determine-how-to-extract-relevant-content-from-bs4-soup&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 3: Determine How to Extract Relevant Content from bs4 Soup&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;This process can be frustrating.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;ren_throws_fit.gif&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This can be a daunting process filled with missteps. I think the the best way to approach this is start with one representative example and then scale up (this principle is true for any programming task). Viewing the page’s html source code is essential. There are a number of way to do this.&lt;/p&gt;
+&lt;p&gt;You can view the entire source code via Python in your IDE (not recommended). Run this code at your own risk:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(soup.prettify())&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While printing out the &lt;em&gt;entire source code&lt;/em&gt; for a page might work for a toy example shown in some tutorials, most modern websites have an massive amount of content on any one of their pages. Even the 404 page is likely to be filled with code for headers, footers and so on.&lt;/p&gt;
+&lt;p&gt;It is usually easiest to browse the source code via “View Page Source” (right-click –&amp;gt; “view page source”). That most actually the most reliable way find your target content (I will explain why later in this tutorial).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;familydollar2.png&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In this instance, I need to find my target content - an address, city, State and zip code - in this vast html ocean. Often, a simple search of the page source (ctrl + F) will yield the section where my target location is located. Once I actually can see an example of my target content (the address for at least one store), I look for an attribute or tag that sets this content apart from the rest.&lt;/p&gt;
+&lt;p&gt;It would appear that first, I need to collect web addresses for different cities in Idaho with Family Dollar Stores and visit those websites to get the address information. These web addresses all appear to be enclosed in a ‘href’ tag. Great! I will try searching for that using the &lt;code&gt;find_all&lt;/code&gt; command:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;dollar_tree_list = soup.find_all(&amp;#39;href&amp;#39;)
+dollar_tree_list&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## []&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Searching for ‘href’ did not yield anything (darn). This might have failed because ‘href’ is nested inside the class ‘itemlist’. For the next attempt, search on ‘item_list’. Because “class” is a reserved word in Python, &lt;code&gt;class_&lt;/code&gt; is used instead. The bs4 function &lt;code&gt;soup.find_all()&lt;/code&gt; turned out to be the Swiss army knife of bs4 functions.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;dollar_tree_list = soup.find_all(class_ = &amp;#39;itemlist&amp;#39;)
+for i in dollar_tree_list[:2]:
+  print(i)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;div class=&amp;quot;itemlist&amp;quot;&amp;gt;&amp;lt;a class=&amp;quot;ga_w2gi_lp&amp;quot; data-gaact=&amp;quot;Click_to_CityPage&amp;quot; data-galoc=&amp;quot;Aberdeen - ID&amp;quot; dta-linktrack=&amp;quot;City index page - Aberdeen&amp;quot; href=&amp;quot;https://locations.familydollar.com/id/aberdeen/&amp;quot;&amp;gt;Aberdeen&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+## &amp;lt;div class=&amp;quot;itemlist&amp;quot;&amp;gt;&amp;lt;a class=&amp;quot;ga_w2gi_lp&amp;quot; data-gaact=&amp;quot;Click_to_CityPage&amp;quot; data-galoc=&amp;quot;American Falls - ID&amp;quot; dta-linktrack=&amp;quot;City index page - American Falls&amp;quot; href=&amp;quot;https://locations.familydollar.com/id/american-falls/&amp;quot;&amp;gt;American Falls&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Anecdotally, I found that searching for a specific class was often a successful approach. Here is more information on that object:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(dollar_tree_list)
+len(dollar_tree_list)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The content from this BeautifulSoup “ResultSet” can be extracted using &lt;code&gt;.contents&lt;/code&gt;. This is also a good time to create a single representative example.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;example = dollar_tree_list[2] # a representative example
+example_content = example.contents
+print(example_content)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [&amp;lt;a class=&amp;quot;ga_w2gi_lp&amp;quot; data-gaact=&amp;quot;Click_to_CityPage&amp;quot; data-galoc=&amp;quot;Arco - ID&amp;quot; dta-linktrack=&amp;quot;City index page - Arco&amp;quot; href=&amp;quot;https://locations.familydollar.com/id/arco/&amp;quot;&amp;gt;Arco&amp;lt;/a&amp;gt;]&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Use &lt;code&gt;.attr&lt;/code&gt; to find what attributes are present in the contents of this object.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: &lt;code&gt;contents&lt;/code&gt; usually return a list of exactly one item, so the first step is to index that item.&lt;/em&gt;&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;example_content = example.contents[0]
+example_content.attrs&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## {&amp;#39;class&amp;#39;: [&amp;#39;ga_w2gi_lp&amp;#39;], &amp;#39;data-galoc&amp;#39;: &amp;#39;Arco - ID&amp;#39;, &amp;#39;data-gaact&amp;#39;: &amp;#39;Click_to_CityPage&amp;#39;, &amp;#39;dta-linktrack&amp;#39;: &amp;#39;City index page - Arco&amp;#39;, &amp;#39;href&amp;#39;: &amp;#39;https://locations.familydollar.com/id/arco/&amp;#39;}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that I can see that ‘href’ is an attribute, that can be extracted like a dictionary item:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;example_href = example_content[&amp;#39;href&amp;#39;]
+print(example_href)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## https://locations.familydollar.com/id/arco/&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-4-put-it-all-together&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 4: Put it all together:&lt;/h4&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;city_hrefs = [] # initialise empty list
+
+for i in dollar_tree_list:
+    cont = i.contents[0]
+    href = cont[&amp;#39;href&amp;#39;]
+    city_hrefs.append(href)
+
+#  check to be sure all went well
+for i in city_hrefs[:2]:
+  print(i)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## https://locations.familydollar.com/id/aberdeen/
+## https://locations.familydollar.com/id/american-falls/&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt; a list of URL’s of Family Dollar stores in Idaho to scrape.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;repeat-steps-1-4-for-the-city-urls&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Repeat Steps 1-4 for the City URLs&lt;/h4&gt;
+&lt;p&gt;I still don’t have address information! Now, each city URL needs to scraped to get this information. So, restart the process, using a single, representative example.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;page2 = requests.get(city_hrefs[2]) # again establish a representative example
+soup2 = BeautifulSoup(page2.text, &amp;#39;html.parser&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;lt;img src=“familydollar3.png” style=&amp;quot;width:100%&amp;gt;&lt;/p&gt;
+&lt;p&gt;The address information is nested within ‘type=“application/ld+json”’. After doing a lot of geolocation scraping, I’ve come to recognize this as a common structure for storing address information. Fortunately, &lt;code&gt;soup.find_all()&lt;/code&gt; also enables searching on ‘type’.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;arco = soup2.find_all(type=&amp;quot;application/ld+json&amp;quot;)
+print(arco[1])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;script type=&amp;quot;application/ld+json&amp;quot;&amp;gt;
+##  {
+##    &amp;quot;@context&amp;quot;:&amp;quot;https://schema.org&amp;quot;,
+##    &amp;quot;@type&amp;quot;:&amp;quot;Schema Business Type&amp;quot;,
+##    &amp;quot;name&amp;quot;: &amp;quot;Family Dollar #9143&amp;quot;,
+##    &amp;quot;address&amp;quot;:{
+##      &amp;quot;@type&amp;quot;:&amp;quot;PostalAddress&amp;quot;,
+##      &amp;quot;streetAddress&amp;quot;:&amp;quot;157 W Grand Avenue&amp;quot;,
+##      &amp;quot;addressLocality&amp;quot;:&amp;quot;Arco&amp;quot;,
+##      &amp;quot;addressRegion&amp;quot;:&amp;quot;ID&amp;quot;,
+##      &amp;quot;postalCode&amp;quot;:&amp;quot;83213&amp;quot;,
+##      &amp;quot;addressCountry&amp;quot;:&amp;quot;US&amp;quot;
+##    },
+##    &amp;quot;containedIn&amp;quot;:&amp;quot;&amp;quot;,  
+##    &amp;quot;branchOf&amp;quot;: {
+##      &amp;quot;name&amp;quot;:&amp;quot;Family Dollar&amp;quot;,
+##      &amp;quot;url&amp;quot;: &amp;quot;https://www.familydollar.com/&amp;quot;
+##    },
+##    &amp;quot;url&amp;quot;:&amp;quot;https://locations.familydollar.com/id/arco/29143/&amp;quot;,
+##    &amp;quot;telephone&amp;quot;:&amp;quot;208-881-5738&amp;quot;,
+##    &amp;quot;image&amp;quot;: &amp;quot;//hosted.where2getit.com/familydollarstore/images/storefront.png&amp;quot;
+##  }           
+##  &amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The address information is in the second list member! Finally!&lt;/p&gt;
+&lt;p&gt;I extracted the contents (from the second list item) using &lt;code&gt;.contents&lt;/code&gt; (this is a good default action after filtering the soup). Again, since the output of contents is a list of length one, I indexed that list item:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;arco_contents = arco[1].contents[0]
+arco_contents&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;#39;\n\t{\n\t  &amp;quot;@context&amp;quot;:&amp;quot;https://schema.org&amp;quot;,\n\t  &amp;quot;@type&amp;quot;:&amp;quot;Schema Business Type&amp;quot;,\n\t  &amp;quot;name&amp;quot;: &amp;quot;Family Dollar #9143&amp;quot;,\n\t  &amp;quot;address&amp;quot;:{\n\t    &amp;quot;@type&amp;quot;:&amp;quot;PostalAddress&amp;quot;,\n\t    &amp;quot;streetAddress&amp;quot;:&amp;quot;157 W Grand Avenue&amp;quot;,\n\t    &amp;quot;addressLocality&amp;quot;:&amp;quot;Arco&amp;quot;,\n\t    &amp;quot;addressRegion&amp;quot;:&amp;quot;ID&amp;quot;,\n\t    &amp;quot;postalCode&amp;quot;:&amp;quot;83213&amp;quot;,\n\t    &amp;quot;addressCountry&amp;quot;:&amp;quot;US&amp;quot;\n\t  },\n\t  &amp;quot;containedIn&amp;quot;:&amp;quot;&amp;quot;,  \n\t  &amp;quot;branchOf&amp;quot;: {\n\t    &amp;quot;name&amp;quot;:&amp;quot;Family Dollar&amp;quot;,\n\t    &amp;quot;url&amp;quot;: &amp;quot;https://www.familydollar.com/&amp;quot;\n\t  },\n\t  &amp;quot;url&amp;quot;:&amp;quot;https://locations.familydollar.com/id/arco/29143/&amp;quot;,\n\t  &amp;quot;telephone&amp;quot;:&amp;quot;208-881-5738&amp;quot;,\n\t  &amp;quot;image&amp;quot;: &amp;quot;//hosted.where2getit.com/familydollarstore/images/storefront.png&amp;quot;\n\t}\t\t\t\n\t&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Wow, looking good. The format presented here is consistent with the json format (also the type did have “json” in its name). A json object can act like a dictionary with nested dictionaries inside. It’s actually a nice format to work with once you become familiar with it (and it’s certainly much easier to program than a long series of regex commands). Although this structurally looks like a json objects, it is still a bs4 object and needs a formal programmatic conversion to json to be accessed as a json object:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;arco_json =  json.loads(arco_contents)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;type(arco_json)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;class &amp;#39;dict&amp;#39;&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;print(arco_json)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## {&amp;#39;@context&amp;#39;: &amp;#39;https://schema.org&amp;#39;, &amp;#39;@type&amp;#39;: &amp;#39;Schema Business Type&amp;#39;, &amp;#39;name&amp;#39;: &amp;#39;Family Dollar #9143&amp;#39;, &amp;#39;address&amp;#39;: {&amp;#39;@type&amp;#39;: &amp;#39;PostalAddress&amp;#39;, &amp;#39;streetAddress&amp;#39;: &amp;#39;157 W Grand Avenue&amp;#39;, &amp;#39;addressLocality&amp;#39;: &amp;#39;Arco&amp;#39;, &amp;#39;addressRegion&amp;#39;: &amp;#39;ID&amp;#39;, &amp;#39;postalCode&amp;#39;: &amp;#39;83213&amp;#39;, &amp;#39;addressCountry&amp;#39;: &amp;#39;US&amp;#39;}, &amp;#39;containedIn&amp;#39;: &amp;#39;&amp;#39;, &amp;#39;branchOf&amp;#39;: {&amp;#39;name&amp;#39;: &amp;#39;Family Dollar&amp;#39;, &amp;#39;url&amp;#39;: &amp;#39;https://www.familydollar.com/&amp;#39;}, &amp;#39;url&amp;#39;: &amp;#39;https://locations.familydollar.com/id/arco/29143/&amp;#39;, &amp;#39;telephone&amp;#39;: &amp;#39;208-881-5738&amp;#39;, &amp;#39;image&amp;#39;: &amp;#39;//hosted.where2getit.com/familydollarstore/images/storefront.png&amp;#39;}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In than content is key called ‘address’ that has the desired address information in smaller nested dictionary. This can be retrieved as thus:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;arco_address = arco_json[&amp;#39;address&amp;#39;]
+arco_address&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## {&amp;#39;@type&amp;#39;: &amp;#39;PostalAddress&amp;#39;, &amp;#39;streetAddress&amp;#39;: &amp;#39;157 W Grand Avenue&amp;#39;, &amp;#39;addressLocality&amp;#39;: &amp;#39;Arco&amp;#39;, &amp;#39;addressRegion&amp;#39;: &amp;#39;ID&amp;#39;, &amp;#39;postalCode&amp;#39;: &amp;#39;83213&amp;#39;, &amp;#39;addressCountry&amp;#39;: &amp;#39;US&amp;#39;}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;step-5-finally-put-it-all-together&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Step 5: Finally, Put It All Together&lt;/h4&gt;
+&lt;p&gt;Iterate over the list store URLs in Idaho:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;locs_dict = [] # initialise empty list
+
+for link in city_hrefs:
+  locpage = requests.get(link)   # request page info
+  locsoup = BeautifulSoup(locpage.text, &amp;#39;html.parser&amp;#39;) 
+      # parse the page&amp;#39;s content
+  locinfo = locsoup.find_all(type=&amp;quot;application/ld+json&amp;quot;) 
+      # extract specific element
+  loccont = locinfo[1].contents[0]  
+      # get contents from the bs4 element set
+  locjson = json.loads(loccont)  # convert to json
+  locaddr = locjson[&amp;#39;address&amp;#39;] # get address
+  locs_dict.append(locaddr) # add address to list&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Do some final data organisations steps: convert to a pandas data frame, drop the unneeded columns “&lt;span class=&#34;citation&#34;&gt;@type&lt;/span&gt;” and “country”) and check the top 5 rows to ensure that everything looks alright.&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;locs_df = df.from_records(locs_dict)
+locs_df.drop([&amp;#39;@type&amp;#39;, &amp;#39;addressCountry&amp;#39;], axis = 1, inplace = True)
+locs_df.head(n = 5)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##         streetAddress addressLocality addressRegion postalCode
+## 0   111 N Main Street        Aberdeen            ID      83210
+## 1     253 Harrison St  American Falls            ID      83211
+## 2  157 W Grand Avenue            Arco            ID      83213
+## 3     177 Main Street          Ashton            ID      83420
+## 4     747 N. Main St.        Bellevue            ID      83313&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Results!!&lt;/strong&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&#34;adventures_in_babysitting.gif&#34; style=&#34;width:95%&#34;&gt;
+&lt;figcaption&gt;
+They are also euphoric about these results!
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Make sure to save results!! (still euphoric)&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;df.to_csv(locs_df, &amp;quot;family_dollar_ID_locations.csv&amp;quot;, sep = &amp;quot;,&amp;quot;, index = False)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-few-words-on-selenium&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;A Few Words on Selenium&lt;/h3&gt;
+&lt;p&gt;(using Walgreens as an example)&lt;/p&gt;
+&lt;p&gt;“Inspect Element” provides the code for what is displayed in a browser:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;walgreens1&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;While “View Page Source” - provides the code for what &lt;strong&gt;requests&lt;/strong&gt; will obtain:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;walgreens2&#34; style=&#34;width:100%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When these two don’t agree, there are plugins modifying the source code - so, it should be accessed &lt;em&gt;after&lt;/em&gt; the page has loaded in a browser. &lt;strong&gt;requests&lt;/strong&gt; cannot do that, but &lt;strong&gt;Selenium&lt;/strong&gt; can.&lt;/p&gt;
+&lt;p&gt;Selenium requires a web driver to retrieve the content. It actually opens a web browser, and this page content is collected. Selenium is powerful - it can interact with loaded content in many ways (read the documentation). After getting data with &lt;strong&gt;Selenium&lt;/strong&gt;, continue to use &lt;strong&gt;BeautifulSoup&lt;/strong&gt; as before:&lt;/p&gt;
+&lt;pre class=&#34;python&#34;&gt;&lt;code&gt;url = &amp;quot;https://www.walgreens.com/storelistings/storesbycity.jsp?requestType=locator&amp;amp;state=ID&amp;quot;
+driver = webdriver.Firefox(executable_path = &amp;#39;mypath/geckodriver.exe&amp;#39;)
+driver.get(url)
+soup_ID = BeautifulSoup(driver.page_source, &amp;#39;html.parser&amp;#39;)
+store_link_soup = soup_ID.find_all(class_ = &amp;#39;col-xl-4 col-lg-4 col-md-4&amp;#39;) &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;in-conclusion&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;In Conclusion…&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Be Patient&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;yoda_lightsaber.gif&#34; style=&#34;width:75%&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Consult the Manuals&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;(these are very helpful)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://beautiful-soup-4.readthedocs.io/en/latest/&#34; class=&#34;uri&#34;&gt;https://beautiful-soup-4.readthedocs.io/en/latest/&lt;/a&gt;&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://selenium.dev/&#34; class=&#34;uri&#34;&gt;https://selenium.dev/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure&gt;
+&lt;img src=&#34;luke_brushesoff_dust.gif&#34; style=&#34;width:95%&#34;&gt;
+&lt;figcaption&gt;
+~ You, After Becoming a Web Scraping Master ~
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;em&gt;Postscript:&lt;/em&gt; It turns out very few people nowadays have seen “Adventures in Babysitting” and get this reference in this post title. That’s okay. To summarise: while a woman babysits 3 charges for an evening, everything goes catastrophically wrong. Yet, somehow she get everyone home unharmed and have some fun adventures along the way. That felt like an apt metaphor for building these scripts. They take considerable attention, but with careful work, you can build a highly functional web scraper.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Post Postscript:&lt;/em&gt;&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&#34;family_dollar_locations.png&#34; style=&#34;width:95%&#34;&gt;
+&lt;figcaption&gt;
+Dollar Stores in America
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;There are many many dollar stores in America.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Adventures in Babysitting</title>
       <link>/talk/pycas2020/</link>
       <pubDate>Sun, 09 Feb 2020 10:20:00 +0000</pubDate>
@@ -158,9 +461,9 @@ Zotero has a huge userbase who take advantage of the
     
     <item>
       <title>Bad Data Management: A Star Wars Story</title>
-      <link>/post/starwars_bad_data/</link>
+      <link>/post/5_starwars_bad_data/</link>
       <pubDate>Sat, 01 Feb 2020 10:50:02 -0700</pubDate>
-      <guid>/post/starwars_bad_data/</guid>
+      <guid>/post/5_starwars_bad_data/</guid>
       <description>&lt;p&gt;Most of us think of Star Wars as the rebellion versus the empire &amp;ndash; good versus evil with key figures: the Jedi, the Sith, Darth Vader, Luke Skywalker, the Emperor, Rey, Kylo Ren. But, The downfall of the governing bodies was not Darth Vader, Luke Skywalker, Kylo Ren or Palpatine. Actually, Star Wars is a story of really bad data management practices.&lt;/p&gt;
 &lt;h4 id=&#34;the-republic&#34;&gt;The Republic:&lt;/h4&gt;
 &lt;p&gt;The Jedi maintained decent, well-organised archives in a large library and they even had paid librarians on staff. But any jedi can delete information and no record is left regarding this? For heaven’s sake, an entire planet was removed from said archives That ain’t good. It led to the Clone wars and eventual rise of the Galactic Empire. It also turns out that a person just has to look like a jedi in order 
@@ -237,9 +540,9 @@ Zotero has a huge userbase who take advantage of the
     
     <item>
       <title>Faster R Scripts through Code Profiling</title>
-      <link>/post/code_profiling/</link>
+      <link>/post/4_code_profiling/</link>
       <pubDate>Wed, 19 Sep 2018 10:50:02 -0700</pubDate>
-      <guid>/post/code_profiling/</guid>
+      <guid>/post/4_code_profiling/</guid>
       <description>&lt;h5 id=&#34;sources&#34;&gt;Sources&lt;/h5&gt;
 &lt;p&gt;Thomas Lumley, Github repo 
 &lt;a href=&#34;https://github.com/tslumley/useRfasteR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;useRfasteR&lt;/a&gt;
@@ -487,9 +790,9 @@ compare_size(x1) #between base R and pryr
     
     <item>
       <title>Best Practices for Data Workflows in Ag Science</title>
-      <link>/post/workflow_basics/</link>
+      <link>/post/3_workflow_basics/</link>
       <pubDate>Tue, 07 Aug 2018 10:50:02 -0700</pubDate>
-      <guid>/post/workflow_basics/</guid>
+      <guid>/post/3_workflow_basics/</guid>
       <description>&lt;p&gt;I was struggling with the data set. The first 50 rows were summary stats (&amp;hellip;I think), and then the actual data started. The file was over 250 columns wide, composed largely of phenotypic traits. Perhaps one third of the columns were unique variables gathered over several years, but, the variable names were inconsistent across years. Actually, there was no information on the variables, what they were measuring, and what scale they were on. The closest hint was a pattern of color coding applied to groups of columns: yellow, green, blue. There appeared to be partial duplication and/or combination of of some columns, but we could not reconstruct exactly what had happened to the data. No one could recall the full history of the file, what that color coding meant, who had pre-processed data, or what they had done. We did know that the raw data were long lost.&lt;/p&gt;
 &lt;p&gt;This was the not the first nor the last messy data set with an unknown history that complicated my capacity to organize and analyse the information.&lt;/p&gt;
 &lt;p&gt;Other problems I encountered with poorly managed data sets:&lt;/p&gt;
@@ -531,9 +834,9 @@ compare_size(x1) #between base R and pryr
     
     <item>
       <title>What I learned at the UseR! conference</title>
-      <link>/post/user_2018/</link>
+      <link>/post/2_user_2018/</link>
       <pubDate>Wed, 18 Jul 2018 10:50:02 -0700</pubDate>
-      <guid>/post/user_2018/</guid>
+      <guid>/post/2_user_2018/</guid>
       <description>&lt;h4 id=&#34;top-lessons-from-r-users-conference-held-july-10---13-in-brisbane-aus&#34;&gt;Top Lessons from R users conference held July 10 - 13 in Brisbane, AUS&lt;/h4&gt;
 &lt;p&gt;With 900 registrants and dozens of talks, there is much to report (
 &lt;a href=&#34;https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/videos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of most talks&lt;/a&gt;
@@ -669,7 +972,7 @@ There was also a brief discussion on how to tell a person their code smells bad 
       <link>/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
       <guid>/privacy/</guid>
-      <description>&lt;p&gt;add text??
+      <description>&lt;p&gt;I&amp;rsquo;m not tracking any site visitors at all with any tools. Your privacy is assured!
 &amp;hellip;&lt;/p&gt;
 </description>
     </item>
@@ -679,7 +982,7 @@ There was also a brief discussion on how to tell a person their code smells bad 
       <link>/terms/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
       <guid>/terms/</guid>
-      <description>&lt;p&gt;add text here?
+      <description>&lt;p&gt;Most of the content on this website is copyright. Blog posts are often an exception - each page on info on this. Mostly, I just want attribution. I can&amp;rsquo;t believe I even need this section on &amp;ldquo;terms of service&amp;rdquo; since I am hardly rendering a service. I&amp;rsquo;m not responsible for errors of information - I try to be accurate, but mistakes happen. This is a personal website, not an set of engineering specs.
 &amp;hellip;&lt;/p&gt;
 </description>
     </item>
@@ -694,9 +997,9 @@ There was also a brief discussion on how to tell a person their code smells bad 
     
     <item>
       <title>How to Set Up a Virtual Machine for Data Analysis If You Are an IT Admin Noob</title>
-      <link>/post/vm_wsu/</link>
+      <link>/post/1_vm_wsu/</link>
       <pubDate>Sun, 18 Mar 2018 10:50:02 -0700</pubDate>
-      <guid>/post/vm_wsu/</guid>
+      <guid>/post/1_vm_wsu/</guid>
       <description>&lt;h2 id=&#34;basic-info&#34;&gt;Basic Info&lt;/h2&gt;
 &lt;p&gt;I came back from PAG (Plant &amp;amp; Animal Genome - a huge ag genetics conference held in San Diego each January) all fired about setting up a virtual machine (VM) to facilitate collaboration. The hope what this would enable us to share files and scripts better (without the aid of countless dropboxes everyone forgets about), and improve overall collaboration.&lt;/p&gt;
 &lt;p&gt;I had considered this before - enterprise deployment of RStudio server or Jupyter hub, but our program doesn’t have dedicated IT support to do this, and frankly, it all seemed rather intimidating to a plant geneticist like me. But this would be useful. I had once run my laptop on dual boot with Ubuntu and Windows. I could handle this, couldn’t I? All I want is a VM that everyone can access via remote desktop for their analytical needs. Fortunately, I had no idea how difficult this would be, or I might not have entered the lion’s den. So, here are fruits of my labor in the hopes it will ease the process for future users. This guide was developed specific for Washington State University&amp;rsquo;s College of Agriculture, Human and Natural Resource Sciences (CAHNRS).&lt;/p&gt;
